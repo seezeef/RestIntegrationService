@@ -5,11 +5,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
-using System.Data.OracleClient;
 using System.Data.Odbc;
 using System.Data;
 using System.Data.OleDb;
 using RestaurantsIntegrationService.Models;
+using Oracle.DataAccess.Client;
+using RestaurantsIntegrationService.Core.DataAccess;
+using RestaurantsIntegrationService.Models.Bills;
 
 namespace RestaurantsIntegrationService.Controllers
 {
@@ -29,14 +31,13 @@ namespace RestaurantsIntegrationService.Controllers
 
         [Route("TestGetData")]
         [HttpGet]
-        public IHttpActionResult TestGetData()
+        public IHttpActionResult TestGetData(string databaseName)
         {
-            string oracleConnection = "Provider = ORAOLEDB.Oracle.1; User ID =onyxproxy[ias20171]; Password =YS$ONYX#PROXY; Data Source =YemenSoft";
-            using (OleDbConnection conn = new OleDbConnection())
+
+            using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                conn.ConnectionString = oracleConnection;
                 conn.Open();
-                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM RES_BILL_MST", conn);
+                OracleDataAdapter da = new OracleDataAdapter("SELECT * FROM RES_BILL_MST", conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 List<string> ids = new List<string>();
@@ -49,38 +50,16 @@ namespace RestaurantsIntegrationService.Controllers
             }
         }
 
-        [Route("IsAccountNumberExist")]
-        [HttpGet]
-        public IHttpActionResult IsAccountNumberExist(string accountNumber)
-        {
-            string oracleConnection = "Provider = ORAOLEDB.Oracle.1; User ID =onyxproxy[ias20171]; Password =YS$ONYX#PROXY; Data Source =YemenSoft";
-            using (OleDbConnection conn = new OleDbConnection())
-            {
-                conn.ConnectionString = oracleConnection;
-                conn.Open();
-                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM ACCOUNT_CURR WHERE A_CODE = " + accountNumber, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
 
-                if (dt.Rows.Count == 0)
-                {
-                    return Ok(false);
-                }
-
-                return Ok(true);
-            }
-        }
-
-        [Route("TestInsertData")]
+        [Route("InsertBills")]
         [HttpPost]
-        public IHttpActionResult TestInsertData(List<TestModel> data)
+        public IHttpActionResult InsertBills(TransferModel<TransferBillModel> data)
         {
-            string oracleConnection = "Provider = ORAOLEDB.Oracle.1; User ID =onyxproxy[ias20171]; Password =YS$ONYX#PROXY; Data Source =YemenSoft";
-            using (OleDbConnection conn = new OleDbConnection(oracleConnection))
+            using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
             {
-                //OleDbTransaction transaction = null;
-
-                OleDbCommand command = new OleDbCommand();
+                conn.Open();
+                var companyInfo = ConnectionManager.GetCompanyInfo(data.DatabaseName, data.OnyxBranchNumber);
+                OracleCommand command = new OracleCommand(conn);
                 command.Connection = conn;
                 conn.Open();
                 //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
@@ -98,13 +77,92 @@ namespace RestaurantsIntegrationService.Controllers
             return Ok("Ok");
         }
 
-        //[Route("TestConnection")]
-        //[HttpGet]
-        //public HttpResponseMessage TestConnection()
-        //{
-        //    return Request.CreateErrorResponse(HttpStatusCode.OK, "Connected Successfully");
-        //}
 
+        private string ValidateInsertBills(TransferModel<TransferBillModel> data)
+        {
+            var message = "";
+            using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
+            {
+                conn.Open();
+                foreach (var item in data.Items.MasterData)
+                {
+                    OracleCommand command = new OracleCommand("SELECT A_CODE FROM ACCOUNT_CURR Where A_CODE =" + item.A_CODE+ " AND A_CY = " + item.A_CY  , conn);
+                    OracleDataAdapter adp = new OracleDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    adp.Fill(dt);
+                    if(dt.Rows.Count == 0)
+                    {
+                        message = $"Account code {item.A_CODE} Not exist";
+                        return message;
+                    }
+
+                    
+
+                    command = new OracleCommand("SELECT U_ID FROM USER_R Where U_ID = " + item.U_ID, conn);
+                    adp.Fill(dt);
+                    if (dt.Rows.Count == 0)
+                    {
+                        message = $"User code {item.U_ID} Not exist";
+                        return message;
+                    }
+
+                    command = new OracleCommand("SELECT W_CODE FROM WAREHOUSE_DETAILS Where W_CODE = " + item.W_CODE, conn);
+                    adp.Fill(dt);
+                    if (dt.Rows.Count == 0)
+                    {
+                        message = $"Warehose code {item.W_CODE} Not exist";
+                        return message;
+                    }
+
+
+                    if (item.AC_DTL_TYP == 1) // Cash_no
+                    {
+                        command = new OracleCommand("SELECT CASH_NO FROM CASH_IN_HAND Where CASH_NO = " + item.AC_CODE_DTL , conn);
+                        adp.Fill(dt);
+                        if (dt.Rows.Count == 0)
+                        {
+                            message = $"Cash No  {item.AC_CODE_DTL} Not exist";
+                            return message;
+                        }
+
+                    }
+                    else if (item.AC_DTL_TYP == 2) // Card_no
+                    {
+                        command = new OracleCommand("SELECT CR_CARD_NO FROM CREDIT_CARD_TYPES Where CR_CARD_NO = " + item.CARD_NO , conn);
+                        adp.Fill(dt);
+                        if (dt.Rows.Count == 0)
+                        {
+                            message = $" Card No  {item.CARD_NO} Not exist";
+                            return message;
+                        }
+
+                    }
+                    else if (item.AC_DTL_TYP == 3) // Customer Code
+                    {
+                        command = new OracleCommand("SELECT CC_CODE FROM COST_CENTERS Where CC_CODE = " + item.AC_CODE_DTL, conn);
+                        adp.Fill(dt);
+                        if (dt.Rows.Count == 0)
+                        {
+                            message = $"Customer code {item.AC_CODE_DTL} Not exist";
+                            return message;
+                        }
+
+                    }
+
+                    //command = new OracleCommand("SELECT U_ID FROM USER_R Where U_ID = " + item.U_ID, conn);
+
+                    //command = new OracleCommand("SELECT U_ID FROM USER_R Where U_ID = " + item.U_ID, conn);
+                    //adp.Fill(dt);
+                    //if (dt.Rows.Count == 0)
+                    //{
+                    //    message = $"User code {item.U_ID} Not exist";
+                    //    return message;
+                    //}
+                }
+            }
+
+            return message;
+        }
 
     }
 }
