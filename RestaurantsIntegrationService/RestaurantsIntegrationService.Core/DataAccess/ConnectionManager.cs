@@ -33,17 +33,18 @@ namespace RestaurantsIntegrationService.Core.DataAccess
         {
             using (var conn = GetConnection(dbName))
             {
-                OracleCommand comm = new OracleCommand("Select CMP_NO,BRN_USR,BRN_YEAR From S_BRN where Brn_no = " + branchNumber, conn);
+                OracleCommand comm = new OracleCommand("Select CMP_NO,BRN_USR,BRN_YEAR  From S_BRN where Brn_no = " + branchNumber, conn);
                 OracleDataAdapter adp = new OracleDataAdapter(comm);
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
-                var companyInfo= new CompanyInfo();
+                var companyInfo = new CompanyInfo();
                 foreach (DataRow row in dt.Rows)
                 {
-                    companyInfo.BranchNumber = int.Parse(row[""].ToString());
-                    companyInfo.ProjectNumber = row[""].ToString();
-                    companyInfo.BranchUser = row[""].ToString();
-                    companyInfo.CompanyNumber = row[""].ToString();
+                    companyInfo.BranchNumber = branchNumber;
+                    companyInfo.ProjectNumber = "NULL";
+                    companyInfo.BranchUser = row["BRN_USR"].ToString();
+                    companyInfo.CompanyNumber = row["CMP_NO"].ToString();
+                    companyInfo.BranchYear  = row["BRN_YEAR"].ToString();
                 }
                 return companyInfo;
             }

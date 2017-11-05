@@ -12,5 +12,6 @@ namespace RestaurantsIntegrationService.Core.Models
         public string CompanyNumber { get; set; }
         public string BranchUser { get; set; }
         public string ProjectNumber { get; set; }
+        public string BranchYear { get; internal set; }
     }
 }
