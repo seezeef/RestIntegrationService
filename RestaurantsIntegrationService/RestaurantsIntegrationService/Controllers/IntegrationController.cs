@@ -82,7 +82,24 @@ namespace RestaurantsIntegrationService.Controllers
                         command.Transaction = transaction;
                         testQuery = query;
                         command.ExecuteNonQuery();
+                        //----------------------------------------------------------------------------------------
+                        //Posting Detail
+                        var detail = data.Items.DetailsData.FirstOrDefault(b => b.BILL_SER == item.BILL_SER && b.W_Code == item.W_Code);
+                        query = "insert into Res_bill_dtl (BILL_NO,BILL_SER,PAY_TYPE,I_Code,ITM_UNT,P_SIZE,I_QTY,P_QTY,I_PRICE,VAT_AMT,OTHR_AMT,DISC_AMT,CC_CODE,PJ_NO,ACTV_NO,W_Code,OUT_W_CODE,SERVICE_ITEM) values" +
+                            "(" + item.BILL_NO + ", " + item.BILL_SER + ", " + item.PAY_TYPE + ",'" + detail.I_Code + "','" + detail.ITM_UNT + "', " + detail.P_SIZE+ ", " + detail.P_QTY + ", " + detail.I_PRICE + ", " + detail.VAT_AMT + ", " + detail.OTHR_AMT + ", " + detail.DISC_AMT + ", '" + detail.CC_CODE + "', NULL, " + detail.ACTV_NO + ", '" + detail.W_Code + "', '" + detail.OUT_W_CODE + "', " + detail.SERVICE_ITEM + ")";
+                        command = new OracleCommand(query, conn);
+                        testQuery = query;
+                        command.ExecuteNonQuery();
+                        //----------------------------------------------------------------------------------------
+                        //Posting Components
+                        var Comp = data.Items.ComponentsData.FirstOrDefault(b => b.BILL_SER == item.BILL_SER && b.BILL_NO == item.BILL_NO  && b.W_Code == item.W_Code);
+                        query = "insert into RES_BILL_COMPND_DTL (BILL_NO, BILL_SER, I_CODE, ITM_UNT, P_SIZE, I_QTY, P_QTY, DI_CODE, DITM_UNT, DP_SIZE, DI_QTY, DP_QTY, W_CODE, CMP_NO, BRN_NO, BRN_YEAR, BRN_USR) values" +
+                            "(" + item.BILL_NO + ", " + item.BILL_SER + ", '" + Comp.I_Code + "','" + Comp.ITM_UNT + "', " + Comp.P_SIZE + ", " + Comp.Prnt_qty + "," + (Comp.P_SIZE * Comp.Prnt_qty) + ", '" + Comp.DI_code + "','" + Comp.DI_UNT + "', " + Comp.DP_SIZE + ", " + Comp.Di_qty + ", " + (Comp.DP_SIZE * Comp.Di_qty) + ",'" + Comp.W_Code + "', " + companyInfo.CompanyNumber + ", " + item.brn_no + ", " + companyInfo.BranchYear + ", " + companyInfo.BranchUser + ")";
+                        command = new OracleCommand(query, conn);
+                        testQuery = query;
+                        command.ExecuteNonQuery();
                     }
+                    
                     transaction.Commit();
                     return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Completed Successfully" });
                 }
@@ -156,6 +173,15 @@ namespace RestaurantsIntegrationService.Controllers
                             message = $"Customer Code {item.AC_CODE_DTL} Not exist";
                             return message;
                         }
+                    }
+                }
+
+                foreach (var item in data.Items.DetailsData)
+                {
+                    if (GetCommandDataCount("SELECT I_CODE FROM IAS_V_ITM_UNT Where I_CODE ='" + item.I_Code + "' AND ITM_UNT = '" + item.ITM_UNT + "'", conn) == 0)
+                    {
+                        message = $"Item code {item.I_Code} - {item.ITM_UNT} Not exist";
+                        return message;
                     }
                 }
             }

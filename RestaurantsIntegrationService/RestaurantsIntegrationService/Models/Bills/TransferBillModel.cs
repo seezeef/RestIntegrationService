@@ -9,5 +9,6 @@ namespace RestaurantsIntegrationService.Models.Bills
     {
         public List<BillMasterModel> MasterData { get; set; }
         public List<BillDetailModel> DetailsData { get; set; }
+        public List<BillComponentsModel> ComponentsData { get; set; }
     }
 }
