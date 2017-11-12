@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RestaurantsIntegrationService.Models.Bills
+namespace RestaurantsIntegrationService.Models.RTBills
 {
-    public class BillComponentsModel
+    public class RTBillComponentsModel
     {
-        public long BILL_NO { get; set; }
-        public string BILL_SER { get; set; }
-        public string I_Code { get; set; }
+        public long RT_BILL_NO { get; set; }
+        public string RT_BILL_SER { get; set; }
+        public string I_CODE { get; set; }
         public string ITM_UNT { get; set; }
         public float P_SIZE { get; set; }
         public int P_food { get; set; }
