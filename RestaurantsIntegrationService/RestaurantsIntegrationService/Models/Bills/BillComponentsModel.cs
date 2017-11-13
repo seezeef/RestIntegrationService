@@ -7,18 +7,20 @@ namespace RestaurantsIntegrationService.Models.Bills
 {
     public class BillComponentsModel
     {
-        public long BILL_NO { get; set; }
+        public long Bill_No { get; set; }
         public string BILL_SER { get; set; }
         public string I_Code { get; set; }
         public string ITM_UNT { get; set; }
         public float P_SIZE { get; set; }
-        public int P_food { get; set; }
-        public Nullable<double> Prnt_qty { get; set; }
-        public int DFood_no { get; set; }
-        public string DI_code { get; set; }
-        public string DI_UNT { get; set; }
+        public Nullable<double> I_QTY { get; set; }
+        public Nullable<double> P_QTY { get; set; }
+        public string DI_Code { get; set; }
+        public string DITM_UNT { get; set; }
         public float DP_SIZE { get; set; }
-        public Nullable<double> Di_qty { get; set; }
-        public Nullable<short> W_CODE { get; set; }
+        public Nullable<double> DI_QTY { get; set; }
+        public Nullable<double> DP_QTY { get; set; }
+        public Nullable<short> W_Code { get; set; }
+        public Nullable<System.DateTime> Expire_Date { get; set; }
+        public int Batch_No { get; set; }
     }
 }

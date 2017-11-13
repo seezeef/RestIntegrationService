@@ -227,10 +227,10 @@
     <Compile Include="Models\Bills\BillMasterModel.cs" />
     <Compile Include="Models\InsertModel.cs" />
     <Compile Include="Models\Result\AjaxResponse.cs" />
-    <Compile Include="Models\RTBills\RTBillComponentsModel.cs" />
-    <Compile Include="Models\RTBills\RTBillDetailModel.cs" />
-    <Compile Include="Models\RTBills\RTBillMasterModel.cs" />
-    <Compile Include="Models\RTBills\TransferRTBillModel.cs" />
+    <Compile Include="Models\RTBills\ReturnBillComponentsModel.cs" />
+    <Compile Include="Models\RTBills\ReturnBillDetailModel.cs" />
+    <Compile Include="Models\RTBills\ReturnBillMasterModel.cs" />
+    <Compile Include="Models\RTBills\TransferReturnBillModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

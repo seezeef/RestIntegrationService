@@ -41,11 +41,30 @@ namespace RestaurantsIntegrationService.Core.DataAccess
                 foreach (DataRow row in dt.Rows)
                 {
                     companyInfo.BranchNumber = branchNumber;
-                    companyInfo.ProjectNumber = "NULL";
                     companyInfo.BranchUser = row["BRN_USR"].ToString();
-                    companyInfo.CompanyNumber = row["CMP_NO"].ToString();
-                    companyInfo.BranchYear  = row["BRN_YEAR"].ToString();
+                    //companyInfo.CompanyNumber = row["CMP_NO"].ToString();
+                    companyInfo.BranchYear = row["BRN_YEAR"].ToString();
                 }
+
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+                OracleCommand comm2 = new OracleCommand("IAS_BRN_PKG.Get_Br_Cmp", conn);
+                comm2.CommandType = CommandType.StoredProcedure;
+                comm2.Parameters.Add(new OracleParameter("G_BRN_NO", OracleDbType.Int32, branchNumber, ParameterDirection.Input));
+                comm2.Parameters.Add(new OracleParameter("v_cmp", OracleDbType.Int32, ParameterDirection.ReturnValue));
+                var companyNumber = comm2.ExecuteScalar();
+                if (companyNumber == null)
+                {
+                    companyInfo.CompanyNumber = "NULL";
+                }
+                else
+                {
+                    companyInfo.CompanyNumber = companyNumber.ToString();
+                }
+
+                companyInfo.CompanyNumber = "1";
                 return companyInfo;
             }
         }
