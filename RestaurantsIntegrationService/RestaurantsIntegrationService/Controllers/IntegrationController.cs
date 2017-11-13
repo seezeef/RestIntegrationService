@@ -96,20 +96,28 @@ namespace RestaurantsIntegrationService.Controllers
                         command.ExecuteNonQuery();
                         //----------------------------------------------------------------------------------------
                         //Posting Detail
-                        var detail = data.Items.DetailsData.FirstOrDefault(b => b.BILL_SER == item.BILL_SER && b.W_Code == item.W_Code);
-                        query = "insert into Res_bill_dtl (BILL_NO,BILL_SER,PAY_TYPE,I_Code,ITM_UNT,P_SIZE,I_QTY,P_QTY,I_PRICE,VAT_AMT,OTHR_AMT,DISC_AMT,CC_CODE,PJ_NO,ACTV_NO,W_Code,OUT_W_CODE,SERVICE_ITEM,Expire_Date,Batch_No,CMP_NO, BRN_NO, BRN_YEAR, BRN_USR) values" +
+                        var details = data.Items.DetailsData.Where(b => b.BILL_SER == item.BILL_SER && b.W_Code == item.W_Code);
+                        foreach (var detail in details)
+                        {
+                            query = "insert into Res_bill_dtl (BILL_NO,BILL_SER,PAY_TYPE,I_Code,ITM_UNT,P_SIZE,I_QTY,P_QTY,I_PRICE,VAT_AMT,OTHR_AMT,DISC_AMT,CC_CODE,PJ_NO,ACTV_NO,W_Code,OUT_W_CODE,SERVICE_ITEM,Expire_Date,Batch_No,CMP_NO, BRN_NO, BRN_YEAR, BRN_USR) values" +
                             "(" + item.BILL_NO + ", " + item.BILL_SER + ", " + item.PAY_TYPE + ",'" + detail.I_Code + "','" + detail.ITM_UNT + "', " + detail.P_SIZE + ", " + detail.I_QTY + ", " + detail.P_QTY + ", " + detail.I_PRICE + ", " + detail.VAT_AMT + ", " + detail.OTHR_AMT + ", " + detail.DISC_AMT + ", '" + detail.CC_CODE + "', " + data.OnyxProjectNumber + ", " + data.OnyxActiveNumber + ", '" + detail.W_Code + "', '" + detail.OUT_W_CODE + "', " + (detail.SERVICE_ITEM ? 1 : 0) + "," + GetOracleDate(detail.Expire_Date) + ",'" + detail.Batch_No + "'," + companyInfo.CompanyNumber + ", " + companyInfo.BranchNumber + ", " + companyInfo.BranchYear + ", " + companyInfo.BranchUser + ")";
-                        command = new OracleCommand(query, conn);
-                        testQuery = query;
-                        command.ExecuteNonQuery();
+                            command = new OracleCommand(query, conn);
+                            testQuery = query;
+                            command.ExecuteNonQuery();
+                        }
+                        
                         //----------------------------------------------------------------------------------------
                         //Posting Components
-                        var Comp = data.Items.ComponentsData.FirstOrDefault(b => b.BILL_SER == item.BILL_SER && b.Bill_No == item.BILL_NO && b.W_Code == item.W_Code);
-                        query = "insert into RES_BILL_COMPND_DTL (BILL_NO, BILL_SER, I_CODE, ITM_UNT, P_SIZE, I_QTY, P_QTY, DI_CODE, DITM_UNT, DP_SIZE, DI_QTY, DP_QTY, W_CODE, CMP_NO, BRN_NO, BRN_YEAR, BRN_USR,Expire_Date,Batch_No) values" +
-                            "(" + item.BILL_NO + ", " + item.BILL_SER + ", '" + Comp.I_Code + "','" + Comp.ITM_UNT + "', " + Comp.P_SIZE + ", " + Comp.I_QTY + "," + Comp.P_QTY + ", '" + Comp.DI_Code + "','" + Comp.DITM_UNT + "', " + Comp.DP_SIZE + ", " + Comp.DI_QTY + ", " + Comp.DP_QTY + ",'" + Comp.W_Code + "', " + companyInfo.CompanyNumber + ", " + companyInfo.BranchNumber + ", " + companyInfo.BranchYear + ", " + companyInfo.BranchUser + "," + GetOracleDate(Comp.Expire_Date) + ",'" + Comp.Batch_No + "')";
-                        command = new OracleCommand(query, conn);
-                        testQuery = query;
-                        command.ExecuteNonQuery();
+                        var Comps = data.Items.ComponentsData.Where(b => b.BILL_SER == item.BILL_SER && b.Bill_No == item.BILL_NO && b.W_Code == item.W_Code);
+                        foreach (var Comp in Comps)
+                        {
+                            query = "insert into RES_BILL_COMPND_DTL (BILL_NO, BILL_SER, I_CODE, ITM_UNT, P_SIZE, I_QTY, P_QTY, DI_CODE, DITM_UNT, DP_SIZE, DI_QTY, DP_QTY, W_CODE, CMP_NO, BRN_NO, BRN_YEAR, BRN_USR,Expire_Date,Batch_No) values" +
+                           "(" + item.BILL_NO + ", " + item.BILL_SER + ", '" + Comp.I_Code + "','" + Comp.ITM_UNT + "', " + Comp.P_SIZE + ", " + Comp.I_QTY + "," + Comp.P_QTY + ", '" + Comp.DI_Code + "','" + Comp.DITM_UNT + "', " + Comp.DP_SIZE + ", " + Comp.DI_QTY + ", " + Comp.DP_QTY + ",'" + Comp.W_Code + "', " + companyInfo.CompanyNumber + ", " + companyInfo.BranchNumber + ", " + companyInfo.BranchYear + ", " + companyInfo.BranchUser + "," + GetOracleDate(Comp.Expire_Date) + ",'" + Comp.Batch_No + "')";
+                            command = new OracleCommand(query, conn);
+                            testQuery = query;
+                            command.ExecuteNonQuery();
+                        }
+                       
                     }
 
                     transaction.Commit();
