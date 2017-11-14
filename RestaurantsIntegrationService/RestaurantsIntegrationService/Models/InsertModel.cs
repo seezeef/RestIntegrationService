@@ -18,7 +18,7 @@ namespace RestaurantsIntegrationService.Models
         {
             get
             {
-                return string.IsNullOrEmpty(_onyxActiveNumber) ? "NULL" : _onyxActiveNumber;
+                return string.IsNullOrEmpty(_onyxActiveNumber) ? "NULL" : "'" + _onyxActiveNumber + "'";
             }
             set
             {
@@ -29,7 +29,7 @@ namespace RestaurantsIntegrationService.Models
         {
             get
             {
-                return string.IsNullOrEmpty(_onyxProjectNumber) ? "NULL" : _onyxProjectNumber;
+                return string.IsNullOrEmpty(_onyxProjectNumber) ? "NULL" : "'" + _onyxProjectNumber + "'";
             }
             set
             {
@@ -40,7 +40,7 @@ namespace RestaurantsIntegrationService.Models
         {
             get
             {
-                return string.IsNullOrEmpty(_codeCostCenter) ? "NULL" : _codeCostCenter;
+                return string.IsNullOrEmpty(_codeCostCenter) ? "NULL" : "'" + _codeCostCenter + "'";
             }
             set
             {
