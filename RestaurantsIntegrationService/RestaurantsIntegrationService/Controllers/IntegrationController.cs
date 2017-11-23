@@ -12,6 +12,10 @@ using RestaurantsIntegrationService.Core.DataAccess;
 using RestaurantsIntegrationService.Models.Bills;
 using RestaurantsIntegrationService.Models.Result;
 using RestaurantsIntegrationService.Models.RTBills;
+using RestaurantsIntegrationService.Models.WHTRNS;
+using RestaurantsIntegrationService.Models.StockAdjustment;
+using RestaurantsIntegrationService.Validator;
+using RestaurantsIntegrationService.Models.Validators;
 
 namespace RestaurantsIntegrationService.Controllers
 {
@@ -67,20 +71,56 @@ namespace RestaurantsIntegrationService.Controllers
                     var companyInfo = ConnectionManager.GetCompanyInfo(data.DatabaseName, data.OnyxBranchNumber);
                     //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                     var errorMessage = "";
-                    foreach (var item in data.Items.MasterData)
-                    {
-                        errorMessage = ValidateInsertBills(item.A_CODE, item.CC_CODE, item.U_ID, item.W_Code, item.AC_CODE_DTL, item.CARD_NO, item.AC_DTL_TYP, item.A_CY, data.DatabaseName);
-                        if (!string.IsNullOrEmpty(errorMessage))
-                        {
-                            return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
-                        }
-                    }
 
-                    errorMessage = ValidateInsertBillsDetails(data);
+                    errorMessage = DataValidator.ValidateACode(data.Items.MasterData.Select(a => new ValidateACodeModel()
+                    {
+                        ACode = a.A_CODE,
+                        ACY = a.A_CY
+                    }).ToList(), data.DatabaseName);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
+
+
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.MasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+
+                    errorMessage = DataValidator.ValidateUid(data.Items.MasterData.Select(a => a.U_ID).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateWcode(data.Items.MasterData.Select(a => a.W_Code).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateAccDetail(data.Items.MasterData.Select(a => new ValidateAccDetailModel()
+                    {
+                        AccountTypeId = a.AC_DTL_TYP,
+                        CardNo = a.CARD_NO,
+                        CacheNo = a.AC_DTL_TYP,
+                        CustomerCode = a.AC_DTL_TYP
+                    }).ToList(), data.DatabaseName);
+
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateInsertBillsDetails(data);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
 
                     foreach (var item in data.Items.MasterData)
                     {
@@ -105,7 +145,7 @@ namespace RestaurantsIntegrationService.Controllers
                             testQuery = query;
                             command.ExecuteNonQuery();
                         }
-                        
+
                         //----------------------------------------------------------------------------------------
                         //Posting Components
                         var Comps = data.Items.ComponentsData.Where(b => b.BILL_SER == item.BILL_SER && b.Bill_No == item.BILL_NO && b.W_Code == item.W_Code);
@@ -117,7 +157,7 @@ namespace RestaurantsIntegrationService.Controllers
                             testQuery = query;
                             command.ExecuteNonQuery();
                         }
-                       
+
                     }
 
                     transaction.Commit();
@@ -133,118 +173,7 @@ namespace RestaurantsIntegrationService.Controllers
         }
 
 
-        private string ValidateInsertBills(string aCode, string cCode, short? uId, short? wCode, int? acCodeDetail, int? cardNo, int? acDetailType, string aCY, string databaseName)
-        {
-            var message = "";
-            using (var conn = ConnectionManager.GetConnection(databaseName))
-            {
-                conn.Open();
-                if (GetCommandDataCount("SELECT A_CODE FROM ACCOUNT_CURR Where A_CODE ='" + aCode + "' AND A_CY = '" + aCY + "'", conn) == 0)
-                {
-                    message = $"Account code {aCode} Not exist";
-                    return message;
-                }
 
-                if (!string.IsNullOrEmpty(cCode))
-                {
-                    if (GetCommandDataCount("SELECT CC_CODE FROM COST_CENTERS Where CC_CODE ='" + cCode + "'", conn) == 0)
-                    {
-                        message = $"Cost Center code {cCode} Not exist";
-                        return message;
-                    }
-                }
-
-
-                if (uId.HasValue)
-                {
-                    if (GetCommandDataCount("SELECT U_ID FROM USER_R Where U_ID = " + uId, conn) == 0)
-                    {
-                        message = $"User code {uId} Not exist";
-                        return message;
-                    }
-                }
-
-
-                if (wCode.HasValue)
-                {
-                    if (GetCommandDataCount("SELECT W_CODE FROM WAREHOUSE_DETAILS Where W_CODE = " + wCode, conn) == 0)
-                    {
-                        message = $"Warehouse code {wCode} Not exist";
-                        return message;
-                    }
-                }
-
-                if (acCodeDetail.HasValue)
-                {
-                    if (acDetailType == 1) // Cash_no
-                    {
-                        if (GetCommandDataCount("SELECT CASH_NO FROM CASH_IN_HAND Where CASH_NO = " + acCodeDetail, conn) == 0)
-                        {
-                            message = $"Cach Number {acCodeDetail} Not exist";
-                            return message;
-                        }
-                    }
-                    else if (acDetailType == 2) // Card_no
-                    {
-                        if (cardNo.HasValue)
-                        {
-                            if (GetCommandDataCount("SELECT CR_CARD_NO FROM CREDIT_CARD_TYPES Where CR_CARD_NO = " + cardNo, conn) == 0)
-                            {
-                                message = $"Card Number {cardNo} Not exist";
-                                return message;
-                            }
-                        }
-                    }
-                    else if (acDetailType == 3) // Customer Code
-                    {
-                        if (GetCommandDataCount("SELECT CC_CODE FROM CUSTOMER Where C_CODE = " + acCodeDetail, conn) == 0)
-                        {
-                            message = $"Customer Code {acCodeDetail} Not exist";
-                            return message;
-                        }
-                    }
-                }
-
-            }
-
-            return message;
-        }
-
-
-        private string ValidateInsertBillsDetails(TransferModel<TransferBillModel> data)
-        {
-            var message = "";
-            using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
-            {
-                foreach (var item in data.Items.DetailsData)
-                {
-                    if (GetCommandDataCount("SELECT I_CODE FROM IAS_V_ITM_UNT Where I_CODE ='" + item.I_Code + "' AND ITM_UNT = '" + item.ITM_UNT + "'", conn) == 0)
-                    {
-                        message = $"Item code {item.I_Code} - {item.ITM_UNT} Not exist";
-                        return message;
-                    }
-                }
-            }
-            return message;
-        }
-
-        private string ValidateInsertRTBillsDetails(TransferModel<TransferReturnBillModel> data)
-        {
-            var message = "";
-            using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
-            {
-                foreach (var item in data.Items.ReturnDetailsData)
-                {
-                    if (GetCommandDataCount("SELECT I_CODE FROM IAS_V_ITM_UNT Where I_CODE ='" + item.I_Code + "' AND ITM_UNT = '" + item.ITM_UNT + "'", conn) == 0)
-                    {
-                        message = $"Item code {item.I_Code} - {item.ITM_UNT} Not exist";
-                        return message;
-                    }
-                }
-            }
-
-            return message;
-        }
 
         [Route("InsertReturnBills")]
         [HttpPost]
@@ -262,20 +191,56 @@ namespace RestaurantsIntegrationService.Controllers
                     var companyInfo = ConnectionManager.GetCompanyInfo(data.DatabaseName, data.OnyxBranchNumber);
                     //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                     var errorMessage = "";
-                    foreach (var item in data.Items.ReturnMasterData)
-                    {
-                        errorMessage = ValidateInsertBills(item.A_CODE, item.CC_CODE, item.U_ID, item.W_Code, item.AC_CODE_DTL, null, item.AC_DTL_TYP, item.A_CY, data.DatabaseName);
-                        if (!string.IsNullOrEmpty(errorMessage))
-                        {
-                            return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
-                        }
-                    }
 
-                    errorMessage = ValidateInsertRTBillsDetails(data);
+                    errorMessage = DataValidator.ValidateACode(data.Items.ReturnMasterData.Select(a => new ValidateACodeModel()
+                    {
+                        ACode = a.A_CODE,
+                        ACY = a.A_CY
+                    }).ToList(), data.DatabaseName);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
+
+
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.ReturnMasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+
+                    errorMessage = DataValidator.ValidateUid(data.Items.ReturnMasterData.Select(a => a.U_ID).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateWcode(data.Items.ReturnMasterData.Select(a => a.W_Code).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateAccDetail(data.Items.ReturnMasterData.Select(a => new ValidateAccDetailModel()
+                    {
+                        AccountTypeId = a.AC_DTL_TYP,
+                        CardNo = null,
+                        CacheNo = a.AC_DTL_TYP,
+                        CustomerCode = a.AC_DTL_TYP
+                    }).ToList(), data.DatabaseName);
+
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateInsertRTBillsDetails(data);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
 
                     foreach (var item in data.Items.ReturnMasterData)
                     {
@@ -321,13 +286,163 @@ namespace RestaurantsIntegrationService.Controllers
         }
 
 
-        private int GetCommandDataCount(string query, OracleConnection conn)
+        [Route("InsertWarehouse")]
+        [HttpPost]
+        public IHttpActionResult InsertWarehouse(TransferModel<TransferWarehouseModel> data)
         {
-            OracleCommand command = new OracleCommand(query, conn);
-            OracleDataAdapter adp = new OracleDataAdapter(command);
-            DataTable dt = new DataTable();
-            adp.Fill(dt);
-            return dt.Rows.Count;
+            var testQuery = "";
+            OracleTransaction transaction = null;
+
+            using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
+            {
+                try
+                {
+                    conn.Open();
+                    transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    var companyInfo = ConnectionManager.GetCompanyInfo(data.DatabaseName, data.OnyxBranchNumber);
+                    //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    var errorMessage = "";
+
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.WarehouseMasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+
+                    errorMessage = DataValidator.ValidateUid(data.Items.WarehouseMasterData.Select(a => a.AD_U_ID).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateWcode(data.Items.WarehouseMasterData.Select(a => a.W_CODE).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateInsertWarehouse(data);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+
+                    foreach (var item in data.Items.WarehouseMasterData)
+                    {
+                        //TODO: Active Number is null, please check after ProjectNumber
+                        var ccCode = string.IsNullOrEmpty(data.CodeCostCenter) ? "NULL" : data.CodeCostCenter;
+                        var DriverNo = item.DRIVER_NO.HasValue ? item.DRIVER_NO.ToString() : "NULL";
+
+                        string query = "insert into RES_WHTRNS_MST (TR_INOUT_TYPE,TR_TYPE,TR_NO,TR_SER,TR_DATE ,W_CODE ,F_W_CODE ,T_W_CODE ,CC_CODE ,REF_NO ,TR_DESC ,PROCESSED ,F_TR_NO ,F_TR_SER ,AD_U_ID ,AD_DATE ,DRIVER_NO ,PJ_NO,ACTV_NO,CMP_NO, BRN_NO, BRN_YEAR, BRN_USR) values" +
+                            "(" + item.TR_INOUT_TYPE + ", " + item.TR_TYPE + ", " + item.TR_NO + "," + item.TR_SER + "," + GetOracleDate(item.TR_DATE) + ", " + item.W_CODE + " , " + item.F_W_CODE + ", " + item.T_W_CODE + ", '" + ccCode + "','RES','" + item.TR_DESC + "'," + (item.PROCESSED ? 1 : 0) + ", " + item.F_TR_NO + ", " + item.F_TR_SER + ", " + item.AD_U_ID + ", " + GetOracleDate(item.AD_DATE) + ", " + DriverNo + ", " + data.OnyxProjectNumber + "," + data.OnyxActiveNumber + "," + companyInfo.CompanyNumber + ", " + companyInfo.BranchNumber + ", " + companyInfo.BranchYear + ", " + companyInfo.BranchUser + ")";
+                        OracleCommand command = new OracleCommand(query, conn);
+                        command.Transaction = transaction;
+                        testQuery = query;
+                        command.ExecuteNonQuery();
+                        //----------------------------------------------------------------------------------------
+                        //Posting Detail
+                        var details = data.Items.WarehouseDetailsData.Where(b => b.TR_NO == item.TR_NO && b.TR_SER == item.TR_SER);
+                        foreach (var detail in details)
+                        {
+                            query = "insert into RES_WHTRNS_DTL (TR_INOUT_TYPE,TR_TYPE ,TR_NO,TR_SER,I_Code,ITM_UNT,TR_QTY,I_QTY,P_SIZE,P_QTY,W_CODE,F_W_CODE,T_W_CODE,CC_CODE,ITEM_DESC,F_TR_NO,F_TR_SER,USE_SERIALNO,BATCH_NO,RCRD_NO,Expire_Date,PJ_NO,ACTV_NO) values" +
+                            "(" + item.TR_INOUT_TYPE + ", " + item.TR_TYPE + ", " + item.TR_NO + "," + item.TR_SER + ",'" + detail.I_Code + "','" + detail.ITM_UNT + "', " + detail.TR_QTY + ", " + detail.I_QTY + ", " + detail.P_SIZE + ", " + detail.P_QTY + ", " + detail.W_CODE + " , " + detail.F_W_CODE + ", " + detail.T_W_CODE + "," + ccCode + ",'" + detail.ITEM_DESC + "', " + item.F_TR_NO + ", " + item.F_TR_SER + ", " + detail.USE_SERIALNO + ", " + detail.BATCH_NO + ", " + detail.RCRD_NO + ", " + GetOracleDate(detail.Expire_Date) + "," + data.OnyxProjectNumber + "," + data.OnyxActiveNumber + ")";
+                            command = new OracleCommand(query, conn);
+                            testQuery = query;
+                            command.ExecuteNonQuery();
+                        }
+
+                    }
+
+                    transaction.Commit();
+                    return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Completed Successfully" });
+                }
+
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                }
+            }
+        }
+
+        [Route("InsertStockAdjustment")]
+        [HttpPost]
+        public IHttpActionResult InsertStockAdjustment(TransferModel<TransferStockAdjustment> data)
+        {
+            var testQuery = "";
+            OracleTransaction transaction = null;
+
+            using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
+            {
+                try
+                {
+                    conn.Open();
+                    transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    var companyInfo = ConnectionManager.GetCompanyInfo(data.DatabaseName, data.OnyxBranchNumber);
+                    //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                    var errorMessage = "";
+
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.StockMaster.Select(a => a.CC_Code).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateUid(data.Items.StockMaster.Select(a => a.AD_U_ID).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateWcode(data.Items.StockMaster.Select(a => (short?)a.W_CODE).ToList(), data.DatabaseName);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    errorMessage = DataValidator.ValidateInsertStockAdjustment(data);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
+                    }
+
+                    foreach (var item in data.Items.StockMaster)
+                    {
+                        //TODO: Active Number is null, please check after ProjectNumber
+                        var ccCode = string.IsNullOrEmpty(data.CodeCostCenter) ? "NULL" : data.CodeCostCenter;
+
+                        string query = "insert into RES_STK_MST (STK_TYPE,DOC_NO,DOC_SER,DOC_DATE,W_CODE,CC_Code,DOC_DESC,DOC_POST,MOVE_STK,AD_U_ID,AD_DATE,AD_TRMNL_NM ,PJ_NO,ACTV_NO,CMP_NO, BRN_NO, BRN_YEAR, BRN_USR) values" +
+                            "(" + item.STK_TYPE + ", " + item.DOC_NO + ", " + item.DOC_SER + "," + GetOracleDate(item.DOC_DATE) + ", " + item.W_CODE + " , '" + ccCode + "','" + item.DOC_DESC + "'," + item.DOC_POST + ", " + item.MOVE_STK + ", " + item.AD_U_ID + ", " + GetOracleDate(item.AD_DATE) + ", '" + item.AD_TRMNL_NM + "', " + data.OnyxProjectNumber + "," + data.OnyxActiveNumber + "," + companyInfo.CompanyNumber + ", " + companyInfo.BranchNumber + ", " + companyInfo.BranchYear + ", " + companyInfo.BranchUser + ")";
+                        OracleCommand command = new OracleCommand(query, conn);
+                        command.Transaction = transaction;
+                        testQuery = query;
+                        command.ExecuteNonQuery();
+                        //----------------------------------------------------------------------------------------
+                        //Posting Detail
+                        var details = data.Items.StockDetails.Where(b => b.Stk_ID == item.Stk_ID && b.DOC_NO == item.DOC_NO);
+                        foreach (var detail in details)
+                        {
+                            query = "insert into RES_STK_DTL (STK_TYPE,DOC_NO,Doc_Ser,I_Code,ITM_UNT,P_SIZE,I_QTY,P_QTY,w_code,CC_Code,EXPIRE_DATE,ITEM_DESC,RCRD_NO,USE_SERIALNO,BATCH_NO,PJ_NO,ACTV_NO) values" +
+                            "(" + item.STK_TYPE + ", " + item.DOC_NO + ", " + item.DOC_SER + ",'" + detail.I_Code + "','" + detail.ITM_UNT + "', " + detail.P_SIZE + ", " + detail.I_QTY + ", " + detail.P_QTY + ", " + detail.w_code + " , " + ccCode + "," + GetOracleDate(detail.EXPIRE_DATE) + ", '" + detail.ITEM_DESC + "', " + detail.RCRD_NO + ",0, 0, " + data.OnyxProjectNumber + "," + data.OnyxActiveNumber + ")";
+                            command = new OracleCommand(query, conn);
+                            testQuery = query;
+                            command.ExecuteNonQuery();
+                        }
+
+                    }
+
+                    transaction.Commit();
+                    return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Completed Successfully" });
+                }
+
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                }
+            }
         }
 
 
@@ -357,5 +472,13 @@ namespace RestaurantsIntegrationService.Controllers
             return "to_date('" + dateTime.ToString("dd/MM/yyyy") + "','dd/MM/yyyy')";
         }
 
+        private int GetCommandDataCount(string query, OracleConnection conn)
+        {
+            OracleCommand command = new OracleCommand(query, conn);
+            OracleDataAdapter adp = new OracleDataAdapter(command);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            return dt.Rows.Count;
+        }
     }
 }

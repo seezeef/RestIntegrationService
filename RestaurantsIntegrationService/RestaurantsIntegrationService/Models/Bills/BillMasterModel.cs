@@ -21,7 +21,7 @@ namespace RestaurantsIntegrationService.Models.Bills
         public int CR_CARD_NO { get; set; }
         public int CR_CARD_AMT { get; set; }
         public Nullable<int> AC_DTL_TYP { get; set; }
-        public Nullable<int> AC_CODE_DTL { get; set; }
+        public int AC_CODE_DTL { get; set; }
         public string A_CODE { get; set; }
         public Nullable<short> Cash_No { get; set; }
         public string CC_CODE { get; set; }

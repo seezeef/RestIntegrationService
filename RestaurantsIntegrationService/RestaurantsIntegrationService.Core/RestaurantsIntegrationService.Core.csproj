@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\ConnectionManager.cs" />
+    <Compile Include="Extensions\Extenstions.cs" />
     <Compile Include="Models\CompanyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

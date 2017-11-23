@@ -231,10 +231,19 @@
     <Compile Include="Models\RTBills\ReturnBillDetailModel.cs" />
     <Compile Include="Models\RTBills\ReturnBillMasterModel.cs" />
     <Compile Include="Models\RTBills\TransferReturnBillModel.cs" />
+    <Compile Include="Models\StockAdjustment\RES_STK_DTLModel.cs" />
+    <Compile Include="Models\StockAdjustment\RES_STK_MSTModel.cs" />
+    <Compile Include="Models\StockAdjustment\TransferStockAdjustment.cs" />
+    <Compile Include="Models\Validators\ValidateAccDetailModel.cs" />
+    <Compile Include="Models\Validators\ValidateACodeModel.cs" />
+    <Compile Include="Models\WHTRNS\RES_WHTRNS_DTLModel.cs" />
+    <Compile Include="Models\WHTRNS\RES_WHTRNS_MSTModel.cs" />
+    <Compile Include="Models\WHTRNS\TransferWarehouseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Validator\DataValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
