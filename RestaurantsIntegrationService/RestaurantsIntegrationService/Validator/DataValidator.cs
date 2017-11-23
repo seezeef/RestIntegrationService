@@ -19,6 +19,10 @@ namespace RestaurantsIntegrationService.Validator
         public static string ValidateInsertBillsDetails(TransferModel<TransferBillModel> data)
         {
             var message = "";
+            if(!data.Items.DetailsData.GroupBy(x => x.I_Code).Select(x => x.FirstOrDefault()).Any())
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
             {
                 var query = "select ";
@@ -61,6 +65,10 @@ namespace RestaurantsIntegrationService.Validator
         public static string ValidateInsertRTBillsDetails(TransferModel<TransferReturnBillModel> data)
         {
             var message = "";
+            if(!data.Items.ReturnDetailsData.GroupBy(x => x.I_Code).Select(x => x.FirstOrDefault()).Any())
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
             {
                 var query = "select ";
@@ -102,6 +110,10 @@ namespace RestaurantsIntegrationService.Validator
         public static string ValidateInsertWarehouse(TransferModel<TransferWarehouseModel> data)
         {
             var message = "";
+            if(!data.Items.WarehouseDetailsData.GroupBy(x => x.I_Code).Select(x => x.FirstOrDefault()).Any())
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(data.DatabaseName))
             {
                 var query = "select ";
@@ -182,12 +194,16 @@ namespace RestaurantsIntegrationService.Validator
             }
         }
 
-        public static string ValidateACode(List<ValidateACodeModel> aCodes, string databaseName)
+        public static string ValidateACode(List<ValidateACodeModel> aCodes, string databaseName, ref string query)
         {
             var message = "";
+            if (!aCodes.Any())
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                var query = "select ";
+                query = "select ";
                 var i = 0;
                 foreach (var item in aCodes)
                 {
@@ -223,16 +239,20 @@ namespace RestaurantsIntegrationService.Validator
             }
         }
 
-        public static string ValidateCCCode(List<string> cCCodes, string databaseName)
+        public static string ValidateCCCode(List<string> cCCodes, string databaseName, ref string query)
         {
             var message = "";
+            if (!cCCodes.Any())
+            {
+                return "";
+            }
+            if (cCCodes.All(a => string.IsNullOrEmpty(a)))
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                if (cCCodes.All(a => string.IsNullOrEmpty(a)))
-                {
-                    return "";
-                }
-                var query = "select ";
+                query = "select ";
                 var i = 0;
                 foreach (var item in cCCodes.Distinct())
                 {
@@ -272,12 +292,16 @@ namespace RestaurantsIntegrationService.Validator
             }
         }
 
-        public static string ValidateUid(List<short?> uids, string databaseName)
+        public static string ValidateUid(List<short?> uids, string databaseName, ref string query)
         {
             var message = "";
+            if (!uids.Any())
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                var query = "select ";
+                query = "select ";
                 var i = 0;
                 foreach (var item in uids.Distinct())
                 {
@@ -317,12 +341,16 @@ namespace RestaurantsIntegrationService.Validator
             }
         }
 
-        public static string ValidateWcode(List<short?> wCodes, string databaseName)
+        public static string ValidateWcode(List<short?> wCodes, string databaseName, ref string query)
         {
+            if (!wCodes.Any())
+            {
+                return "";
+            }
             var message = "";
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                var query = "select ";
+                 query = "select ";
                 var i = 0;
                 foreach (var item in wCodes.Distinct())
                 {
@@ -362,37 +390,41 @@ namespace RestaurantsIntegrationService.Validator
             }
         }
 
-        public static string ValidateAccDetail(List<ValidateAccDetailModel> data, string databaseName)
+        public static string ValidateAccDetail(List<ValidateAccDetailModel> data, string databaseName, ref string query)
         {
 
             string errorMessage = "";
-            errorMessage = ValidateCacheNo(data.Where(d => d.AccountTypeId == 1).Select(d => d.CacheNo).ToList(), databaseName);
+            errorMessage = ValidateCacheNo(data.Where(d => d.AccountTypeId == 1).Select(d => d.CacheNo).ToList(), databaseName, ref query);
 
             if (string.IsNullOrEmpty(errorMessage))
             {
                 return errorMessage;
             }
 
-            errorMessage = ValidateCardNo(data.Where(d => d.AccountTypeId == 2).Select(d => d.CacheNo).ToList(), databaseName);
+            errorMessage = ValidateCardNo(data.Where(d => d.AccountTypeId == 2).Select(d => d.CacheNo).ToList(), databaseName, ref query);
 
             if (string.IsNullOrEmpty(errorMessage))
             {
                 return errorMessage;
             }
 
-            errorMessage = ValidateCCCodeForAccountDetail(data.Where(d => d.AccountTypeId == 3).Select(d => d.CacheNo).ToList(), databaseName);
+            errorMessage = ValidateCCCodeForAccountDetail(data.Where(d => d.AccountTypeId == 3).Select(d => d.CacheNo).ToList(), databaseName, ref query);
 
 
             return errorMessage;
         }
 
 
-        private static string ValidateCacheNo(List<int?> cacheNos, string databaseName)
+        private static string ValidateCacheNo(List<int?> cacheNos, string databaseName, ref string query)
         {
             var message = "";
+            if (!cacheNos.Any())
+            {
+                return "";
+            }
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                var query = "select ";
+                 query = "select ";
                 var i = 0;
                 foreach (var item in cacheNos.Distinct())
                 {
@@ -433,8 +465,12 @@ namespace RestaurantsIntegrationService.Validator
         }
 
 
-        private static string ValidateCardNo(List<int?> cardNos, string databaseName)
+        private static string ValidateCardNo(List<int?> cardNos, string databaseName, ref string query)
         {
+            if (!cardNos.Any())
+            {
+                return "";
+            }
             var message = "";
             if (cardNos.All(a => !a.HasValue))
             {
@@ -442,7 +478,7 @@ namespace RestaurantsIntegrationService.Validator
             }
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                var query = "select ";
+                 query = "select ";
                 var i = 0;
                 foreach (var item in cardNos.Distinct())
                 {
@@ -483,8 +519,12 @@ namespace RestaurantsIntegrationService.Validator
         }
 
 
-        private static string ValidateCCCodeForAccountDetail(List<int?> ccCodes, string databaseName)
+        private static string ValidateCCCodeForAccountDetail(List<int?> ccCodes, string databaseName, ref string query)
         {
+            if (!ccCodes.Any())
+            {
+                return "";
+            }
             var message = "";
             if (ccCodes.All(a => !a.HasValue))
             {
@@ -492,7 +532,7 @@ namespace RestaurantsIntegrationService.Validator
             }
             using (var conn = ConnectionManager.GetConnection(databaseName))
             {
-                var query = "select ";
+                 query = "select ";
                 var i = 0;
                 foreach (var item in ccCodes.Distinct())
                 {

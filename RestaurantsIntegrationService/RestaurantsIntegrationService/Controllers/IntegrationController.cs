@@ -76,27 +76,27 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         ACode = a.A_CODE,
                         ACY = a.A_CY
-                    }).ToList(), data.DatabaseName);
+                    }).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
 
-                    errorMessage = DataValidator.ValidateCCCode(data.Items.MasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.MasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
 
-                    errorMessage = DataValidator.ValidateUid(data.Items.MasterData.Select(a => a.U_ID).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateUid(data.Items.MasterData.Select(a => a.U_ID).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
-                    errorMessage = DataValidator.ValidateWcode(data.Items.MasterData.Select(a => a.W_Code).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateWcode(data.Items.MasterData.Select(a => a.W_Code).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
@@ -108,7 +108,7 @@ namespace RestaurantsIntegrationService.Controllers
                         CardNo = a.CARD_NO,
                         CacheNo = a.AC_DTL_TYP,
                         CustomerCode = a.AC_DTL_TYP
-                    }).ToList(), data.DatabaseName);
+                    }).ToList(), data.DatabaseName, ref testQuery);
 
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
@@ -196,27 +196,27 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         ACode = a.A_CODE,
                         ACY = a.A_CY
-                    }).ToList(), data.DatabaseName);
+                    }).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
 
-                    errorMessage = DataValidator.ValidateCCCode(data.Items.ReturnMasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.ReturnMasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
 
-                    errorMessage = DataValidator.ValidateUid(data.Items.ReturnMasterData.Select(a => a.U_ID).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateUid(data.Items.ReturnMasterData.Select(a => a.U_ID).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
-                    errorMessage = DataValidator.ValidateWcode(data.Items.ReturnMasterData.Select(a => a.W_Code).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateWcode(data.Items.ReturnMasterData.Select(a => a.W_Code).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
@@ -228,7 +228,7 @@ namespace RestaurantsIntegrationService.Controllers
                         CardNo = null,
                         CacheNo = a.AC_DTL_TYP,
                         CustomerCode = a.AC_DTL_TYP
-                    }).ToList(), data.DatabaseName);
+                    }).ToList(), data.DatabaseName, ref testQuery);
 
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
@@ -303,20 +303,20 @@ namespace RestaurantsIntegrationService.Controllers
                     //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                     var errorMessage = "";
 
-                    errorMessage = DataValidator.ValidateCCCode(data.Items.WarehouseMasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.WarehouseMasterData.Select(a => a.CC_CODE).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
 
-                    errorMessage = DataValidator.ValidateUid(data.Items.WarehouseMasterData.Select(a => a.AD_U_ID).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateUid(data.Items.WarehouseMasterData.Select(a => a.AD_U_ID).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
-                    errorMessage = DataValidator.ValidateWcode(data.Items.WarehouseMasterData.Select(a => a.W_CODE).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateWcode(data.Items.WarehouseMasterData.Select(a => a.W_CODE).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
@@ -384,19 +384,19 @@ namespace RestaurantsIntegrationService.Controllers
                     //transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
                     var errorMessage = "";
 
-                    errorMessage = DataValidator.ValidateCCCode(data.Items.StockMaster.Select(a => a.CC_Code).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateCCCode(data.Items.StockMaster.Select(a => a.CC_Code).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
-                    errorMessage = DataValidator.ValidateUid(data.Items.StockMaster.Select(a => a.AD_U_ID).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateUid(data.Items.StockMaster.Select(a => a.AD_U_ID).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
                     }
 
-                    errorMessage = DataValidator.ValidateWcode(data.Items.StockMaster.Select(a => (short?)a.W_CODE).ToList(), data.DatabaseName);
+                    errorMessage = DataValidator.ValidateWcode(data.Items.StockMaster.Select(a => (short?)a.W_CODE).ToList(), data.DatabaseName, ref testQuery);
                     if (!string.IsNullOrEmpty(errorMessage))
                     {
                         return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = errorMessage });
