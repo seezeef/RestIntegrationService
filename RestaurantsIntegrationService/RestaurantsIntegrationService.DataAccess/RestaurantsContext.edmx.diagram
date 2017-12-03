@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4d299a8dac0e4a5f8d38cfcc2055d3a1" Name="Diagram1">
+        <EntityTypeShape EntityType="Restaurant_2017002Model.AccSys_Accounts" Width="1.5" PointX="3" PointY="230.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Action" Width="1.5" PointX="5.75" PointY="325.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Area" Width="1.5" PointX="3" PointY="234.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Areas_Drivers" Width="1.5" PointX="5.25" PointY="335.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.BarCode_Setup" Width="1.5" PointX="3" PointY="240.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bench" Width="1.5" PointX="5.25" PointY="302.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Benches_Sections" Width="1.5" PointX="3" PointY="248.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Benches_Types" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bill" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bills_Components" Width="1.5" PointX="5.25" PointY="379.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bills_Notes_Mst" Width="1.5" PointX="3" PointY="256.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Black_List" Width="1.5" PointX="5.25" PointY="355.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Cell" Width="1.5" PointX="5.25" PointY="312" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Cells_Groups" Width="1.5" PointX="3" PointY="266.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Chef" Width="1.5" PointX="3" PointY="269.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.COST_CENTERS" Width="1.5" PointX="3" PointY="272.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.CreditCard" Width="1.5" PointX="3" PointY="276.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Currency_Categories" Width="1.5" PointX="3" PointY="280.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customer_Promo_MST" Width="1.5" PointX="3" PointY="283" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customers_Accounts" Width="1.5" PointX="3" PointY="287.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customers_Payment" Width="1.5" PointX="6" PointY="339.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_MST" Width="1.5" PointX="8" PointY="334" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_Types" Width="1.5" PointX="3" PointY="300.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Delegate" Width="1.5" PointX="3" PointY="388.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Deleted_D" Width="1.5" PointX="13.75" PointY="361.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Deleted_H" Width="1.5" PointX="10.5" PointY="403.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.DeleteRest" Width="1.5" PointX="21.75" PointY="377.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Delivery_Options" Width="1.5" PointX="3" PointY="303.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Device_Token" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Discount_MST" Width="1.5" PointX="3" PointY="307.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Dlvr_Dtl" Width="1.5" PointX="8.25" PointY="370.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Driver" Width="1.5" PointX="3" PointY="312.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Drivers_Work_Days" Width="1.5" PointX="8.25" PointY="330" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Employee_Groups" Width="1.5" PointX="3" PointY="327.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Employee" Width="1.5" PointX="10.25" PointY="334.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Employees_Foods" Width="1.5" PointX="24.75" PointY="336.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionElement" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionEstimate" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModel" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModelDetail" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionMST" Width="1.5" PointX="3" PointY="330.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.FingerDevice" Width="1.5" PointX="3" PointY="334.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Food" Width="1.5" PointX="19.5" PointY="327" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Altrantv" Width="1.5" PointX="24.75" PointY="341" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Attach" Width="1.5" PointX="21.75" PointY="332.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Combo" Width="1.5" PointX="24.75" PointY="333.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Components" Width="1.5" PointX="27.75" PointY="337.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Components_End" Width="1.5" PointX="27.75" PointY="334" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Groups" Width="1.5" PointX="8.25" PointY="314.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Prices" Width="1.5" PointX="3" PointY="338.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Types" Width="1.5" PointX="3" PointY="342.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Units" Width="1.5" PointX="21.75" PointY="421.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.FoodsReport_D" Width="1.5" PointX="27.75" PointY="342.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.FoodsReport_H" Width="1.5" PointX="3" PointY="346.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Form_Details" Width="1.5" PointX="5.75" PointY="350" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Groups_Items" Width="1.5" PointX="27.75" PointY="330.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D" Width="1.5" PointX="30.75" PointY="369.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D_Combo" Width="1.5" PointX="24.75" PointY="375.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D_DTL" Width="1.5" PointX="24.75" PointY="381.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_H" Width="1.5" PointX="13.5" PointY="400.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_OUT_REQUEST_MST" Width="1.5" PointX="5.25" PointY="415" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.InComing_DTL" Width="1.5" PointX="24.75" PointY="345" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.InComing_Mst" Width="1.5" PointX="8.25" PointY="342.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Incoming_Types" Width="1.5" PointX="3" PointY="355.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance_Bills_DTL" Width="1.5" PointX="5.25" PointY="344.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance_Materials" Width="1.5" PointX="3" PointY="363.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance" Width="1.5" PointX="11.25" PointY="383.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurances_Closed" Width="1.5" PointX="13.5" PointY="353" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurances_Deleted" Width="1.5" PointX="3" PointY="374.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Inventory_MST" Width="1.5" PointX="11" PointY="339.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Item_Move" Width="1.5" PointX="27.75" PointY="372" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ItemAchv" Width="1.5" PointX="5.25" PointY="384.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Items_Notes_Dtl" Width="1.5" PointX="21.75" PointY="354.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Items_Notes_Mst" Width="1.5" PointX="3" PointY="391.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.List_States" Width="1.5" PointX="3" PointY="394.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MNTNC_REQ" Width="1.5" PointX="11" PointY="344.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Mobile_Privillages" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MyPoint" Width="1.5" PointX="3" PointY="401.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MyPoints_DTL" Width="1.5" PointX="3" PointY="404.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Notification" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.OpenBuffet" Width="1.5" PointX="3" PointY="407.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Options_Privileges" Width="1.5" PointX="11" PointY="331.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.OUT_TYPES" Width="1.5" PointX="3" PointY="413.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.P_Meal_DTL" Width="1.5" PointX="3" PointY="417.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.P_Meal_DTL_DTL" Width="1.5" PointX="3" PointY="420.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.P_Meal_DTL_EXP" Width="1.5" PointX="3" PointY="423.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.P_Meal_MST" Width="1.5" PointX="3" PointY="426.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Penality" Width="1.5" PointX="3" PointY="429.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.POS" Width="1.5" PointX="3" PointY="433.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.POS_Printers" Width="1.5" PointX="13.5" PointY="375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.PosTransTable" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Printer" Width="1.5" PointX="3" PointY="445.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Privilege" Width="1.5" PointX="13" PointY="334.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Privileges_SBF" Width="1.5" PointX="6" PointY="328.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.REQUEST_TYPES" Width="1.5" PointX="3" PointY="456" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_MST" Width="1.5" PointX="5.25" PointY="395.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reservation" Width="1.5" PointX="5.25" PointY="373.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods" Width="1.5" PointX="14" PointY="338.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods_Canceled" Width="1.5" PointX="3" PointY="459.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods_Items" Width="1.5" PointX="24.75" PointY="417.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Rest_Targets" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Rest_Taxes" Width="1.5" PointX="3" PointY="471.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_D" Width="1.5" PointX="18.75" PointY="371" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_H" Width="1.5" PointX="16.5" PointY="402.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Info" Width="1.5" PointX="0.75" PointY="317.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_InvoTypes" Width="1.5" PointX="3" PointY="475.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Menus" Width="1.5" PointX="3" PointY="481.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Menus_Food" Width="1.5" PointX="21.75" PointY="399.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Orders" Width="1.5" PointX="11.25" PointY="377.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Periods" Width="1.5" PointX="3" PointY="484.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Shortcuts" Width="1.5" PointX="11" PointY="326.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RSRVD_Payments" Width="1.5" PointX="22.25" PointY="336.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RSRVD_RefundPayment" Width="1.5" PointX="22.25" PointY="342.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_DTL" Width="1.5" PointX="21.75" PointY="367.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_DTL_DTL" Width="1.5" PointX="27.75" PointY="379.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_MST" Width="1.5" PointX="16.5" PointY="379.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Ins_DTL" Width="1.5" PointX="8.25" PointY="381.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Ins_MST" Width="1.5" PointX="19.5" PointY="383.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SchduleOption" Width="1.5" PointX="3" PointY="493.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SMS_DTL" Width="1.5" PointX="3" PointY="498.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SMS_Suplliers" Width="1.5" PointX="3" PointY="501.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Spend" Width="1.5" PointX="8.25" PointY="416.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Spends_Types" Width="1.5" PointX="3" PointY="511.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Split_Bills" Width="1.5" PointX="11.25" PointY="371.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_Adjst_MST" Width="1.5" PointX="8.25" PointY="388" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_QtyAv" Width="1.5" PointX="27.75" PointY="345.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Street" Width="1.5" PointX="5.25" PointY="296.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Sub_Items" Width="1.5" PointX="24.75" PointY="330.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Suggestions_Types" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SyncData" Width="1.5" PointX="3" PointY="514.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SyncTable" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.System_Initial" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.System_Options" Width="1.5" PointX="3" PointY="519.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Tables_Status" Width="1.5" PointX="5.25" PointY="388.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Transfer_Orders" Width="1.5" PointX="21.75" PointY="386" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.TRANSFER_TYPES" Width="1.5" PointX="3" PointY="523.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Unit" Width="1.5" PointX="3" PointY="526.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.User_Income" Width="1.5" PointX="14" PointY="327.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.User" Width="1.5" PointX="19.5" PointY="314.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Acc_Link" Width="1.5" PointX="8" PointY="349.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Current_Login" Width="1.5" PointX="14.25" PointY="387" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Login" Width="1.5" PointX="14" PointY="347.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Options" Width="1.5" PointX="17" PointY="335.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Periods" Width="1.5" PointX="5.25" PointY="403.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Waiter" Width="1.5" PointX="3" PointY="552.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Waiters_Privileges" Width="1.5" PointX="7.5" PointY="428.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.WareHouse" Width="1.5" PointX="3" PointY="556.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.WAREHOUSE_DETAILS" Width="1.5" PointX="3" PointY="560.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bill_details" Width="1.5" PointX="10" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ConfirmConsume_DTL" Width="1.5" PointX="21.75" PointY="328.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ConfirmConsume_MST" Width="1.5" PointX="3" PointY="349.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customer_Promo_DTL" Width="1.5" PointX="5.25" PointY="320.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_Components" Width="1.5" PointX="30.75" PointY="337.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_DTL" Width="1.5" PointX="30.75" PointY="332.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Discount_DTL" Width="1.5" PointX="27.75" PointY="324.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.DriverGp" Width="1.5" PointX="8.25" PointY="339.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionDTL" Width="1.5" PointX="5.25" PointY="331.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModelEstimate" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_NO_ITM_FOUND" Width="1.5" PointX="30.75" PointY="343" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_OUT_REQUEST_DTL" Width="1.5" PointX="21.75" PointY="438.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Inventory_DTL" Width="1.5" PointX="30.75" PointY="346.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.JournalTable" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.PrinterDetail" Width="1.5" PointX="3" PointY="568.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_DTL" Width="1.5" PointX="24.75" PointY="393.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_DTL_T" Width="1.5" PointX="3" PointY="570.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Bill_No" Width="1.5" PointX="14.25" PointY="382.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SaveSetting" Width="1.5" PointX="11" PointY="349.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_Adjst_DTL" Width="1.5" PointX="24.75" PointY="353" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Sys_Errors" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Actions" Width="1.5" PointX="8" PointY="323.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_History" Width="1.5" PointX="17" PointY="330.375" IsExpanded="true" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_AccSys_Accounts_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Actions_Actions" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_History_Actions" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Areas_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Streets_Areas" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Areas_Drivers_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Drivers_Areas_Drivers" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_BarCode_Setup_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Benches_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Benches_Sections_Benches" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_Benches" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_H_Benches" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Benches" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Waiters_Privileges_Benches" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Benches_Sections_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Bills_Bill_details" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Bills_Components_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Bills_Components_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Bills_Components_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Bills_Notes_Mst_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Black_List_List_States" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Black_List_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Groups_Cells" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_H_Cells" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Cells" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Groups_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Chefs_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Groups_Chefs" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_COST_CENTERS_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_MST_COST_CENTERS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_COST_CENTERS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_MST_COST_CENTERS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_CreditCards_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_CreditCards" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_H_CreditCards" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_CreditCards" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Currency_Categories_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Customer_Promo_DTL_Customer_Promo_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Customer_Promo_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Customers_Accounts_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Customers_Payment_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Customers_Payment_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_DTL_Damage_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_MST_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_Types_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_MST_Delegates" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_D_Deleted_H" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_D_Foods_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_D_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_Restaurant_InvoTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_Restaurant_Periods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_Waiters" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_DeleteRest_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_DeleteRest_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_DeleteRest_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_DeleteRest_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Delivery_Options_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.Discount_DTL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Discount_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Dlvr_Dtl_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Dlvr_Dtl_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Dlvr_Dtl_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Drivers_Dlvr_Dtl" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Drivers_DriverGps" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Drivers_Drivers_Work_Days" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Drivers_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Drivers_Work_Days_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Employee_Groups_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Employee_Groups_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Employees_Foods_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Employees_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Employees_Foods_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Employees_Foods_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_EvalutionModelDetail_EvalutionEstimate" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_EvalutionModelEstimate_EvalutionEstimate" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_EvalutionModelDetail_EvalutionModel" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_EvalutionModelEstimate_EvalutionModelDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_EvalutionDTL_EvalutionMST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_EvalutionMST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_FingerDevices_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_Components_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Discount_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Altrantv_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Altrantv_Foods2" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Attach_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Combo_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Components_End_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Components_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Foods_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Groups_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Units_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_FoodsReport_D_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Groups_Items_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_Combo_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_NO_ITM_FOUND_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_InComing_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Inventory_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Item_Move_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Items_Notes_Dtl_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reserved_Foods_Items_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Menus_Food_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_Adjst_DTL_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_QtyAv_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Sub_Items_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Transfer_Orders_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Altrantv_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Attach_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Combo_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Components_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Components_End_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Groups_Foods_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Groups_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Groups_Items_Foods_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_POS_Printers_Foods_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Prices_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Types_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_D_Foods_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_D_Foods_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Units_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Foods_Units_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_FoodsReport_D_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_FoodsReport_H_FoodsReport_D" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_FoodsReport_H_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Privileges_Form_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_SaveSetting_Form_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Actions_Form_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_History_Form_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Groups_Items_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_HstrRest_H" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_Combo_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_Combo_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_DTL_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_D_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_H_OpenBuffet" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_H_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_H_Restaurant_InvoTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_H_Restaurant_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_H_Restaurant_Periods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_HstrRest_H_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_H_Waiters" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_MST_REQUEST_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_MST_WAREHOUSE_DETAILS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_InComing_DTL_InComing_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_InComing_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_InComing_Mst_InComing_DTL" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_InComing_Mst_InComing_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_InComing_Mst_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Incoming_Types_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurance_Bills_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurance_Materials_Insurance_Bills_DTL" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurance_Materials_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_DTL_Insurance_Materials" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_Closed_Insurances" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_Insurances" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_MST_Insurances" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_DTL_Insurances" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_MST_Insurances" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_Closed_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_Deleted_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Inventory_Mst_Inventory_DTL" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Inventory_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Inventory_MST_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Item_Move_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Item_Move_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ItemAchv_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ItemAchv_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Items_Notes_Dtl_Items_Notes_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Items_Notes_Dtl_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Items_Notes_Mst_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_List_States_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_MNTNC_REQ_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_MNTNC_REQ_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_MyPoints_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_MyPoints_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_OpenBuffet_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_OpenBuffet" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Options_Privileges_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Options_Privileges_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_OUT_TYPES_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_P_Meal_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_P_Meal_DTL_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_P_Meal_DTL_EXP_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_P_Meal_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Penality_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_POS_Printers_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_POS_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reservations_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Bill_No_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_D_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Orders_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_DTL_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_MST_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_DTL_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_MST_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Split_Bills_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_Adjst_MST_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Tables_Status_MST_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Transfer_Orders_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Current_Login_POS" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_POS_Printers_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_PosTransTable_PosTransTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Printer_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Privileges_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Privileges_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Privileges_SBF_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Privileges_SBF_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_REQUEST_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_REQUEST_TYPES_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_RES_WHTRNS_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_MST_TRANSFER_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reservations_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reserved_Foods_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reserved_Foods_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.RSRVD_Payments_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.RSRVD_RefundPayment_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reserved_Foods_Canceled_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reserved_Foods_Items_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Reserved_Foods_Items_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Rest_Taxes_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_D_Restaurant_H" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_D_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Restaurant_InvoTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Restaurant_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Restaurant_Periods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Waiters" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Customer_Promo_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_Components_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Discount_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_DriverGps_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_NO_ITM_FOUND_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Inventory_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_PrinterDetail_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_T_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Bill_No_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_InvoTypes_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Menus_Food_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Menus_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Orders_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Periods_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Shortcuts_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RSRVD_Payments_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RSRVD_RefundPayment_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_SaveSetting_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_SchduleOptions_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_SMS_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_SMS_Suplliers_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Spends_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Spends_Types_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Split_Bills_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_Adjst_DTL_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_Adjst_MST_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_QtyAv_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Streets_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Sub_Items_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_SyncData_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_System_Options_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Tables_Status_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Transfer_Orders_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_TRANSFER_TYPES_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Units_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_User_Income_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Acc_Link_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Actions_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Current_Login_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_History_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Login_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Options_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Periods_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Waiters_Privileges_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Waiters_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_WAREHOUSE_DETAILS_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_WareHouse_Restaurant_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Menus_Food_Restaurant_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Periods_Restaurant_Periods" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Shortcuts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RSRVD_Payments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RSRVD_RefundPayment_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_RT_Bill_DTL_DTL" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Bill_DTL_RT_Bill_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RT_Ins_DTL_RT_Ins_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Spends_Spends_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Spends_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_Adjst_Mst_Stock_Adjst_Dtl" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Tables_Status_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_TRANSFER_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_User_Income_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_DTL_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_MST_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_Components_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_DTL_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Acc_Link_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Login_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Options_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Periods_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Waiters_Privileges_Waiters" ManuallyRouted="false" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_WAREHOUSE_DETAILS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

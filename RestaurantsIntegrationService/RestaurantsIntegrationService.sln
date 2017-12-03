@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantsIntegrationServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantsIntegrationService.Core", "RestaurantsIntegrationService.Core\RestaurantsIntegrationService.Core.csproj", "{7D8F75BB-9A83-4D8E-A58D-DFA6FAC2692B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantsIntegrationService.DataAccess", "RestaurantsIntegrationService.DataAccess\RestaurantsIntegrationService.DataAccess.csproj", "{0C48464A-6B28-4389-A9FE-C0D3943E86AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D8F75BB-9A83-4D8E-A58D-DFA6FAC2692B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8F75BB-9A83-4D8E-A58D-DFA6FAC2692B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8F75BB-9A83-4D8E-A58D-DFA6FAC2692B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C48464A-6B28-4389-A9FE-C0D3943E86AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C48464A-6B28-4389-A9FE-C0D3943E86AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C48464A-6B28-4389-A9FE-C0D3943E86AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C48464A-6B28-4389-A9FE-C0D3943E86AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

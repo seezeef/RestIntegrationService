@@ -214,6 +214,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntegrationController.cs" />
+    <Compile Include="Controllers\PosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,6 +227,14 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Bills\BillMasterModel.cs" />
     <Compile Include="Models\InsertModel.cs" />
+    <Compile Include="Models\Pos\BillsTransferModel.cs" />
+    <Compile Include="Models\Pos\DamageTransferModel.cs" />
+    <Compile Include="Models\Pos\IncomingTransferModel.cs" />
+    <Compile Include="Models\Pos\InsuranceTransferModel.cs" />
+    <Compile Include="Models\Pos\ReturnBillsTransferModel.cs" />
+    <Compile Include="Models\Pos\ReturnInsTransferModel.cs" />
+    <Compile Include="Models\Pos\StockAdjustmentTransferModel.cs" />
+    <Compile Include="Models\Pos\WarehouseTransferModel.cs" />
     <Compile Include="Models\Result\AjaxResponse.cs" />
     <Compile Include="Models\RTBills\ReturnBillComponentsModel.cs" />
     <Compile Include="Models\RTBills\ReturnBillDetailModel.cs" />
@@ -304,6 +313,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Integration\" />
+    <Folder Include="Views\Pos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -320,6 +330,10 @@
     <ProjectReference Include="..\RestaurantsIntegrationService.Core\RestaurantsIntegrationService.Core.csproj">
       <Project>{7d8f75bb-9a83-4d8e-a58d-dfa6fac2692b}</Project>
       <Name>RestaurantsIntegrationService.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestaurantsIntegrationService.DataAccess\RestaurantsIntegrationService.DataAccess.csproj">
+      <Project>{0c48464a-6b28-4389-a9fe-c0d3943e86af}</Project>
+      <Name>RestaurantsIntegrationService.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

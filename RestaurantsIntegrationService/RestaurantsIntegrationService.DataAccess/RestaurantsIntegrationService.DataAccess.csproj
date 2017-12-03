@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C48464A-6B28-4389-A9FE-C0D3943E86AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestaurantsIntegrationService.DataAccess</RootNamespace>
+    <AssemblyName>RestaurantsIntegrationService.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccSys_Accounts.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Action.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Area.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas_Drivers.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BarCode_Setup.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bench.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Benches_Sections.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Benches_Types.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bills_Components.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bills_Notes_Mst.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill_details.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Black_List.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cell.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cells_Groups.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chef.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmConsume_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmConsume_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COST_CENTERS.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCard.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency_Categories.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customers_Accounts.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customers_Payment.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Promo_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Promo_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Damage_Components.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Damage_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Damage_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Damage_Types.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delegate.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deleted_D.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deleted_H.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteRest.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_Options.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Device_Token.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Discount_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Discount_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dlvr_Dtl.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Driver.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DriverGp.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers_Work_Days.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employees_Foods.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Groups.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionDTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionElement.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionEstimate.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionModel.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionModelDetail.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionModelEstimate.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionMST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FingerDevice.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Food.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoodsReport_D.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoodsReport_H.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Altrantv.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Attach.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Combo.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Components.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Components_End.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Groups.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Prices.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Types.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foods_Units.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Details.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Groups_Items.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HstrRest_D.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HstrRest_D_Combo.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HstrRest_D_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HstrRest_H.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAS_NO_ITM_FOUND.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAS_OUT_REQUEST_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAS_OUT_REQUEST_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InComing_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InComing_Mst.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Incoming_Types.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insurance.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insurances_Closed.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insurances_Deleted.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insurance_Bills_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insurance_Materials.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAchv.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Items_Notes_Dtl.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Items_Notes_Mst.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item_Move.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JournalTable.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="List_States.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MNTNC_REQ.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_Privillages.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyPoint.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyPoints_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenBuffet.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Options_Privileges.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OUT_TYPES.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Penality.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosTransTable.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS_Printers.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Printer.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrinterDetail.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Privilege.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Privileges_SBF.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="P_Meal_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_Meal_DTL_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_Meal_DTL_EXP.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_Meal_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REQUEST_TYPES.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reserved_Foods.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reserved_Foods_Canceled.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reserved_Foods_Items.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantsContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestaurantsContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantsContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantsContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestaurantsContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Bill_No.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_D.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_H.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Info.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_InvoTypes.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Menus.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Menus_Food.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Orders.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Periods.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant_Shortcuts.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rest_Targets.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rest_Taxes.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_WHTRNS_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_WHTRNS_DTL_T.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_WHTRNS_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RSRVD_Payments.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RSRVD_RefundPayment.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RT_Bill_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RT_Bill_DTL_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RT_Bill_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RT_Ins_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RT_Ins_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaveSetting.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchduleOption.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Suplliers.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spend.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spends_Types.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Split_Bills.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stock_Adjst_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stock_Adjst_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stock_QtyAv.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Street.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sub_Items.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Suggestions_Types.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncData.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncTable.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System_Initial.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System_Options.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sys_Errors.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tables_Status.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer_Orders.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSFER_TYPES.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Acc_Link.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Actions.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Current_Login.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_History.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Login.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Options.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Periods.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Income.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Waiter.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Waiters_Privileges.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WareHouse.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WAREHOUSE_DETAILS.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="RestaurantsContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RestaurantsContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="RestaurantsContext.edmx.diagram">
+      <DependentUpon>RestaurantsContext.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RestaurantsContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestaurantsContext.edmx</DependentUpon>
+      <LastGenOutput>RestaurantsContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RestaurantsContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestaurantsContext.edmx</DependentUpon>
+      <LastGenOutput>RestaurantsContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
