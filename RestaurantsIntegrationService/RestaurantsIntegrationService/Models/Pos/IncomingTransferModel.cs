@@ -10,5 +10,6 @@ namespace RestaurantsIntegrationService.Models.Pos
     {
         public List<InComing_Mst> Master { get; set; }
         public List<InComing_DTL> Detail { get; set; }
+        public List<Item_Move> ItemMoves { get; set; }
     }
 }

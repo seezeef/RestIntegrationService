@@ -11,5 +11,7 @@ namespace RestaurantsIntegrationService.Models.Pos
         public List<HstrRest_H> BillsMaster { get; set; }
         public List<HstrRest_D> BillsDetail { get; set; }
         public List<HstrRest_D_DTL> BillsComponents { get; set; }
+        public List<Item_Move> ItemMoves { get; set; }
+        public List<Restaurant_Orders> RestaurantOrders { get; set; }
     }
 }

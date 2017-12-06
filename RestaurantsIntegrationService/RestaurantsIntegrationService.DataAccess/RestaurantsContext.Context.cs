@@ -178,7 +178,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<ConfirmConsume_MST> ConfirmConsume_MST { get; set; }
         public virtual DbSet<Customer_Promo_DTL> Customer_Promo_DTL { get; set; }
         public virtual DbSet<Damage_Components> Damage_Components { get; set; }
-        public virtual DbSet<Damage_DTL> Damage_DTL { get; set; }
         public virtual DbSet<Discount_DTL> Discount_DTL { get; set; }
         public virtual DbSet<DriverGp> DriverGps { get; set; }
         public virtual DbSet<EvalutionDTL> EvalutionDTLs { get; set; }
@@ -188,13 +187,14 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Inventory_DTL> Inventory_DTL { get; set; }
         public virtual DbSet<JournalTable> JournalTables { get; set; }
         public virtual DbSet<PrinterDetail> PrinterDetails { get; set; }
-        public virtual DbSet<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
         public virtual DbSet<RES_WHTRNS_DTL_T> RES_WHTRNS_DTL_T { get; set; }
         public virtual DbSet<Restaurant_Bill_No> Restaurant_Bill_No { get; set; }
         public virtual DbSet<SaveSetting> SaveSettings { get; set; }
-        public virtual DbSet<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
         public virtual DbSet<Sys_Errors> Sys_Errors { get; set; }
         public virtual DbSet<Users_Actions> Users_Actions { get; set; }
         public virtual DbSet<Users_History> Users_History { get; set; }
+        public virtual DbSet<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
+        public virtual DbSet<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
+        public virtual DbSet<Damage_DTL> Damage_DTL { get; set; }
     }
 }

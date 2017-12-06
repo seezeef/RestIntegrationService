@@ -231,9 +231,13 @@
     <Compile Include="Models\Pos\DamageTransferModel.cs" />
     <Compile Include="Models\Pos\IncomingTransferModel.cs" />
     <Compile Include="Models\Pos\InsuranceTransferModel.cs" />
+    <Compile Include="Models\Pos\ItemMoveTransferModel.cs" />
+    <Compile Include="Models\Pos\RestaurantOrdersTransferModel.cs" />
     <Compile Include="Models\Pos\ReturnBillsTransferModel.cs" />
     <Compile Include="Models\Pos\ReturnInsTransferModel.cs" />
+    <Compile Include="Models\Pos\SpendsTransferModel.cs" />
     <Compile Include="Models\Pos\StockAdjustmentTransferModel.cs" />
+    <Compile Include="Models\Pos\UserIncomeModel.cs" />
     <Compile Include="Models\Pos\WarehouseTransferModel.cs" />
     <Compile Include="Models\Result\AjaxResponse.cs" />
     <Compile Include="Models\RTBills\ReturnBillComponentsModel.cs" />

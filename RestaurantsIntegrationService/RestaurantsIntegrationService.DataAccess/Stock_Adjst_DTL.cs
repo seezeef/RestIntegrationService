@@ -25,6 +25,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int RCRD_No { get; set; }
         public bool B_Sync { get; set; }
         public Nullable<long> DocSer { get; set; }
+        public int SyncSerial { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }

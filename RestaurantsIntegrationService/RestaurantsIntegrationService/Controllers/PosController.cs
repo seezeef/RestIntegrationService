@@ -22,10 +22,11 @@ namespace RestaurantsIntegrationService.Controllers
             {
                 using (Restaurants context = new DataAccess.Restaurants())
                 {
-                    context.HstrRest_H.AddRange(data.BillsMaster);
-                  
+                    context.HstrRest_H.AddRange(data.BillsMaster);                  
                     context.HstrRest_D.AddRange(data.BillsDetail);
                     context.HstrRest_D_DTL.AddRange(data.BillsComponents);
+                    context.Item_Move.AddRange(data.ItemMoves);
+                    context.Restaurant_Orders.AddRange(data.RestaurantOrders);
                     context.SaveChanges();
                 }
             }
@@ -48,6 +49,7 @@ namespace RestaurantsIntegrationService.Controllers
                     context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
                     context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
                     context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
+                    context.Item_Move.AddRange(data.ItemMoves);
                     context.SaveChanges();
                 }
             }
@@ -91,6 +93,7 @@ namespace RestaurantsIntegrationService.Controllers
                 {
                     context.RES_WHTRNS_MST.AddRange(data.Master);
                     context.RES_WHTRNS_DTL.AddRange(data.Detail);
+                    context.Item_Move.AddRange(data.ItemMoves);
                     context.SaveChanges();
                 }
             }
@@ -101,7 +104,29 @@ namespace RestaurantsIntegrationService.Controllers
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
         }
+        
 
+        [Route("InsertInsurances")]
+        [HttpPost]
+        public IHttpActionResult InsertInsurances(InsuranceTransferModel data)
+        {
+            try
+            {
+                using (Restaurants context = new DataAccess.Restaurants())
+                {
+                    context.Insurances.AddRange(data.Master);
+                    context.Insurance_Bills_DTL.AddRange(data.Detail);
+                    context.Insurances_Closed.AddRange(data.Closed);                    
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+            }
+
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        }
 
         [Route("InsertReturnIns")]
         [HttpPost]
@@ -125,28 +150,6 @@ namespace RestaurantsIntegrationService.Controllers
         }
 
 
-        [Route("InsertInsurances")]
-        [HttpPost]
-        public IHttpActionResult InsertInsurances(InsuranceTransferModel data)
-        {
-            try
-            {
-                using (Restaurants context = new DataAccess.Restaurants())
-                {
-                    context.Insurances.AddRange(data.Master);
-                    context.Insurance_Bills_DTL.AddRange(data.Detail);
-                    context.Insurances_Closed.AddRange(data.Closed);
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
-            }
-
-            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
-        }
-
         [Route("InsertIncoming")]
         [HttpPost]
         public IHttpActionResult InsertIncoming(IncomingTransferModel data)
@@ -157,6 +160,7 @@ namespace RestaurantsIntegrationService.Controllers
                 {
                     context.InComing_Mst.AddRange(data.Master);
                     context.InComing_DTL.AddRange(data.Detail);
+                    context.Item_Move.AddRange(data.ItemMoves);
                     context.SaveChanges();
                 }
             }
@@ -168,7 +172,7 @@ namespace RestaurantsIntegrationService.Controllers
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
         }
 
-        [Route("InsertIncoming")]
+        [Route("InsertDamage")]
         [HttpPost]
         public IHttpActionResult InsertDamage(DamageTransferModel data)
         {
@@ -188,5 +192,108 @@ namespace RestaurantsIntegrationService.Controllers
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
         }
+
+        /// <summary>
+        /// Restaurant_Orders
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        [Route("InsertRestaurantOrders")]
+        [HttpPost]
+        public IHttpActionResult InsertRestaurantOrders(RestaurantOrdersTransferModel data)
+        {
+            try
+            {
+                using (Restaurants context = new Restaurants())
+                {
+                    context.Restaurant_Orders.AddRange(data.Master);
+                    //context.Damage_DTL.AddRange(data.Detail);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+            }
+
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        }
+
+        /// <summary>
+        /// Item_Move
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        //[Route("InsertItemMove")]
+        //[HttpPost]
+        //public IHttpActionResult InsertItemMove(ItemMoveTransferModel data)
+        //{
+        //    try
+        //    {
+        //        using (Restaurants context = new Restaurants())
+        //        {
+        //            context.Item_Move.AddRange(data.Master);
+        //            //context.Damage_DTL.AddRange(data.Detail);
+        //            context.SaveChanges();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+        //    }
+
+        //    return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        //}
+
+        /// <summary>
+        /// User_Income
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        [Route("InsertUserIncome")]
+        [HttpPost]
+        public IHttpActionResult InsertUserIncome(UserIncomeModel data)
+        {
+            try
+            {
+                using (Restaurants context = new DataAccess.Restaurants())
+                {
+                    context.User_Income.AddRange(data.Master);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+            }
+
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        }
+
+        /// <summary>
+        /// Spends
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        [Route("InsertSpends")]
+        [HttpPost]
+        public IHttpActionResult InsertSpends(SpendsTransferModel data)
+        {
+            try
+            {
+                using (Restaurants context = new DataAccess.Restaurants())
+                {
+                    context.Spends.AddRange(data.Master);                    
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+            }
+
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        }
+
     }
 }

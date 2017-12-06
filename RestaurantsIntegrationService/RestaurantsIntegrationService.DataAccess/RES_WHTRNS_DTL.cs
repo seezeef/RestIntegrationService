@@ -34,6 +34,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public short Branch_No { get; set; }
         public long DocSer { get; set; }
+        public int SyncSerial { get; set; }
     
         public virtual COST_CENTERS COST_CENTERS { get; set; }
         public virtual Food Food { get; set; }

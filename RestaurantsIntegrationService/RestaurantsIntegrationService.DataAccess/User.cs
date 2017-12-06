@@ -38,11 +38,11 @@ namespace RestaurantsIntegrationService.DataAccess
             this.ConfirmConsume_DTL = new HashSet<ConfirmConsume_DTL>();
             this.ConfirmConsume_MST = new HashSet<ConfirmConsume_MST>();
             this.Damage_Components = new HashSet<Damage_Components>();
-            this.Damage_DTL = new HashSet<Damage_DTL>();
             this.Users_Acc_Link = new HashSet<Users_Acc_Link>();
             this.Users_Login = new HashSet<Users_Login>();
             this.Users_Options = new HashSet<Users_Options>();
             this.Users_Periods = new HashSet<Users_Periods>();
+            this.Damage_DTL = new HashSet<Damage_DTL>();
         }
     
         public short User_Id { get; set; }
@@ -116,8 +116,6 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Damage_Components> Damage_Components { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users_Acc_Link> Users_Acc_Link { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users_Login> Users_Login { get; set; }
@@ -125,5 +123,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<Users_Options> Users_Options { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users_Periods> Users_Periods { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
     }
 }

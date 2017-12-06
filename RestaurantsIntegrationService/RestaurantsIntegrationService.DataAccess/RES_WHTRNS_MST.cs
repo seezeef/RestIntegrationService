@@ -51,9 +51,9 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public virtual COST_CENTERS COST_CENTERS { get; set; }
         public virtual Delegate Delegate { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual TRANSFER_TYPES TRANSFER_TYPES { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
     }
 }

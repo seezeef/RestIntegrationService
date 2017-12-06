@@ -108,14 +108,12 @@ namespace RestaurantsIntegrationService.DataAccess
             this.ConfirmConsume_MST = new HashSet<ConfirmConsume_MST>();
             this.Customer_Promo_DTL = new HashSet<Customer_Promo_DTL>();
             this.Damage_Components = new HashSet<Damage_Components>();
-            this.Damage_DTL = new HashSet<Damage_DTL>();
             this.Discount_DTL = new HashSet<Discount_DTL>();
             this.DriverGps = new HashSet<DriverGp>();
             this.IAS_NO_ITM_FOUND = new HashSet<IAS_NO_ITM_FOUND>();
             this.IAS_OUT_REQUEST_DTL = new HashSet<IAS_OUT_REQUEST_DTL>();
             this.Inventory_DTL = new HashSet<Inventory_DTL>();
             this.PrinterDetails = new HashSet<PrinterDetail>();
-            this.RES_WHTRNS_DTL = new HashSet<RES_WHTRNS_DTL>();
             this.RES_WHTRNS_DTL_T = new HashSet<RES_WHTRNS_DTL_T>();
             this.Restaurant_Bill_No = new HashSet<Restaurant_Bill_No>();
             this.Restaurant_InvoTypes = new HashSet<Restaurant_InvoTypes>();
@@ -137,7 +135,6 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Spends = new HashSet<Spend>();
             this.Spends_Types = new HashSet<Spends_Types>();
             this.Split_Bills = new HashSet<Split_Bills>();
-            this.Stock_Adjst_DTL = new HashSet<Stock_Adjst_DTL>();
             this.Stock_Adjst_MST = new HashSet<Stock_Adjst_MST>();
             this.Stock_QtyAv = new HashSet<Stock_QtyAv>();
             this.Streets = new HashSet<Street>();
@@ -160,6 +157,9 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Waiters = new HashSet<Waiter>();
             this.WAREHOUSE_DETAILS = new HashSet<WAREHOUSE_DETAILS>();
             this.WareHouses = new HashSet<WareHouse>();
+            this.RES_WHTRNS_DTL = new HashSet<RES_WHTRNS_DTL>();
+            this.Stock_Adjst_DTL = new HashSet<Stock_Adjst_DTL>();
+            this.Damage_DTL = new HashSet<Damage_DTL>();
         }
     
         public short Branch_No { get; set; }
@@ -423,8 +423,6 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Damage_Components> Damage_Components { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Discount_DTL> Discount_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DriverGp> DriverGps { get; set; }
@@ -436,8 +434,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<Inventory_DTL> Inventory_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PrinterDetail> PrinterDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RES_WHTRNS_DTL_T> RES_WHTRNS_DTL_T { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -482,8 +478,6 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Split_Bills> Split_Bills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stock_Adjst_MST> Stock_Adjst_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stock_QtyAv> Stock_QtyAv { get; set; }
@@ -527,5 +521,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<WAREHOUSE_DETAILS> WAREHOUSE_DETAILS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WareHouse> WareHouses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
     }
 }
