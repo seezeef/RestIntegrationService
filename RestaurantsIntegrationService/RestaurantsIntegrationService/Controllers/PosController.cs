@@ -71,6 +71,7 @@ namespace RestaurantsIntegrationService.Controllers
                 {
                     context.Stock_Adjst_MST.AddRange(data.Master);
                     context.Stock_Adjst_DTL.AddRange(data.Detail);
+                    context.Item_Move.AddRange(data.ItemMoves);
                     context.SaveChanges();
                 }
             }
