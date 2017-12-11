@@ -24,11 +24,10 @@ namespace RestaurantsIntegrationService.Controllers
     public class IntegrationController : ApiController
     {
         [Route("TestConnection")]
-        [HttpGet]
+        [HttpPost]
         public IHttpActionResult TestConnection()
         {
-            string message = "Connected Successfully";
-            return Ok(message);
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage= "Connected" });
         }
 
 
