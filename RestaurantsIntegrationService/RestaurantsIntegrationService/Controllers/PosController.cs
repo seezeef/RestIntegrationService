@@ -2,9 +2,7 @@
 using RestaurantsIntegrationService.Models.Pos;
 using RestaurantsIntegrationService.Models.Result;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
 
 namespace RestaurantsIntegrationService.Controllers
@@ -17,22 +15,41 @@ namespace RestaurantsIntegrationService.Controllers
         [HttpPost]
         public IHttpActionResult InsertBills(BillsTransferModel data)
         {
-            long test = 0;
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.HstrRest_H.AddRange(data.BillsMaster);                  
-                    context.HstrRest_D.AddRange(data.BillsDetail);
-                    context.HstrRest_D_DTL.AddRange(data.BillsComponents);
-                    context.Item_Move.AddRange(data.ItemMoves);
-                    context.Restaurant_Orders.AddRange(data.RestaurantOrders);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.BillsMaster.ForEach(x => x.B_Sync = true);
+                            data.RestaurantOrders.ForEach(x=>x.B_Sync=true);
+                            data.ItemMoves.ForEach(x => x.B_Sync = true);                            
+                            context.HstrRest_H.AddRange(data.BillsMaster);
+                            context.HstrRest_D.AddRange(data.BillsDetail);
+                            context.HstrRest_D_DTL.AddRange(data.BillsComponents);
+                            context.Item_Move.AddRange(data.ItemMoves);
+                            context.Restaurant_Orders.AddRange(data.RestaurantOrders);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                    
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                   ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                   : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -44,18 +61,37 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
-                    context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
-                    context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
-                    context.Item_Move.AddRange(data.ItemMoves);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.ReturnBillsMaster.ForEach(x=>x.B_Sync=true);
+                            data.ItemMoves.ForEach(x => x.B_Sync = true);
+                            context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
+                            context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
+                            context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
+                            context.Item_Move.AddRange(data.ItemMoves);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                   ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                   : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -67,8 +103,28 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.ItemMoves.ForEach(x => x.B_Sync = true);
+                            context.Stock_Adjst_MST.AddRange(data.Master);
+                            context.Stock_Adjst_DTL.AddRange(data.Detail);
+                            context.Item_Move.AddRange(data.ItemMoves);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
                     context.Stock_Adjst_MST.AddRange(data.Master);
                     context.Stock_Adjst_DTL.AddRange(data.Detail);
                     context.Item_Move.AddRange(data.ItemMoves);
@@ -77,7 +133,9 @@ namespace RestaurantsIntegrationService.Controllers
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                   ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                   : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -90,22 +148,41 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.RES_WHTRNS_MST.AddRange(data.Master);
-                    context.RES_WHTRNS_DTL.AddRange(data.Detail);
-                    context.Item_Move.AddRange(data.ItemMoves);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.ItemMoves.ForEach(x => x.B_Sync = true);
+                            context.RES_WHTRNS_MST.AddRange(data.Master);
+                            context.RES_WHTRNS_DTL.AddRange(data.Detail);
+                            context.Item_Move.AddRange(data.ItemMoves);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                   ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                   : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
         }
-        
+
 
         [Route("InsertInsurances")]
         [HttpPost]
@@ -113,17 +190,36 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.Insurances.AddRange(data.Master);
-                    context.Insurance_Bills_DTL.AddRange(data.Detail);
-                    context.Insurances_Closed.AddRange(data.Closed);                    
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            
+                            data.Master.ForEach(x=>x.B_Sync=true);
+                            context.Insurances.AddRange(data.Master);
+                            context.Insurance_Bills_DTL.AddRange(data.Detail);
+                            context.Insurances_Closed.AddRange(data.Closed);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                   ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                   : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -135,16 +231,34 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.RT_Ins_MST.AddRange(data.Master);
-                    context.RT_Ins_DTL.AddRange(data.Detail);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            context.RT_Ins_MST.AddRange(data.Master);
+                            context.RT_Ins_DTL.AddRange(data.Detail);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                    ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                    : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -157,17 +271,34 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.InComing_Mst.AddRange(data.Master);
-                    context.InComing_DTL.AddRange(data.Detail);
-                    context.Item_Move.AddRange(data.ItemMoves);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            context.InComing_Mst.AddRange(data.Master);
+                            context.InComing_DTL.AddRange(data.Detail);
+                            context.Item_Move.AddRange(data.ItemMoves);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                    ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                    : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -179,16 +310,35 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.Damage_MST.AddRange(data.Master);
-                    context.Damage_DTL.AddRange(data.Detail);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            context.Damage_MST.AddRange(data.Master);
+                            context.Damage_DTL.AddRange(data.Detail);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+
+                return Ok(ex.InnerException?.InnerException != null
+                    ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                    : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -207,14 +357,32 @@ namespace RestaurantsIntegrationService.Controllers
             {
                 using (Restaurants context = new Restaurants())
                 {
-                    context.Restaurant_Orders.AddRange(data.Master);
-                    //context.Damage_DTL.AddRange(data.Detail);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            context.Restaurant_Orders.AddRange(data.Master);
+                            //context.Damage_DTL.AddRange(data.Detail);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                    ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                    : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -257,15 +425,33 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.User_Income.AddRange(data.Master);
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            context.User_Income.AddRange(data.Master);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                  
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                    ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                    : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message }); 
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -282,15 +468,33 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new DataAccess.Restaurants())
+                using (Restaurants context = new Restaurants())
                 {
-                    context.Spends.AddRange(data.Master);                    
-                    context.SaveChanges();
+                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            data.Master.ForEach(x => x.B_Sync = true);
+                            context.Spends.AddRange(data.Master);
+                            context.SaveChanges();
+                            dbContextTransaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            dbContextTransaction.Rollback();
+                            return Ok(ex.InnerException?.InnerException != null
+                                 ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                                 : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                        }
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                return Ok(ex.InnerException?.InnerException != null
+                    ? new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.InnerException.Message }
+                    : new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });

@@ -9,6 +9,7 @@ using System.Data;
 using RestaurantsIntegrationService.Models;
 using Oracle.DataAccess.Client;
 using RestaurantsIntegrationService.Core.DataAccess;
+using RestaurantsIntegrationService.DataAccess;
 using RestaurantsIntegrationService.Models.Bills;
 using RestaurantsIntegrationService.Models.Result;
 using RestaurantsIntegrationService.Models.RTBills;
@@ -27,7 +28,7 @@ namespace RestaurantsIntegrationService.Controllers
         [HttpPost]
         public IHttpActionResult TestConnection()
         {
-            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage= "Connected" });
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Connected" });
         }
 
 
@@ -444,6 +445,29 @@ namespace RestaurantsIntegrationService.Controllers
             }
         }
 
+        [Route("TestDb")]
+        [HttpGet]
+        [AllowAnonymous]
+        [OverrideAuthentication]
+        public IHttpActionResult TestDb()
+        {
+            using (var context = new Restaurants())
+            {
+                try
+                {
+                    var x = context.Areas.Count();
+                    return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "connected" });
+                }
+                catch (Exception ex)
+                {
+                    if (ex.InnerException != null)
+                    {
+                        return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.InnerException.Message });
+                    }
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.Message });
+                }
+            }
+        }
 
         private string GetOracleDate(DateTime? date)
         {
