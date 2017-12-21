@@ -212,6 +212,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntegrationController.cs" />
     <Compile Include="Controllers\PosController.cs" />
@@ -224,6 +225,11 @@
     <Compile Include="Models\Bills\BillComponentsModel.cs" />
     <Compile Include="Models\Bills\BillDetailModel.cs" />
     <Compile Include="Models\Bills\TransferBillModel.cs" />
+    <Compile Include="Models\Get\FifthInput.cs" />
+    <Compile Include="Models\Get\FirstInput.cs" />
+    <Compile Include="Models\Get\FourthInput.cs" />
+    <Compile Include="Models\Get\SecondInput.cs" />
+    <Compile Include="Models\Get\ThirdInput.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Bills\BillMasterModel.cs" />
     <Compile Include="Models\InsertModel.cs" />

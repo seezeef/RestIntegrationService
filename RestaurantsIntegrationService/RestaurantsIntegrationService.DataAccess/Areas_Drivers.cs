@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -19,7 +21,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Dr_No { get; set; }
         public bool S_Priority { get; set; }
     
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        [JsonIgnore]
         public virtual Driver Driver { get; set; }
     }
 }

@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -27,13 +29,16 @@ namespace RestaurantsIntegrationService.DataAccess
         public string CC_A_NAME { get; set; }
         public string CC_E_NAME { get; set; }
         public short Branch_No { get; set; }
-    
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<IAS_OUT_REQUEST_MST> IAS_OUT_REQUEST_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<RES_WHTRNS_MST> RES_WHTRNS_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
     }
 }

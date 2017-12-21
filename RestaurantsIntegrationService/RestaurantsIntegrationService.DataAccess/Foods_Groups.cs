@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -46,14 +48,20 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Link_W_Item { get; set; }
         public int Main_W_Item { get; set; }
     
+        [JsonIgnore]
         public virtual Chef Chef { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Food> Foods { get; set; }
+        [JsonIgnore]
         public virtual Foods_Types Foods_Types { get; set; }
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Groups_Items> Groups_Items { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<POS_Printers> POS_Printers { get; set; }
     }
 }

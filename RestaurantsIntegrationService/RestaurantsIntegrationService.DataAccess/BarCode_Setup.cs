@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -20,7 +22,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<short> Item_No_Length { get; set; }
         public Nullable<int> Weight_Basic { get; set; }
         public bool Weight_Begin_Align { get; set; }
-    
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

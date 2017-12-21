@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -25,6 +27,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Price_Type { get; set; }
         public int IDSer { get; set; }
     
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

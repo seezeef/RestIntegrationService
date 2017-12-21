@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -19,7 +21,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public int MinAmt { get; set; }
         public short No_Of_points { get; set; }
         public short Branch_No { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

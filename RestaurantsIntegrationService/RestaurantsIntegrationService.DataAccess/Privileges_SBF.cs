@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -19,8 +21,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Can_Use { get; set; }
         public int Type_No { get; set; }
         public short Branch_No { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        [JsonIgnore]
         public virtual User User { get; set; }
     }
 }
