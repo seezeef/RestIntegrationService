@@ -16,5 +16,6 @@ namespace RestaurantsIntegrationService.Models.Result
         public ThirdInput ThirdInput { get; set; }
         public FourthInput FourthInput { get; set; }
         public FifthInput FifthInput { get; set; }
+        public LastInput LastInput { get; set; }
     }
 }

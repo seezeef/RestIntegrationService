@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Customers_OrdersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Customer_No" />
+          </Key>
+          <Property Name="Customer_No" Type="bigint" Nullable="false" />
+          <Property Name="Customer_Name" Type="nvarchar" MaxLength="60" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="30" />
+          <Property Name="Tel_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="C_Gender" Type="tinyint" Nullable="false" />
+          <Property Name="Customer_Type" Type="int" />
+          <Property Name="C_Lang" Type="tinyint" Nullable="false" />
+          <Property Name="REG_Date" Type="date" Nullable="false" />
+          <Property Name="InActive" Type="smallint" Nullable="false" />
+          <Property Name="Activation_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_Android" Type="bit" Nullable="false" />
+          <Property Name="Card_ID" Type="nvarchar" MaxLength="20" />
+          <Property Name="Card_Stop" Type="bit" Nullable="false" />
+          <Property Name="Card_Stop_Desc" Type="nvarchar" MaxLength="30" />
+          <Property Name="Stopped" Type="bit" Nullable="false" />
+          <Property Name="MyPoints_Card_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Branch_No" Type="smallint" Nullable="false" />
+          <Property Name="Act_No" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers_Address">
+          <Key>
+            <PropertyRef Name="Serial_No" />
+          </Key>
+          <Property Name="Serial_No" Type="int" Nullable="false" />
+          <Property Name="Customer_No" Type="bigint" />
+          <Property Name="Customer_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tel_No" Type="nvarchar" MaxLength="30" />
+          <Property Name="Area_No" Type="int" />
+          <Property Name="S_No" Type="int" />
+          <Property Name="Court_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="Floor_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="Apartment_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="A_Desc" Type="nvarchar" MaxLength="255" />
+          <Property Name="C_Color" Type="nvarchar" MaxLength="20" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="20" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_Android" Type="bit" Nullable="false" />
+          <Property Name="Branch_No" Type="smallint" Nullable="false" />
+          <Property Name="Act_No" Type="smallint" Nullable="false" />
+          <Property Name="A_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customers_Types">
+          <Key>
+            <PropertyRef Name="Type_No" />
+          </Key>
+          <Property Name="Type_No" Type="int" Nullable="false" />
+          <Property Name="Type_Name_L" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type_Name_F" Type="nvarchar" MaxLength="50" />
+          <Property Name="Card_Disc" Type="int" Nullable="false" />
+          <Property Name="Type_Disc" Type="float" />
+          <Property Name="Branch_No" Type="smallint" Nullable="false" />
+          <Property Name="Act_No" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Customers_OrdersModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers_Address" EntityType="Self.Customers_Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers_Types" EntityType="Self.Customers_Types" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Customers_OrdersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_No" />
+          </Key>
+          <Property Name="Customer_No" Type="Int64" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Tel_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="C_Gender" Type="Byte" Nullable="false" />
+          <Property Name="Customer_Type" Type="Int32" />
+          <Property Name="C_Lang" Type="Byte" Nullable="false" />
+          <Property Name="REG_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="InActive" Type="Int16" Nullable="false" />
+          <Property Name="Activation_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="F_Android" Type="Boolean" Nullable="false" />
+          <Property Name="Card_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Card_Stop" Type="Boolean" Nullable="false" />
+          <Property Name="Card_Stop_Desc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Stopped" Type="Boolean" Nullable="false" />
+          <Property Name="MyPoints_Card_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Branch_No" Type="Int16" Nullable="false" />
+          <Property Name="Act_No" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers_Address">
+          <Key>
+            <PropertyRef Name="Serial_No" />
+          </Key>
+          <Property Name="Serial_No" Type="Int32" Nullable="false" />
+          <Property Name="Customer_No" Type="Int64" />
+          <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tel_No" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Area_No" Type="Int32" />
+          <Property Name="S_No" Type="Int32" />
+          <Property Name="Court_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Floor_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Apartment_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="A_Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C_Color" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="F_Android" Type="Boolean" Nullable="false" />
+          <Property Name="Branch_No" Type="Int16" Nullable="false" />
+          <Property Name="Act_No" Type="Int16" Nullable="false" />
+          <Property Name="A_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customers_Types">
+          <Key>
+            <PropertyRef Name="Type_No" />
+          </Key>
+          <Property Name="Type_No" Type="Int32" Nullable="false" />
+          <Property Name="Type_Name_L" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type_Name_F" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Card_Disc" Type="Int32" Nullable="false" />
+          <Property Name="Type_Disc" Type="Double" />
+          <Property Name="Branch_No" Type="Int16" Nullable="false" />
+          <Property Name="Act_No" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Context" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Customers_Address" EntityType="Self.Customers_Address" />
+          <EntitySet Name="Customers_Types" EntityType="Self.Customers_Types" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Customers_OrdersModelStoreContainer" CdmEntityContainer="Context">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Customers_OrdersModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Customer_No" ColumnName="Customer_No" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Tel_No" ColumnName="Tel_No" />
+                <ScalarProperty Name="C_Gender" ColumnName="C_Gender" />
+                <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+                <ScalarProperty Name="C_Lang" ColumnName="C_Lang" />
+                <ScalarProperty Name="REG_Date" ColumnName="REG_Date" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="Activation_Code" ColumnName="Activation_Code" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="F_Android" ColumnName="F_Android" />
+                <ScalarProperty Name="Card_ID" ColumnName="Card_ID" />
+                <ScalarProperty Name="Card_Stop" ColumnName="Card_Stop" />
+                <ScalarProperty Name="Card_Stop_Desc" ColumnName="Card_Stop_Desc" />
+                <ScalarProperty Name="Stopped" ColumnName="Stopped" />
+                <ScalarProperty Name="MyPoints_Card_ID" ColumnName="MyPoints_Card_ID" />
+                <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
+                <ScalarProperty Name="Act_No" ColumnName="Act_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers_Address">
+            <EntityTypeMapping TypeName="Customers_OrdersModel.Customers_Address">
+              <MappingFragment StoreEntitySet="Customers_Address">
+                <ScalarProperty Name="Serial_No" ColumnName="Serial_No" />
+                <ScalarProperty Name="Customer_No" ColumnName="Customer_No" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Tel_No" ColumnName="Tel_No" />
+                <ScalarProperty Name="Area_No" ColumnName="Area_No" />
+                <ScalarProperty Name="S_No" ColumnName="S_No" />
+                <ScalarProperty Name="Court_No" ColumnName="Court_No" />
+                <ScalarProperty Name="Floor_No" ColumnName="Floor_No" />
+                <ScalarProperty Name="Apartment_No" ColumnName="Apartment_No" />
+                <ScalarProperty Name="A_Desc" ColumnName="A_Desc" />
+                <ScalarProperty Name="C_Color" ColumnName="C_Color" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="F_Android" ColumnName="F_Android" />
+                <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
+                <ScalarProperty Name="Act_No" ColumnName="Act_No" />
+                <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers_Types">
+            <EntityTypeMapping TypeName="Customers_OrdersModel.Customers_Types">
+              <MappingFragment StoreEntitySet="Customers_Types">
+                <ScalarProperty Name="Type_No" ColumnName="Type_No" />
+                <ScalarProperty Name="Type_Name_L" ColumnName="Type_Name_L" />
+                <ScalarProperty Name="Type_Name_F" ColumnName="Type_Name_F" />
+                <ScalarProperty Name="Card_Disc" ColumnName="Card_Disc" />
+                <ScalarProperty Name="Type_Disc" ColumnName="Type_Disc" />
+                <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
+                <ScalarProperty Name="Act_No" ColumnName="Act_No" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

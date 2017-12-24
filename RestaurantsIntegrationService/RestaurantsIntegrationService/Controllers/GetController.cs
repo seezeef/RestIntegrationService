@@ -18,7 +18,7 @@ namespace RestaurantsIntegrationService.Controllers
 
         [HttpGet]
         [Route("GetFirstInputs/{branchNo}")]
-        public IHttpActionResult GetFirstInputs(short branchNo )
+        public IHttpActionResult GetFirstInputs(short branchNo)
         {
             var inputs = new FirstInput();
             using (var context = new Restaurants())
@@ -31,10 +31,10 @@ namespace RestaurantsIntegrationService.Controllers
                 inputs.RestTaxeses = context.Rest_Taxes.Where(b => b.Branch_No == branchNo).ToList();
                 inputs.BarCodeSetups = context.BarCode_Setup.Where(b => b.Branch_No == branchNo).ToList();
                 inputs.CreditCards = context.CreditCards.Where(x => x.Branch_No == branchNo).ToList();
-                inputs.CurrencyCategorieses=context.Currency_Categories.Where(x => x.Branch_No == branchNo).ToList();
-                inputs.EmployeeGroupses=context.Employee_Groups.Where(x => x.Branch_No == branchNo).ToList();
+                inputs.CurrencyCategorieses = context.Currency_Categories.Where(x => x.Branch_No == branchNo).ToList();
+                inputs.EmployeeGroupses = context.Employee_Groups.Where(x => x.Branch_No == branchNo).ToList();
                 //var json = JsonConvert.SerializeObject(inputs);
-                return Ok(new AjaxResponse<object>() {Success = true,  Input = inputs});
+                return Ok(new AjaxResponse<object>() { Success = true, Input = inputs });
             }
         }
 
@@ -86,31 +86,22 @@ namespace RestaurantsIntegrationService.Controllers
         [Route("GetFourthInputs/{branchNo}")]
         public IHttpActionResult GetFourthInputs(short branchNo)
         {
-            try
+            var inputs = new FourthInput();
+            using (var context = new Restaurants())
             {
-                var inputs = new FourthInput();
-                using (var context = new Restaurants())
-                {
-                    inputs.FoodsTypeses = context.Foods_Types.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.FoodsGroupses = context.Foods_Groups.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.Foods = context.Foods.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.FoodsUnits = context.Foods_Units.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.FoodsPriceses = context.Foods_Prices.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.GroupsItems = context.Groups_Items.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.ItemsNotesMsts = context.Items_Notes_Mst.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.ItemsNotesDtls = context.Items_Notes_Dtl.Where(b => b.Branch_No == branchNo).ToList();
-                    inputs.SubItemses = context.Sub_Items.Where(x => x.Branch_No == branchNo).ToList();
-                    inputs.FoodsAltrantvs = context.Foods_Altrantv.Where(x => x.Branch_No == branchNo).ToList();
-                    //var json = JsonConvert.SerializeObject(inputs);
-                    return Ok(new AjaxResponse<object>() { Success = true, FourthInput = inputs });
-                }
-            }
-            catch (Exception ex)
-            {
-                
-                throw;
-            }
-            
+                inputs.FoodsTypeses = context.Foods_Types.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.FoodsGroupses = context.Foods_Groups.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.Foods = context.Foods.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.FoodsUnits = context.Foods_Units.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.FoodsPriceses = context.Foods_Prices.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.GroupsItems = context.Groups_Items.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.ItemsNotesMsts = context.Items_Notes_Mst.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.ItemsNotesDtls = context.Items_Notes_Dtl.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.SubItemses = context.Sub_Items.Where(x => x.Branch_No == branchNo).ToList();
+                inputs.FoodsAltrantvs = context.Foods_Altrantv.Where(x => x.Branch_No == branchNo).ToList();
+                //var json = JsonConvert.SerializeObject(inputs);
+                return Ok(new AjaxResponse<object>() { Success = true, FourthInput = inputs });
+            }            
         }
 
         [HttpGet]
@@ -136,6 +127,20 @@ namespace RestaurantsIntegrationService.Controllers
                 inputs.Poss = context.POS.Where(x => x.Branch_No == branchNo).ToList();
                 //var json = JsonConvert.SerializeObject(inputs);
                 return Ok(new AjaxResponse<object>() { Success = true, FifthInput = inputs });
+            }
+        }
+
+        [HttpGet]
+        [Route("GetLastInputs/{branchNo}")]
+        public IHttpActionResult GetLastInputs(short branchNo)
+        {
+            var inputs = new LastInput();
+            using (var context = new Context())
+            {
+                inputs.CustomersTypes = context.Customers_Types.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.Customers = context.Customers.Where(b => b.Branch_No == branchNo).ToList();
+                inputs.CustomersAddres = context.Customers_Address.Where(b => b.Branch_No == branchNo).ToList();
+                return Ok(new AjaxResponse<object>() { Success = true, LastInput = inputs });
             }
         }
 

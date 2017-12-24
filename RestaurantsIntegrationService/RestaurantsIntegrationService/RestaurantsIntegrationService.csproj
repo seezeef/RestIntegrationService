@@ -229,6 +229,7 @@
     <Compile Include="Models\Get\FirstInput.cs" />
     <Compile Include="Models\Get\FourthInput.cs" />
     <Compile Include="Models\Get\SecondInput.cs" />
+    <Compile Include="Models\Get\LastInput.cs" />
     <Compile Include="Models\Get\ThirdInput.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Bills\BillMasterModel.cs" />
@@ -304,7 +305,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
