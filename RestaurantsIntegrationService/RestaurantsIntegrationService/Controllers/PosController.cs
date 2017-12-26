@@ -141,7 +141,7 @@ namespace RestaurantsIntegrationService.Controllers
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
         }
 
-
+        
         [Route("InsertWarehouse")]
         [HttpPost]
         public IHttpActionResult InsertWarehouse(WarehouseTransferModel data)
