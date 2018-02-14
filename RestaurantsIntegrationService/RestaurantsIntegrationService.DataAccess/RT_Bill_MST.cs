@@ -22,7 +22,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public long RT_Bill_No { get; set; }
         public long ASerial { get; set; }
-        public float Discount { get; set; }
+        public Nullable<double> Discount { get; set; }
         public Nullable<decimal> Net_Amount { get; set; }
         public decimal Amount_Before_Round { get; set; }
         public Nullable<System.DateTime> RT_Date { get; set; }
@@ -54,11 +54,14 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool PaidByPoints { get; set; }
         public int Bill_Type { get; set; }
         public int Section_No { get; set; }
-        public Nullable<short> Table_No { get; set; }
+        public short Table_No { get; set; }
         public int Order_No { get; set; }
         public Nullable<double> Itm_Disc { get; set; }
         public bool Dstrbut_DISC_TAX { get; set; }
-        public double ItemsTaxAmt { get; set; }
+        public Nullable<double> ItemsTaxAmt { get; set; }
+        public bool RptPrinted { get; set; }
+        public Nullable<System.DateTime> RT_DateTime { get; set; }
+        public bool IsItemPriceIncludeTax { get; set; }
     
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }

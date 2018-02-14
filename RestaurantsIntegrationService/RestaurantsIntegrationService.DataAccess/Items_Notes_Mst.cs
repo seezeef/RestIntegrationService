@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -16,21 +14,10 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class Items_Notes_Mst
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Items_Notes_Mst()
-        {
-            this.Items_Notes_Dtl = new HashSet<Items_Notes_Dtl>();
-        }
-    
         public int Note_No { get; set; }
         public string Note_Text { get; set; }
         public short Branch_No { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Items_Notes_Dtl> Items_Notes_Dtl { get; set; }
-        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
-
     }
 }

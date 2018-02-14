@@ -28,7 +28,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int SyncSerial { get; set; }
     
         public virtual Food Food { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Stock_Adjst_MST Stock_Adjst_MST { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

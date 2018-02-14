@@ -17,7 +17,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public long RT_Bill_No { get; set; }
         public string Food_Name { get; set; }
         public int Food_No { get; set; }
-        public Nullable<float> Food_Price { get; set; }
+        public Nullable<double> Food_Price { get; set; }
         public Nullable<double> Quantity { get; set; }
         public Nullable<double> S_Qty { get; set; }
         public double S_Size { get; set; }
@@ -28,7 +28,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public int POS_No { get; set; }
         public bool Food_Free { get; set; }
-        public Nullable<float> Real_Price { get; set; }
+        public Nullable<double> Real_Price { get; set; }
         public Nullable<short> W_Code { get; set; }
         public double S_ID { get; set; }
         public int Sync_No { get; set; }
@@ -36,7 +36,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public virtual Food Food { get; set; }
         public virtual POS POS { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual RT_Bill_DTL RT_Bill_DTL { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

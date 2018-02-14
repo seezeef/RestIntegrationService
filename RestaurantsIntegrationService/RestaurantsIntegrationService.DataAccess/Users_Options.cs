@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -51,10 +49,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool CanPrintResMoreOne { get; set; }
         public bool CanNotEditAfterPrintBill { get; set; }
         public bool CanCloseIns { get; set; }
-
-        [JsonIgnore]
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
-        [JsonIgnore]
+    
         public virtual User User { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

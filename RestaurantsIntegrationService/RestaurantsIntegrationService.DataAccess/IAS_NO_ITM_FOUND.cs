@@ -18,7 +18,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string Food_Name { get; set; }
         public string I_CODE { get; set; }
         public string ITM_UNT { get; set; }
-        public Nullable<float> P_SIZE { get; set; }
+        public Nullable<double> P_SIZE { get; set; }
         public Nullable<short> Branch_No { get; set; }
     
         public virtual Food Food { get; set; }

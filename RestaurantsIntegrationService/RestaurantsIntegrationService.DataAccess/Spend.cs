@@ -14,6 +14,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class Spend
     {
+        public long DocSer { get; set; }
         public int Sp_No { get; set; }
         public Nullable<decimal> Sp_Amount { get; set; }
         public Nullable<System.DateTime> Sp_Date { get; set; }
@@ -26,11 +27,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
         public Nullable<int> Sp_Type { get; set; }
-        public long DocSer { get; set; }
         public Nullable<int> POS_No { get; set; }
     
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Spends_Types Spends_Types { get; set; }
         public virtual User User { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

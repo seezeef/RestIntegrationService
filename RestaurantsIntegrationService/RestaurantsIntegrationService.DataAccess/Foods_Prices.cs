@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -16,18 +14,18 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class Foods_Prices
     {
+        public int IDSer { get; set; }
         public short Branch_No { get; set; }
-        public short Type_No { get; set; }
+        public Nullable<short> Type_No { get; set; }
         public Nullable<short> Group_No { get; set; }
         public int Food_No { get; set; }
         public Nullable<int> Unit_No { get; set; }
         public int Unit_Size { get; set; }
-        public Nullable<float> Food_Price { get; set; }
+        public Nullable<double> Food_Price { get; set; }
         public short Food_Disc { get; set; }
-        public short Price_Type { get; set; }
-        public int IDSer { get; set; }
+        public Nullable<short> Price_Type { get; set; }
+        public Nullable<double> FoodPriceVAT { get; set; }
     
-        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

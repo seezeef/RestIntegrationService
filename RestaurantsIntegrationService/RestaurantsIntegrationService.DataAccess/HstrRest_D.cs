@@ -17,7 +17,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public long ASerial { get; set; }
         public string Food_Name { get; set; }
         public int Food_No { get; set; }
-        public Nullable<float> Food_Price { get; set; }
+        public Nullable<double> Food_Price { get; set; }
         public short Food_Type { get; set; }
         public int Order_No { get; set; }
         public Nullable<double> Quantity { get; set; }
@@ -40,7 +40,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public int POS_No { get; set; }
         public bool Food_Free { get; set; }
-        public Nullable<float> Real_Price { get; set; }
+        public Nullable<double> Real_Price { get; set; }
         public int Ins_No { get; set; }
         public int M_No { get; set; }
         public int M_Qty { get; set; }
@@ -68,8 +68,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Bill_Service_Charges { get; set; }
         public Nullable<double> Bill_Amount_Before { get; set; }
         public bool IsCombo { get; set; }
-        public double I_TaxAmt { get; set; }
-        public double I_TaxPer { get; set; }
+        public Nullable<double> I_TaxAmt { get; set; }
+        public Nullable<double> I_TaxPer { get; set; }
+        public short AttMainFoodNo { get; set; }
+        public Nullable<double> FoodPriceVAT { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Foods_Types Foods_Types { get; set; }

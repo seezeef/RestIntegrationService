@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -25,9 +23,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<System.DateTime> P2_TTime { get; set; }
         public bool Stopped { get; set; }
         public bool Active { get; set; }
-        [JsonIgnore]
+    
         public virtual Driver Driver { get; set; }
-        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -25,8 +25,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Branch_No { get; set; }
         public string Account_No { get; set; }
     
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Foods_Groups> Foods_Groups { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

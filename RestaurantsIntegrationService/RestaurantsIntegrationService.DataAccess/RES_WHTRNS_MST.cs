@@ -20,7 +20,7 @@ namespace RestaurantsIntegrationService.DataAccess
             this.RES_WHTRNS_DTL = new HashSet<RES_WHTRNS_DTL>();
         }
     
-        public int Rec_ID { get; set; }
+        public Nullable<int> Rec_ID { get; set; }
         public Nullable<short> TR_INOUT_TYPE { get; set; }
         public Nullable<short> TR_TYPE { get; set; }
         public Nullable<long> TR_NO { get; set; }
@@ -45,15 +45,15 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool W_Posted { get; set; }
         public bool DRVR_DLVR { get; set; }
         public Nullable<short> DG_No { get; set; }
-        public short Branch_No { get; set; }
         public long DocSer { get; set; }
+        public short Branch_No { get; set; }
         public Nullable<int> POS_No { get; set; }
     
         public virtual COST_CENTERS COST_CENTERS { get; set; }
         public virtual Delegate Delegate { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
-        public virtual TRANSFER_TYPES TRANSFER_TYPES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
+        public virtual TRANSFER_TYPES TRANSFER_TYPES { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Service_No { get; set; }
         public Nullable<short> Bill_Type { get; set; }
         public Nullable<short> User_ID { get; set; }
-        public Nullable<short> Handle_User_ID { get; set; }
+        public short Handle_User_ID { get; set; }
         public short Branch_No { get; set; }
         public int Foods_Time { get; set; }
         public Nullable<System.DateTime> Handle_Date { get; set; }
@@ -56,10 +56,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Sync_No { get; set; }
         public int Post_No { get; set; }
         public bool F_ACO { get; set; }
+        public Nullable<int> Method_No { get; set; }
     
         public virtual POS POS { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }
         public virtual Driver Driver { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

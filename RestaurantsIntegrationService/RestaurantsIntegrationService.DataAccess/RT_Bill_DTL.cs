@@ -24,7 +24,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public long ASerial { get; set; }
         public string Food_Name { get; set; }
         public int Food_No { get; set; }
-        public Nullable<float> Food_Price { get; set; }
+        public Nullable<double> Food_Price { get; set; }
         public short Food_Type { get; set; }
         public Nullable<double> Quantity { get; set; }
         public Nullable<double> S_Qty { get; set; }
@@ -39,7 +39,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public int POS_No { get; set; }
         public bool Food_Free { get; set; }
-        public Nullable<float> Real_Price { get; set; }
+        public Nullable<double> Real_Price { get; set; }
         public Nullable<int> Ins_No { get; set; }
         public Nullable<double> Ins_Amount { get; set; }
         public int Item_Count { get; set; }
@@ -55,15 +55,16 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Bill_Extra_Service { get; set; }
         public Nullable<double> Bill_Service_Charges { get; set; }
         public Nullable<double> Bill_Amount_Before { get; set; }
-        public double I_TaxAmt { get; set; }
-        public double I_TaxPer { get; set; }
+        public Nullable<double> I_TaxAmt { get; set; }
+        public Nullable<double> I_TaxPer { get; set; }
+        public Nullable<double> FoodPriceVAT { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual RT_Bill_MST RT_Bill_MST { get; set; }
     }
 }

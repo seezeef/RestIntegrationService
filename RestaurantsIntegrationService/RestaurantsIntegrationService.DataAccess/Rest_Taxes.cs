@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -25,7 +23,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<byte> Tax_Per { get; set; }
         public Nullable<double> Tax_Val { get; set; }
         public short Branch_No { get; set; }
-        [JsonIgnore]
+    
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

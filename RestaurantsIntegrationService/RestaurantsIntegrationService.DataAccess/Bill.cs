@@ -38,7 +38,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Extra_Amt { get; set; }
         public int Order_No { get; set; }
         public short CR_Card_No { get; set; }
-        public Nullable<long> Cust_No { get; set; }
+        public long Cust_No { get; set; }
         public int Emp_No { get; set; }
         public string C_Code { get; set; }
         public string C_Name { get; set; }

@@ -21,7 +21,7 @@ namespace RestaurantsIntegrationService.DataAccess
         }
     
         public long ASerial { get; set; }
-        public Nullable<float> Discount { get; set; }
+        public Nullable<double> Discount { get; set; }
         public Nullable<decimal> Net_Amount { get; set; }
         public int Order_No { get; set; }
         public string P_Name { get; set; }
@@ -83,7 +83,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Sync_No { get; set; }
         public int Post_No { get; set; }
         public int Dr_No { get; set; }
-        public Nullable<long> Cust_No { get; set; }
+        public long Cust_No { get; set; }
         public int Cust_S_No { get; set; }
         public decimal Dr_Amount { get; set; }
         public int Ins_No { get; set; }
@@ -102,7 +102,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Dstrbut_DISC_TAX { get; set; }
         public Nullable<System.DateTime> S_DateTime { get; set; }
         public decimal ItemsAmount { get; set; }
-        public double ItemsTaxAmt { get; set; }
+        public Nullable<double> ItemsTaxAmt { get; set; }
+        public Nullable<double> VisaAmt { get; set; }
+        public bool IsItemPriceIncludeTax { get; set; }
     
         public virtual Bench Bench { get; set; }
         public virtual Cell Cell { get; set; }
@@ -110,11 +112,11 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HstrRest_D> HstrRest_D { get; set; }
         public virtual OpenBuffet OpenBuffet { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Restaurant_InvoTypes Restaurant_InvoTypes { get; set; }
         public virtual Restaurant_Menus Restaurant_Menus { get; set; }
         public virtual Restaurant_Periods Restaurant_Periods { get; set; }
         public virtual User User { get; set; }
         public virtual Waiter Waiter { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

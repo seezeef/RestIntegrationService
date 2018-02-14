@@ -35,8 +35,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public long DocSer { get; set; }
     
         public virtual POS POS { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

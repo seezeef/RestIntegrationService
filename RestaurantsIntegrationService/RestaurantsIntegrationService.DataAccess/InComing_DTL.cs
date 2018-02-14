@@ -25,13 +25,13 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<System.DateTime> Expire_Date { get; set; }
         public Nullable<short> User_ID { get; set; }
         public Nullable<int> RCRD_No { get; set; }
-        public short Branch_No { get; set; }
         public bool B_Sync { get; set; }
+        public short Branch_No { get; set; }
         public Nullable<long> DocSer { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Incoming_Types Incoming_Types { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual InComing_Mst InComing_Mst { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

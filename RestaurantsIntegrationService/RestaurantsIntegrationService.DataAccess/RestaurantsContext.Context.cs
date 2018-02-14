@@ -40,17 +40,17 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Cell> Cells { get; set; }
         public virtual DbSet<Cells_Groups> Cells_Groups { get; set; }
         public virtual DbSet<Chef> Chefs { get; set; }
+        public virtual DbSet<Configuration> Configurations { get; set; }
         public virtual DbSet<COST_CENTERS> COST_CENTERS { get; set; }
         public virtual DbSet<CreditCard> CreditCards { get; set; }
         public virtual DbSet<Currency_Categories> Currency_Categories { get; set; }
         public virtual DbSet<Customer_Promo_MST> Customer_Promo_MST { get; set; }
         public virtual DbSet<Customers_Accounts> Customers_Accounts { get; set; }
         public virtual DbSet<Customers_Payment> Customers_Payment { get; set; }
+        public virtual DbSet<Damage_DTL> Damage_DTL { get; set; }
         public virtual DbSet<Damage_MST> Damage_MST { get; set; }
         public virtual DbSet<Damage_Types> Damage_Types { get; set; }
         public virtual DbSet<Delegate> Delegates { get; set; }
-        public virtual DbSet<Deleted_D> Deleted_D { get; set; }
-        public virtual DbSet<Deleted_H> Deleted_H { get; set; }
         public virtual DbSet<DeleteRest> DeleteRests { get; set; }
         public virtual DbSet<Delivery_Options> Delivery_Options { get; set; }
         public virtual DbSet<Device_Token> Device_Token { get; set; }
@@ -107,19 +107,19 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<OpenBuffet> OpenBuffets { get; set; }
         public virtual DbSet<Options_Privileges> Options_Privileges { get; set; }
+        public virtual DbSet<OrderMethod> OrderMethods { get; set; }
         public virtual DbSet<OUT_TYPES> OUT_TYPES { get; set; }
-        public virtual DbSet<P_Meal_DTL> P_Meal_DTL { get; set; }
-        public virtual DbSet<P_Meal_DTL_DTL> P_Meal_DTL_DTL { get; set; }
-        public virtual DbSet<P_Meal_DTL_EXP> P_Meal_DTL_EXP { get; set; }
-        public virtual DbSet<P_Meal_MST> P_Meal_MST { get; set; }
         public virtual DbSet<Penality> Penalities { get; set; }
         public virtual DbSet<POS> POS { get; set; }
         public virtual DbSet<POS_Printers> POS_Printers { get; set; }
-        public virtual DbSet<PosTransTable> PosTransTables { get; set; }
         public virtual DbSet<Printer> Printers { get; set; }
         public virtual DbSet<Privilege> Privileges { get; set; }
         public virtual DbSet<Privileges_SBF> Privileges_SBF { get; set; }
+        public virtual DbSet<ProductionRequestComponent> ProductionRequestComponents { get; set; }
+        public virtual DbSet<ProductionRequestDtl> ProductionRequestDtls { get; set; }
+        public virtual DbSet<ProductionRequestMst> ProductionRequestMsts { get; set; }
         public virtual DbSet<REQUEST_TYPES> REQUEST_TYPES { get; set; }
+        public virtual DbSet<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
         public virtual DbSet<RES_WHTRNS_MST> RES_WHTRNS_MST { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Reserved_Foods> Reserved_Foods { get; set; }
@@ -128,8 +128,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Rest_Targets> Rest_Targets { get; set; }
         public virtual DbSet<Rest_Taxes> Rest_Taxes { get; set; }
         public virtual DbSet<Restaurant_D> Restaurant_D { get; set; }
-        public virtual DbSet<Restaurant_H> Restaurant_H { get; set; }
-        public virtual DbSet<Restaurant_Info> Restaurant_Info { get; set; }
         public virtual DbSet<Restaurant_InvoTypes> Restaurant_InvoTypes { get; set; }
         public virtual DbSet<Restaurant_Menus> Restaurant_Menus { get; set; }
         public virtual DbSet<Restaurant_Menus_Food> Restaurant_Menus_Food { get; set; }
@@ -140,7 +138,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<RSRVD_RefundPayment> RSRVD_RefundPayment { get; set; }
         public virtual DbSet<RT_Bill_DTL> RT_Bill_DTL { get; set; }
         public virtual DbSet<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
-        public virtual DbSet<RT_Bill_MST> RT_Bill_MST { get; set; }
         public virtual DbSet<RT_Ins_DTL> RT_Ins_DTL { get; set; }
         public virtual DbSet<RT_Ins_MST> RT_Ins_MST { get; set; }
         public virtual DbSet<SchduleOption> SchduleOptions { get; set; }
@@ -149,11 +146,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Spend> Spends { get; set; }
         public virtual DbSet<Spends_Types> Spends_Types { get; set; }
         public virtual DbSet<Split_Bills> Split_Bills { get; set; }
+        public virtual DbSet<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
         public virtual DbSet<Stock_Adjst_MST> Stock_Adjst_MST { get; set; }
         public virtual DbSet<Stock_QtyAv> Stock_QtyAv { get; set; }
         public virtual DbSet<Street> Streets { get; set; }
         public virtual DbSet<Sub_Items> Sub_Items { get; set; }
-        public virtual DbSet<Suggestions_Types> Suggestions_Types { get; set; }
         public virtual DbSet<SyncData> SyncDatas { get; set; }
         public virtual DbSet<SyncTable> SyncTables { get; set; }
         public virtual DbSet<System_Initial> System_Initial { get; set; }
@@ -187,14 +184,25 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Inventory_DTL> Inventory_DTL { get; set; }
         public virtual DbSet<JournalTable> JournalTables { get; set; }
         public virtual DbSet<PrinterDetail> PrinterDetails { get; set; }
-        public virtual DbSet<RES_WHTRNS_DTL_T> RES_WHTRNS_DTL_T { get; set; }
         public virtual DbSet<Restaurant_Bill_No> Restaurant_Bill_No { get; set; }
         public virtual DbSet<SaveSetting> SaveSettings { get; set; }
         public virtual DbSet<Sys_Errors> Sys_Errors { get; set; }
         public virtual DbSet<Users_Actions> Users_Actions { get; set; }
         public virtual DbSet<Users_History> Users_History { get; set; }
-        public virtual DbSet<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
-        public virtual DbSet<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
-        public virtual DbSet<Damage_DTL> Damage_DTL { get; set; }
+        public virtual DbSet<RES_BILL_COMPND_DTL> RES_BILL_COMPND_DTL { get; set; }
+        public virtual DbSet<RES_BILL_DTL> RES_BILL_DTL { get; set; }
+        public virtual DbSet<RES_RT_BILL_COMPND_DTL> RES_RT_BILL_COMPND_DTL { get; set; }
+        public virtual DbSet<RES_RT_BILL_DTL> RES_RT_BILL_DTL { get; set; }
+        public virtual DbSet<RES_RT_BILL_MST> RES_RT_BILL_MST { get; set; }
+        public virtual DbSet<RES_STK_DTL> RES_STK_DTL { get; set; }
+        public virtual DbSet<RES_STK_MST> RES_STK_MST { get; set; }
+        public virtual DbSet<RES_WHTRNS_DTL_V> RES_WHTRNS_DTL_V { get; set; }
+        public virtual DbSet<RES_WHTRNS_MST_V> RES_WHTRNS_MST_V { get; set; }
+        public virtual DbSet<Restaurant_Info> Restaurant_Info { get; set; }
+        public virtual DbSet<Deleted_D> Deleted_D { get; set; }
+        public virtual DbSet<Deleted_H> Deleted_H { get; set; }
+        public virtual DbSet<Restaurant_H> Restaurant_H { get; set; }
+        public virtual DbSet<RT_Bill_MST> RT_Bill_MST { get; set; }
+        public virtual DbSet<RES_BILL_MST> RES_BILL_MST { get; set; }
     }
 }

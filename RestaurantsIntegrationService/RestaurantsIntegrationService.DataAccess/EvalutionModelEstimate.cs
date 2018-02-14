@@ -15,8 +15,8 @@ namespace RestaurantsIntegrationService.DataAccess
     public partial class EvalutionModelEstimate
     {
         public short ModelID { get; set; }
-        public short ElemID { get; set; }
-        public short EstmID { get; set; }
+        public Nullable<short> ElemID { get; set; }
+        public Nullable<short> EstmID { get; set; }
         public Nullable<short> EstmDegree { get; set; }
     
         public virtual EvalutionEstimate EvalutionEstimate { get; set; }

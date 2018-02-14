@@ -20,7 +20,7 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Damage_DTL = new HashSet<Damage_DTL>();
         }
     
-        public int Doc_no { get; set; }
+        public Nullable<int> Doc_no { get; set; }
         public Nullable<System.DateTime> Doc_Date { get; set; }
         public Nullable<short> W_CODE { get; set; }
         public string Damage_Reason { get; set; }
@@ -32,13 +32,13 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool P_Onyx { get; set; }
         public Nullable<short> User_ID { get; set; }
         public string AD_TRMNL_NM { get; set; }
-        public short Branch_No { get; set; }
         public long DocSer { get; set; }
+        public short Branch_No { get; set; }
         public Nullable<int> POS_No { get; set; }
     
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
+        public virtual User User { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

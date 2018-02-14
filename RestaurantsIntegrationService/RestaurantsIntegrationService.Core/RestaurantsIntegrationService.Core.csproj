@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.112.1.2, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Oracle.DataAccess.dll</HintPath>
@@ -37,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,9 +51,71 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\ConnectionManager.cs" />
+    <Compile Include="Dtos\FifthInputDtos\AreaDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Areas_DriversDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Bills_Notes_MstDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\CellDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Cells_GroupsDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Discount_MSTDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Foods_AttachDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Foods_ComponentsDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Foods_Components_EndDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Insurance_MaterialsDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\POSDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Restaurant_MenusDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\Restaurant_Menus_FoodDto.cs" />
+    <Compile Include="Dtos\FifthInputDtos\StreetDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\BarCode_SetupDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\CreditCardDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\Currency_CategoriesDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\Delivery_OptionsDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\Employee_GroupsDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\Restaurant_InvoTypesDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\Rest_TaxesDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\SMS_DTLDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\SMS_SuplliersDto.cs" />
+    <Compile Include="Dtos\FirstInputDtos\System_OptionsDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\FoodDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Foods_AltrantvDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Foods_GroupsDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Foods_PricesDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Foods_TypesDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Foods_UnitsDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Groups_ItemsDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Items_Notes_DtlDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Items_Notes_MstDto.cs" />
+    <Compile Include="Dtos\FourthInputDtos\Sub_ItemsDto.cs" />
+    <Compile Include="Dtos\LastInputDtos\CustomerDto.cs" />
+    <Compile Include="Dtos\LastInputDtos\Customers_AddressDto.cs" />
+    <Compile Include="Dtos\LastInputDtos\Customers_TypesDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\BenchDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\Benches_SectionsDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\COST_CENTERSDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\DriverDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\Drivers_Work_DaysDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\EmployeeDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\REQUEST_TYPESDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\Spends_TypesDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\TRANSFER_TYPESDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\WaiterDto.cs" />
+    <Compile Include="Dtos\SecondInputDtos\WAREHOUSE_DETAILSDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\MyPointDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\MyPoints_DTLDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\PrivilegeDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\Privileges_SBFDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\Restaurant_PeriodsDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\UnitDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\UserDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\Users_OptionsDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\Users_PeriodsDto.cs" />
+    <Compile Include="Dtos\ThirdInputDtos\Waiters_PrivilegesDto.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
     <Compile Include="Extensions\Extenstions.cs" />
     <Compile Include="Models\CompanyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,7 +21,7 @@ namespace RestaurantsIntegrationService.DataAccess
         }
     
         public long ASerial { get; set; }
-        public Nullable<float> Discount { get; set; }
+        public Nullable<double> Discount { get; set; }
         public Nullable<decimal> Net_Amount { get; set; }
         public Nullable<int> Order_No { get; set; }
         public string P_Name { get; set; }
@@ -82,7 +82,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<int> Trans_Table { get; set; }
         public int Sync_No { get; set; }
         public int Dr_No { get; set; }
-        public Nullable<long> Cust_No { get; set; }
+        public long Cust_No { get; set; }
         public int Cust_S_No { get; set; }
         public decimal Dr_Amount { get; set; }
         public int Ins_No { get; set; }
@@ -101,9 +101,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Dstrbut_DISC_TAX { get; set; }
         public Nullable<System.DateTime> S_DateTime { get; set; }
         public decimal ItemsAmount { get; set; }
-        public double I_TaxAmt { get; set; }
-        public double I_TaxPer { get; set; }
-        public double ItemsTaxAmt { get; set; }
+        public Nullable<double> I_TaxAmt { get; set; }
+        public Nullable<double> I_TaxPer { get; set; }
+        public Nullable<double> ItemsTaxAmt { get; set; }
+        public Nullable<double> VisaAmt { get; set; }
+        public bool IsItemPriceIncludeTax { get; set; }
     
         public virtual Bench Bench { get; set; }
         public virtual CreditCard CreditCard1 { get; set; }

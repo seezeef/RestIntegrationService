@@ -29,7 +29,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<byte> Type4_HotKey { get; set; }
         public Nullable<byte> Type5_HotKey { get; set; }
     
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace RestaurantsIntegrationService.DataAccess
     public partial class PrinterDetail
     {
         public short PrinterID { get; set; }
+        public Nullable<short> PrintBy { get; set; }
         public Nullable<short> PrintByID { get; set; }
         public Nullable<short> SplitBy { get; set; }
         public short Branch_No { get; set; }

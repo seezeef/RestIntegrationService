@@ -15,7 +15,7 @@ namespace RestaurantsIntegrationService.DataAccess
     public partial class Customer_Promo_DTL
     {
         public int Promo_No { get; set; }
-        public Nullable<long> Customer_No { get; set; }
+        public long Customer_No { get; set; }
         public Nullable<System.DateTime> Promo_Date { get; set; }
         public bool Promo_Actv { get; set; }
         public Nullable<short> Promo_Type { get; set; }

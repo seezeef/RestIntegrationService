@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -21,6 +19,7 @@ namespace RestaurantsIntegrationService.DataAccess
         {
             this.Bills_Components = new HashSet<Bills_Components>();
             this.Cells = new HashSet<Cell>();
+            this.Damage_DTL = new HashSet<Damage_DTL>();
             this.DeleteRests = new HashSet<DeleteRest>();
             this.Employees_Foods = new HashSet<Employees_Foods>();
             this.Damage_Components = new HashSet<Damage_Components>();
@@ -31,6 +30,8 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Foods_Combo = new HashSet<Foods_Combo>();
             this.Foods_Components_End = new HashSet<Foods_Components_End>();
             this.Foods_Components = new HashSet<Foods_Components>();
+            this.ProductionRequestComponents = new HashSet<ProductionRequestComponent>();
+            this.ProductionRequestDtls = new HashSet<ProductionRequestDtl>();
             this.Foods_Units = new HashSet<Foods_Units>();
             this.FoodsReport_D = new HashSet<FoodsReport_D>();
             this.Groups_Items = new HashSet<Groups_Items>();
@@ -38,32 +39,30 @@ namespace RestaurantsIntegrationService.DataAccess
             this.HstrRest_D_DTL = new HashSet<HstrRest_D_DTL>();
             this.HstrRest_D = new HashSet<HstrRest_D>();
             this.IAS_NO_ITM_FOUND = new HashSet<IAS_NO_ITM_FOUND>();
-            this.IAS_OUT_REQUEST_DTL = new HashSet<IAS_OUT_REQUEST_DTL>();
             this.InComing_DTL = new HashSet<InComing_DTL>();
             this.Inventory_DTL = new HashSet<Inventory_DTL>();
             this.Item_Move = new HashSet<Item_Move>();
             this.Items_Notes_Dtl = new HashSet<Items_Notes_Dtl>();
+            this.RES_WHTRNS_DTL = new HashSet<RES_WHTRNS_DTL>();
             this.Reserved_Foods_Items = new HashSet<Reserved_Foods_Items>();
             this.Restaurant_Menus_Food = new HashSet<Restaurant_Menus_Food>();
             this.RT_Bill_DTL_DTL = new HashSet<RT_Bill_DTL_DTL>();
             this.RT_Bill_DTL = new HashSet<RT_Bill_DTL>();
+            this.Stock_Adjst_DTL = new HashSet<Stock_Adjst_DTL>();
             this.Stock_QtyAv = new HashSet<Stock_QtyAv>();
             this.Sub_Items = new HashSet<Sub_Items>();
             this.Transfer_Orders = new HashSet<Transfer_Orders>();
-            this.RES_WHTRNS_DTL = new HashSet<RES_WHTRNS_DTL>();
-            this.Stock_Adjst_DTL = new HashSet<Stock_Adjst_DTL>();
-            this.Damage_DTL = new HashSet<Damage_DTL>();
         }
     
         public int Food_No { get; set; }
         public string Food_AName { get; set; }
         public string Food_EName { get; set; }
-        public float Food_Price { get; set; }
+        public Nullable<float> Food_Price { get; set; }
         public short Food_Type { get; set; }
         public string Food_Unit { get; set; }
         public decimal Food_Cost { get; set; }
         public string I_Code { get; set; }
-        public short Group_No { get; set; }
+        public Nullable<short> Group_No { get; set; }
         public string Food_ADesc { get; set; }
         public string Food_EDesc { get; set; }
         public byte[] Food_Pic { get; set; }
@@ -88,7 +87,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<short> W_Code { get; set; }
         public int Sub_Item { get; set; }
         public bool W_Link { get; set; }
-        public float P_SIZE { get; set; }
+        public Nullable<double> P_SIZE { get; set; }
         public bool Use_Qty_Fraction { get; set; }
         public bool Main_Unit { get; set; }
         public short Unt_Level { get; set; }
@@ -99,117 +98,83 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool IsCombo { get; set; }
         public bool IsGNRL { get; set; }
         public bool ReturnAsDamaged { get; set; }
-        public float ItemTax { get; set; }
+        public Nullable<double> ItemTax { get; set; }
+        public bool IsProduct { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Bills_Components> Bills_Components { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Cell> Cells { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
+        public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeleteRest> DeleteRests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Employees_Foods> Employees_Foods { get; set; }
-        [JsonIgnore]
         public virtual ConfirmConsume_DTL ConfirmConsume_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Damage_Components> Damage_Components { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Discount_DTL> Discount_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Foods_Altrantv> Foods_Altrantv { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Foods_Altrantv> Foods_Altrantv1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Foods_Attach> Foods_Attach { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Foods_Combo> Foods_Combo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Foods_Components_End> Foods_Components_End { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Foods_Components> Foods_Components { get; set; }
-        [JsonIgnore]
         public virtual Foods_Types Foods_Types { get; set; }
-        [JsonIgnore]
         public virtual Foods_Groups Foods_Groups { get; set; }
-        [JsonIgnore]
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
+        public virtual ICollection<ProductionRequestComponent> ProductionRequestComponents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductionRequestDtl> ProductionRequestDtls { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Foods_Units> Foods_Units { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<FoodsReport_D> FoodsReport_D { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Groups_Items> Groups_Items { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<HstrRest_D_Combo> HstrRest_D_Combo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<HstrRest_D_DTL> HstrRest_D_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<HstrRest_D> HstrRest_D { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<IAS_NO_ITM_FOUND> IAS_NO_ITM_FOUND { get; set; }
+        public virtual IAS_OUT_REQUEST_DTL IAS_OUT_REQUEST_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<IAS_OUT_REQUEST_DTL> IAS_OUT_REQUEST_DTL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<InComing_DTL> InComing_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Inventory_DTL> Inventory_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Item_Move> Item_Move { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Items_Notes_Dtl> Items_Notes_Dtl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Reserved_Foods_Items> Reserved_Foods_Items { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Restaurant_Menus_Food> Restaurant_Menus_Food { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<RT_Bill_DTL> RT_Bill_DTL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Stock_QtyAv> Stock_QtyAv { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Sub_Items> Sub_Items { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Transfer_Orders> Transfer_Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<RES_WHTRNS_DTL> RES_WHTRNS_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
+        public virtual ICollection<Reserved_Foods_Items> Reserved_Foods_Items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Restaurant_Menus_Food> Restaurant_Menus_Food { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RT_Bill_DTL> RT_Bill_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stock_Adjst_DTL> Stock_Adjst_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }
+        public virtual ICollection<Stock_QtyAv> Stock_QtyAv { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sub_Items> Sub_Items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Transfer_Orders> Transfer_Orders { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

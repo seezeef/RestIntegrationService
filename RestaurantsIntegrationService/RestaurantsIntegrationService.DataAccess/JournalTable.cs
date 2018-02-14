@@ -37,8 +37,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Doc_Type { get; set; }
         public int Bill_Pay_Type { get; set; }
         public Nullable<short> User_ID { get; set; }
-        public Nullable<long> Cust_No { get; set; }
-        public int Emp_No { get; set; }
+        public long Cust_No { get; set; }
+        public Nullable<int> Emp_No { get; set; }
         public string C_Code { get; set; }
         public short CV_Type { get; set; }
         public int Post_No { get; set; }

@@ -32,7 +32,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Sync_No { get; set; }
     
         public virtual POS POS { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

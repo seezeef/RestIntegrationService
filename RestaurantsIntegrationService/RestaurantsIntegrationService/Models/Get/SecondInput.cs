@@ -3,20 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using RestaurantsIntegrationService.Core.Dtos.SecondInputDtos;
 
 namespace RestaurantsIntegrationService.Models.Get
 {
     public class SecondInput
     {
-        public List<Employee> Employees { get; set; }
-        public List<WAREHOUSE_DETAILS> WarehouseDetailss { get; set; }
-        public List<COST_CENTERS> CostCenterss { get; set; }
-        public List<Driver> Drivers { get; set; }
-        public List<TRANSFER_TYPES> TransferTypess { get; set; }
-        public List<REQUEST_TYPES> RequestTypess { get; set; }
-        public List<Drivers_Work_Days> DriversWorkDayses { get; set; }
-        public List<Benches_Sections> BenchesSectionses { get; set; }
-        public List<Bench> Benches { get; set; }
-        public List<Waiter> Waiters { get; set; }
+        public List<EmployeeDto> Employees { get; set; }
+        public List<WAREHOUSE_DETAILSDto> WarehouseDetails { get; set; }
+        public List<COST_CENTERSDto> CostCenters { get; set; }
+        public List<DriverDto> Drivers { get; set; }
+        public List<TRANSFER_TYPESDto> TransferTypes { get; set; }
+        public List<REQUEST_TYPESDto> RequestTypes { get; set; }
+        public List<Drivers_Work_DaysDto> DriversWorkDays { get; set; }
+        public List<Benches_SectionsDto> BenchesSections { get; set; }
+        public List<BenchDto> Benches { get; set; }
+        public List<WaiterDto> Waiters { get; set; }
     }
 }

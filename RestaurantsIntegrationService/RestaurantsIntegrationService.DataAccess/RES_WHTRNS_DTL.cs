@@ -14,7 +14,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class RES_WHTRNS_DTL
     {
-        public int Rec_ID { get; set; }
+        public Nullable<int> Rec_ID { get; set; }
         public Nullable<short> TR_INOUT_TYPE { get; set; }
         public Nullable<short> TR_TYPE { get; set; }
         public Nullable<long> TR_NO { get; set; }
@@ -32,14 +32,14 @@ namespace RestaurantsIntegrationService.DataAccess
         public string F_TR_SER { get; set; }
         public Nullable<System.DateTime> Expire_Date { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<long> DocSer { get; set; }
         public short Branch_No { get; set; }
-        public long DocSer { get; set; }
         public int SyncSerial { get; set; }
     
         public virtual COST_CENTERS COST_CENTERS { get; set; }
         public virtual Food Food { get; set; }
         public virtual RES_WHTRNS_MST RES_WHTRNS_MST { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual TRANSFER_TYPES TRANSFER_TYPES { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

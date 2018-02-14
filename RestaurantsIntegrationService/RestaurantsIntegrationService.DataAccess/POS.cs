@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -32,11 +30,9 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Reservations = new HashSet<Reservation>();
             this.Restaurant_Bill_No = new HashSet<Restaurant_Bill_No>();
             this.Restaurant_D = new HashSet<Restaurant_D>();
-            this.Restaurant_H = new HashSet<Restaurant_H>();
             this.Restaurant_Orders = new HashSet<Restaurant_Orders>();
             this.RT_Bill_DTL_DTL = new HashSet<RT_Bill_DTL_DTL>();
             this.RT_Bill_DTL = new HashSet<RT_Bill_DTL>();
-            this.RT_Bill_MST = new HashSet<RT_Bill_MST>();
             this.RT_Ins_DTL = new HashSet<RT_Ins_DTL>();
             this.RT_Ins_MST = new HashSet<RT_Ins_MST>();
             this.Split_Bills = new HashSet<Split_Bills>();
@@ -44,6 +40,8 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Tables_Status = new HashSet<Tables_Status>();
             this.Transfer_Orders = new HashSet<Transfer_Orders>();
             this.Users_Current_Login = new HashSet<Users_Current_Login>();
+            this.Restaurant_H = new HashSet<Restaurant_H>();
+            this.RT_Bill_MST = new HashSet<RT_Bill_MST>();
         }
     
         public int POS_No { get; set; }
@@ -67,88 +65,63 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<byte> Print_Count { get; set; }
         public string RPT_Printer { get; set; }
         public bool SelfService { get; set; }
-        public Nullable<short> SS_User_ID { get; set; }
-        public short Branch_No { get; set; }
+        public short SS_User_ID { get; set; }
         public bool StopPrintCheck { get; set; }
         public Nullable<int> DlvryWCode { get; set; }
         public Nullable<int> DlvryReQType { get; set; }
+        public short Branch_No { get; set; }
+        public string ServerName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Bills_Components> Bills_Components { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<DeleteRest> DeleteRests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Dlvr_Dtl> Dlvr_Dtl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<HstrRest_D> HstrRest_D { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<HstrRest_D_Combo> HstrRest_D_Combo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<HstrRest_D_DTL> HstrRest_D_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Insurance> Insurances { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Item_Move> Item_Move { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<ItemAchv> ItemAchvs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<POS_Printers> POS_Printers { get; set; }
-        [JsonIgnore]
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Reservation> Reservations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Restaurant_Bill_No> Restaurant_Bill_No { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Restaurant_D> Restaurant_D { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Restaurant_Orders> Restaurant_Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<RT_Bill_DTL> RT_Bill_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<RT_Bill_MST> RT_Bill_MST { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<RT_Ins_MST> RT_Ins_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Split_Bills> Split_Bills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Stock_Adjst_MST> Stock_Adjst_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Tables_Status> Tables_Status { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Transfer_Orders> Transfer_Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
         public virtual ICollection<Users_Current_Login> Users_Current_Login { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RT_Bill_MST> RT_Bill_MST { get; set; }
     }
 }

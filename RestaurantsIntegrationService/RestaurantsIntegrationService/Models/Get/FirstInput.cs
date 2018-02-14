@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Web;
+using RestaurantsIntegrationService.Core.Dtos.FirstInputDtos;
+using RestaurantsIntegrationService.Core.Dtos.SecondInputDtos;
 using RestaurantsIntegrationService.DataAccess;
 
 namespace RestaurantsIntegrationService.Models.Get
 {
     public class FirstInput
     {
-        public List<System_Options> System { get; set; }
-        public List<Delivery_Options> DeliveryOptionses { get; set; }
-        public List<Restaurant_InvoTypes> InvoTypeses { get; set; }
-        public List<SMS_Suplliers> SmsSupllierses { get; set; }
-        public List<SMS_DTL> SmsDtls { get; set; }
-        public List<Rest_Taxes> RestTaxeses { get; set; }
-        public List<BarCode_Setup> BarCodeSetups { get; set; }
-        public List<CreditCard> CreditCards { get; set; }
-        public List<Currency_Categories> CurrencyCategorieses { get; set; }
-        public List<Employee_Groups> EmployeeGroupses { get; set; }
+        public List<System_OptionsDto> System { get; set; }
+        public List<Delivery_OptionsDto> DeliveryOptionses { get; set; }
+        public List<Restaurant_InvoTypesDto> InvoTypeses { get; set; }
+        public List<SMS_SuplliersDto> SmsSupllierses { get; set; }
+        public List<SMS_DTLDto> SmsDtls { get; set; }
+        public List<Rest_TaxesDto> RestTaxes { get; set; }
+        public List<BarCode_SetupDto> BarCodeSetups { get; set; }
+        public List<CreditCardDto> CreditCards { get; set; }
+        public List<Currency_CategoriesDto> CurrencyCategories { get; set; }
+        public List<Employee_GroupsDto> EmployeeGroups { get; set; }
+        public List<Spends_TypesDto> SpendsTypes { get; set; }
     }
 }

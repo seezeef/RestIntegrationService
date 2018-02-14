@@ -14,7 +14,13 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class IAS_OUT_REQUEST_MST
     {
-        public int Rec_ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public IAS_OUT_REQUEST_MST()
+        {
+            this.IAS_OUT_REQUEST_DTL = new HashSet<IAS_OUT_REQUEST_DTL>();
+        }
+    
+        public Nullable<int> Rec_ID { get; set; }
         public Nullable<short> OUT_REQ_TYPE { get; set; }
         public Nullable<long> REQ_NO { get; set; }
         public string REQ_SER { get; set; }
@@ -30,15 +36,17 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool P_Onyx { get; set; }
         public bool Rec_Read { get; set; }
         public Nullable<short> User_ID { get; set; }
-        public short Branch_No { get; set; }
         public Nullable<int> DlvryWCode { get; set; }
         public Nullable<int> DlvryReQType { get; set; }
         public long DocSer { get; set; }
+        public short Branch_No { get; set; }
         public Nullable<int> POS_No { get; set; }
     
         public virtual COST_CENTERS COST_CENTERS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<IAS_OUT_REQUEST_DTL> IAS_OUT_REQUEST_DTL { get; set; }
         public virtual REQUEST_TYPES REQUEST_TYPES { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual WAREHOUSE_DETAILS WAREHOUSE_DETAILS { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

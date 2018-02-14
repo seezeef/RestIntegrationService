@@ -14,7 +14,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class IAS_OUT_REQUEST_DTL
     {
-        public int Rec_ID { get; set; }
+        public Nullable<int> Rec_ID { get; set; }
         public Nullable<short> OUT_REQ_TYPE { get; set; }
         public Nullable<long> REQ_NO { get; set; }
         public string REQ_SER { get; set; }
@@ -23,12 +23,13 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> P_QTY { get; set; }
         public Nullable<short> W_CODE { get; set; }
         public string ITEM_DESC { get; set; }
+        public Nullable<long> DocSer { get; set; }
         public short Branch_No { get; set; }
-        public long DocSer { get; set; }
     
         public virtual Food Food { get; set; }
+        public virtual IAS_OUT_REQUEST_MST IAS_OUT_REQUEST_MST { get; set; }
         public virtual REQUEST_TYPES REQUEST_TYPES { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual WAREHOUSE_DETAILS WAREHOUSE_DETAILS { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> QTY { get; set; }
         public Nullable<double> S_Qty { get; set; }
         public double S_Size { get; set; }
-        public decimal Price { get; set; }
+        public Nullable<double> Price { get; set; }
         public string Food_Note { get; set; }
         public bool Printed { get; set; }
         public int M_No { get; set; }
@@ -31,11 +31,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool FromPastYear { get; set; }
         public Nullable<double> RC_ID { get; set; }
         public short Branch_No { get; set; }
-        public double I_TaxAmt { get; set; }
-        public double I_TaxPer { get; set; }
+        public Nullable<double> I_TaxAmt { get; set; }
+        public Nullable<double> I_TaxPer { get; set; }
     
         public virtual Food Food { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Unit Unit { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

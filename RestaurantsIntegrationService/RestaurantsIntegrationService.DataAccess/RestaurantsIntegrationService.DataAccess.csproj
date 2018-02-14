@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -101,6 +105,9 @@
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Chef.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="ConfirmConsume_DTL.cs">
@@ -367,6 +374,9 @@
     <Compile Include="Options_Privileges.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderMethod.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="OUT_TYPES.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
@@ -374,9 +384,6 @@
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="POS.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PosTransTable.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="POS_Printers.cs">
@@ -394,19 +401,16 @@
     <Compile Include="Privileges_SBF.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductionRequestComponent.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionRequestDtl.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionRequestMst.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="P_Meal_DTL.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="P_Meal_DTL_DTL.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="P_Meal_DTL_EXP.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="P_Meal_MST.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="REQUEST_TYPES.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
@@ -473,13 +477,40 @@
     <Compile Include="Rest_Taxes.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="RES_BILL_COMPND_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_BILL_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_BILL_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_RT_BILL_COMPND_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_RT_BILL_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_RT_BILL_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_STK_DTL.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_STK_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="RES_WHTRNS_DTL.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="RES_WHTRNS_DTL_T.cs">
+    <Compile Include="RES_WHTRNS_DTL_V.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="RES_WHTRNS_MST.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RES_WHTRNS_MST_V.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="RSRVD_Payments.cs">
@@ -537,9 +568,6 @@
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Sub_Items.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Suggestions_Types.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="SyncData.cs">

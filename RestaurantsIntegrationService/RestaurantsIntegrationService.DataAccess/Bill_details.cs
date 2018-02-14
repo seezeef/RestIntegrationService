@@ -36,7 +36,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string BarCode_No { get; set; }
         public int Order_No { get; set; }
         public string ITM_UNT { get; set; }
-        public Nullable<float> P_SIZE { get; set; }
+        public Nullable<double> P_SIZE { get; set; }
         public Nullable<short> User_ID { get; set; }
         public Nullable<double> S_ID { get; set; }
         public bool RT_Bill { get; set; }

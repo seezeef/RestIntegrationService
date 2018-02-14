@@ -14,7 +14,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
     public partial class Device_Token
     {
-        public string User_ID { get; set; }
+        public Nullable<short> User_ID { get; set; }
         public string Device_ID { get; set; }
     }
 }

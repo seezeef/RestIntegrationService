@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
-
 namespace RestaurantsIntegrationService.DataAccess
 {
     using System;
@@ -19,15 +17,15 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Restaurant_InvoTypes()
         {
-            this.Deleted_H = new HashSet<Deleted_H>();
             this.HstrRest_H = new HashSet<HstrRest_H>();
+            this.Deleted_H = new HashSet<Deleted_H>();
             this.Restaurant_H = new HashSet<Restaurant_H>();
         }
     
         public short Type_No { get; set; }
         public string Type_Name { get; set; }
         public string Type_E_Name { get; set; }
-        public Nullable<float> Tax { get; set; }
+        public Nullable<double> Tax { get; set; }
         public Nullable<byte> Service_Charges { get; set; }
         public Nullable<byte> Discount { get; set; }
         public short Branch_No { get; set; }
@@ -39,20 +37,17 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<short> Print_Copy_No { get; set; }
         public bool CopyChefOrders { get; set; }
         public string CopyChefOrdersPrinter { get; set; }
-        public Nullable<long> Feed_Cust_No { get; set; }
+        public long Feed_Cust_No { get; set; }
         public int Use_Android { get; set; }
         public int StopPrintCheck { get; set; }
-
-        [JsonIgnore]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Deleted_H> Deleted_H { get; set; }
-        [JsonIgnore]
+        public bool DefaultReservation { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HstrRest_H> HstrRest_H { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [JsonIgnore]
-        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
-        [JsonIgnore]
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Deleted_H> Deleted_H { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
     }
 }
