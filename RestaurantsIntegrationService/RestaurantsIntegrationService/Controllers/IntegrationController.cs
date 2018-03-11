@@ -9,6 +9,7 @@ using System.Data;
 using RestaurantsIntegrationService.Models;
 using Oracle.DataAccess.Client;
 using RestaurantsIntegrationService.Core.DataAccess;
+using RestaurantsIntegrationService.Core.Extensions;
 using RestaurantsIntegrationService.DataAccess;
 using RestaurantsIntegrationService.Models.Bills;
 using RestaurantsIntegrationService.Models.Result;
@@ -28,11 +29,22 @@ namespace RestaurantsIntegrationService.Controllers
         [HttpPost]
         public IHttpActionResult TestConnection()
         {
-            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Connected" });
+            try
+            {
+                using (var context = new Restaurants())
+                {
+                    var count = context.Restaurant_Info.Count();
+                    return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = $"Connected {count}" });
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException()});
+            }
+            
         }
-
-
-
+        
         [Route("TestGetData")]
         [HttpGet]
         public IHttpActionResult TestGetData(string databaseName)
@@ -53,7 +65,6 @@ namespace RestaurantsIntegrationService.Controllers
                 return Ok(ids);
             }
         }
-
 
         [Route("InsertBills")]
         [HttpPost]
@@ -171,10 +182,7 @@ namespace RestaurantsIntegrationService.Controllers
                 }
             }
         }
-
-
-
-
+        
         [Route("InsertReturnBills")]
         [HttpPost]
         public IHttpActionResult InsertReturnBills(TransferModel<TransferReturnBillModel> data)
@@ -284,7 +292,6 @@ namespace RestaurantsIntegrationService.Controllers
                 }
             }
         }
-
 
         [Route("InsertWarehouse")]
         [HttpPost]

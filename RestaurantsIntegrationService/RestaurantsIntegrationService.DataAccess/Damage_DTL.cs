@@ -29,7 +29,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public virtual Damage_MST Damage_MST { get; set; }
         public virtual Food Food { get; set; }
-        public virtual User User { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual User User { get; set; }
     }
 }

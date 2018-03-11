@@ -29,8 +29,8 @@ namespace RestaurantsIntegrationService.DataAccess
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Insurance_Bills_DTL> Insurance_Bills_DTL { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

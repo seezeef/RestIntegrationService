@@ -54,11 +54,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> DiscPer { get; set; }
         public Nullable<double> DiscAmt { get; set; }
     
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RSRVD_Payments> RSRVD_Payments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RSRVD_RefundPayment> RSRVD_RefundPayment { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

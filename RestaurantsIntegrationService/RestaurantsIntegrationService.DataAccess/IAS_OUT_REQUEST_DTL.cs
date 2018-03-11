@@ -29,7 +29,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual Food Food { get; set; }
         public virtual IAS_OUT_REQUEST_MST IAS_OUT_REQUEST_MST { get; set; }
         public virtual REQUEST_TYPES REQUEST_TYPES { get; set; }
-        public virtual WAREHOUSE_DETAILS WAREHOUSE_DETAILS { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual WAREHOUSE_DETAILS WAREHOUSE_DETAILS { get; set; }
     }
 }

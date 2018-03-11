@@ -17,8 +17,8 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Restaurant_InvoTypes()
         {
-            this.HstrRest_H = new HashSet<HstrRest_H>();
             this.Deleted_H = new HashSet<Deleted_H>();
+            this.HstrRest_H = new HashSet<HstrRest_H>();
             this.Restaurant_H = new HashSet<Restaurant_H>();
         }
     
@@ -43,11 +43,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool DefaultReservation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HstrRest_H> HstrRest_H { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Deleted_H> Deleted_H { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HstrRest_H> HstrRest_H { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

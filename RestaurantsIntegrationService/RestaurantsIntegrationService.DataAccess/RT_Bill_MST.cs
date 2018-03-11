@@ -62,6 +62,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool RptPrinted { get; set; }
         public Nullable<System.DateTime> RT_DateTime { get; set; }
         public bool IsItemPriceIncludeTax { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }

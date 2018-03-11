@@ -30,9 +30,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public int POS_No { get; set; }
         public Nullable<double> BSerial_No { get; set; }
         public int Sync_No { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual POS POS { get; set; }
-        public virtual User User { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual User User { get; set; }
     }
 }

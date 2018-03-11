@@ -3,44 +3,55 @@ using RestaurantsIntegrationService.Models.Pos;
 using RestaurantsIntegrationService.Models.Result;
 using System;
 using System.Linq;
+using System.Transactions;
 using System.Web.Http;
+using EntityFramework.Utilities;
 using RestaurantsIntegrationService.Core.Extensions;
 using WebGrease.Css.Extensions;
 
-namespace RestaurantsIntegrationService.Controllers
-{
+namespace RestaurantsIntegrationService.Controllers {
     [Authorize]
     [RoutePrefix("api/pos")]
-    public class PosController : ApiController
-    {
+    public class PosController : ApiController {
         [Route("InsertBills")]
         [HttpPost]
         public IHttpActionResult InsertBills(BillsTransferModel data)
         {
             try
             {
-                using (Restaurants context = new Restaurants())
+                using (var ts = new TransactionScope())
                 {
-                    using (var dbContextTransaction = context.Database.BeginTransaction())
+
+                    using (Restaurants context = new Restaurants())
                     {
-                        try
+                        data.BillsMaster.ForEach(x =>
                         {
-                            data.BillsMaster.ForEach(x => x.B_Sync = true);
-                            data.RestaurantOrders.ForEach(x => x.B_Sync = true);
-                            data.ItemMoves.ForEach(x => x.B_Sync = true);
-                            context.HstrRest_H.AddRange(data.BillsMaster);
-                            context.HstrRest_D.AddRange(data.BillsDetail);
-                            context.HstrRest_D_DTL.AddRange(data.BillsComponents);
-                            context.Item_Move.AddRange(data.ItemMoves);
-                            context.Restaurant_Orders.AddRange(data.RestaurantOrders);
-                            context.SaveChanges();
-                            dbContextTransaction.Commit();
-                        }
-                        catch (Exception ex)
+                            x.B_Sync = true;
+                            x.SyncDate = DateTime.Now;
+                        });
+                        data.RestaurantOrders.ForEach(x =>
                         {
-                            dbContextTransaction.Rollback();
-                            return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
-                        }
+                            x.B_Sync = true;
+                            x.SyncDate = DateTime.Now;
+                        });
+                        data.ItemMoves.ForEach(x =>
+                        {
+                            x.B_Sync = true;
+                            x.SyncDate = DateTime.Now;
+                        });
+                        EFBatchOperation.For(context, context.HstrRest_H).InsertAll(data.BillsMaster);
+                        EFBatchOperation.For(context, context.HstrRest_D).InsertAll(data.BillsDetail);
+                        EFBatchOperation.For(context, context.HstrRest_D_DTL).InsertAll(data.BillsComponents);
+                        EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
+                        EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
+                        ts.Complete();
+                        //context.HstrRest_H.AddRange(data.BillsMaster);
+                        //context.HstrRest_D.AddRange(data.BillsDetail);
+                        //context.HstrRest_D_DTL.AddRange(data.BillsComponents);
+                        //context.Item_Move.AddRange(data.ItemMoves);
+                        //context.Restaurant_Orders.AddRange(data.RestaurantOrders);
+                        //context.SaveChanges();
+                        //dbContextTransaction.Commit();                   
                     }
                 }
             }
@@ -58,27 +69,29 @@ namespace RestaurantsIntegrationService.Controllers
         {
             try
             {
-                using (Restaurants context = new Restaurants())
+                using (var ts = new TransactionScope())
                 {
-                    using (var dbContextTransaction = context.Database.BeginTransaction())
+                    using (Restaurants context = new Restaurants())
                     {
-                        try
+                        data.ReturnBillsMaster.ForEach(x =>
                         {
-                            data.ReturnBillsMaster.ForEach(x => x.B_Sync = true);
-                            data.ItemMoves.ForEach(x => x.B_Sync = true);
-                            context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
-                            context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
-                            context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
-                            context.Item_Move.AddRange(data.ItemMoves);
-                            context.SaveChanges();
-                            dbContextTransaction.Commit();
-                        }
-                        catch (Exception ex)
-                        {
-                            dbContextTransaction.Rollback();
-                            return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                            x.B_Sync = true;
+                            x.SyncDate = DateTime.Now;
+                        });
+                        data.ItemMoves.ForEach(x => x.B_Sync = true);
+                        EFBatchOperation.For(context, context.RT_Bill_MST).InsertAll(data.ReturnBillsMaster);
+                        EFBatchOperation.For(context, context.RT_Bill_DTL).InsertAll(data.ReturnBillsDetail);
+                        EFBatchOperation.For(context, context.RT_Bill_DTL_DTL).InsertAll(data.ReturnBillsComponents);
+                        EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
 
-                        }
+                        //context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
+                        //context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
+                        //context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
+                        //context.Item_Move.AddRange(data.ItemMoves);
+                        //context.SaveChanges();
+                        //dbContextTransaction.Commit();
+
+                        ts.Complete();
                     }
                 }
             }
@@ -102,7 +115,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             data.ItemMoves.ForEach(x => x.B_Sync = true);
                             context.Stock_Adjst_MST.AddRange(data.Master);
                             context.Stock_Adjst_DTL.AddRange(data.Detail);
@@ -143,7 +160,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             data.ItemMoves.ForEach(x => x.B_Sync = true);
                             context.RES_WHTRNS_MST.AddRange(data.Master);
                             context.RES_WHTRNS_DTL.AddRange(data.Detail);
@@ -182,7 +203,11 @@ namespace RestaurantsIntegrationService.Controllers
                         try
                         {
 
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.Insurances.AddRange(data.Master);
                             context.Insurance_Bills_DTL.AddRange(data.Detail);
                             context.Insurances_Closed.AddRange(data.Closed);
@@ -218,7 +243,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.RT_Ins_MST.AddRange(data.Master);
                             context.RT_Ins_DTL.AddRange(data.Detail);
                             context.SaveChanges();
@@ -254,7 +283,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.InComing_Mst.AddRange(data.Master);
                             context.InComing_DTL.AddRange(data.Detail);
                             context.Item_Move.AddRange(data.ItemMoves);
@@ -289,7 +322,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.Damage_MST.AddRange(data.Master);
                             context.Damage_DTL.AddRange(data.Detail);
                             context.SaveChanges();
@@ -330,7 +367,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.Restaurant_Orders.AddRange(data.Master);
                             //context.Damage_DTL.AddRange(data.Detail);
                             context.SaveChanges();
@@ -396,7 +437,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.User_Income.AddRange(data.Master);
                             context.SaveChanges();
                             dbContextTransaction.Commit();
@@ -435,7 +480,11 @@ namespace RestaurantsIntegrationService.Controllers
                     {
                         try
                         {
-                            data.Master.ForEach(x => x.B_Sync = true);
+                            data.Master.ForEach(x =>
+                            {
+                                x.B_Sync = true;
+                                x.SyncDate = DateTime.Now;
+                            });
                             context.Spends.AddRange(data.Master);
                             context.SaveChanges();
                             dbContextTransaction.Commit();
@@ -465,7 +514,11 @@ namespace RestaurantsIntegrationService.Controllers
             {
                 using (Restaurants context = new Restaurants())
                 {
-                    data.Master.ForEach(x => x.B_Sync = true);
+                    data.Master.ForEach(x =>
+                    {
+                        x.B_Sync = true;
+                        x.SyncDate = DateTime.Now;
+                    });
                     context.MNTNC_REQ.AddRange(data.Master);
                     context.SaveChanges();
                 }

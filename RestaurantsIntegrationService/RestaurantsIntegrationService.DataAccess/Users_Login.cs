@@ -29,7 +29,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
     
-        public virtual User User { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual User User { get; set; }
     }
 }

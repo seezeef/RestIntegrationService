@@ -23,8 +23,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Branch_No { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
-        public virtual User User { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual User User { get; set; }
     }
 }

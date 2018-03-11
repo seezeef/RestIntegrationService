@@ -57,14 +57,14 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Bill_Amount_Before { get; set; }
         public Nullable<double> I_TaxAmt { get; set; }
         public Nullable<double> I_TaxPer { get; set; }
-        public Nullable<double> FoodPriceVAT { get; set; }
+        public double FoodPriceVAT { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual RT_Bill_MST RT_Bill_MST { get; set; }
     }
 }

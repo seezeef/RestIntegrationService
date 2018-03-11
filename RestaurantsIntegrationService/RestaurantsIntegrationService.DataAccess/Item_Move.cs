@@ -37,6 +37,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public bool U_Sync { get; set; }
         public Nullable<short> Branch_No { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual POS POS { get; set; }

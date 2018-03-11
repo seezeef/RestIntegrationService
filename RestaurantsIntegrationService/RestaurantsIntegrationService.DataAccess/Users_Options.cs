@@ -50,7 +50,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool CanNotEditAfterPrintBill { get; set; }
         public bool CanCloseIns { get; set; }
     
-        public virtual User User { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual User User { get; set; }
     }
 }

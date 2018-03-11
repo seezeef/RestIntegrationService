@@ -134,6 +134,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<ProductionRequestComponent> ProductionRequestComponents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductionRequestDtl> ProductionRequestDtls { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Foods_Units> Foods_Units { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -175,6 +176,5 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<Sub_Items> Sub_Items { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transfer_Orders> Transfer_Orders { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

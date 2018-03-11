@@ -46,7 +46,7 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IAS_OUT_REQUEST_DTL> IAS_OUT_REQUEST_DTL { get; set; }
         public virtual REQUEST_TYPES REQUEST_TYPES { get; set; }
-        public virtual WAREHOUSE_DETAILS WAREHOUSE_DETAILS { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual WAREHOUSE_DETAILS WAREHOUSE_DETAILS { get; set; }
     }
 }

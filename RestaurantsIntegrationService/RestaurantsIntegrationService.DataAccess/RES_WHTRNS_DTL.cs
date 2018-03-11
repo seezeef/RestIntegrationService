@@ -39,7 +39,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual COST_CENTERS COST_CENTERS { get; set; }
         public virtual Food Food { get; set; }
         public virtual RES_WHTRNS_MST RES_WHTRNS_MST { get; set; }
-        public virtual TRANSFER_TYPES TRANSFER_TYPES { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual TRANSFER_TYPES TRANSFER_TYPES { get; set; }
     }
 }

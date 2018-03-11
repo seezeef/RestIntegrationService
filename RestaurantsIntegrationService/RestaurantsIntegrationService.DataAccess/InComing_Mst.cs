@@ -39,6 +39,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int AccEmpNo { get; set; }
         public long DocSer { get; set; }
         public Nullable<int> POS_No { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InComing_DTL> InComing_DTL { get; set; }

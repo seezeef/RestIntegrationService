@@ -31,7 +31,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public virtual Food Food { get; set; }
         public virtual Incoming_Types Incoming_Types { get; set; }
-        public virtual InComing_Mst InComing_Mst { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual InComing_Mst InComing_Mst { get; set; }
     }
 }

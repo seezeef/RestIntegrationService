@@ -44,11 +44,12 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Sync_No { get; set; }
         public bool FromPastYear { get; set; }
         public bool RptPrinted { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -36,7 +36,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public virtual Food Food { get; set; }
         public virtual POS POS { get; set; }
-        public virtual RT_Bill_DTL RT_Bill_DTL { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual RT_Bill_DTL RT_Bill_DTL { get; set; }
     }
 }

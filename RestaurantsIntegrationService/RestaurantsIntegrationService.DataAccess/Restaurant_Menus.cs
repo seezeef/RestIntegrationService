@@ -18,8 +18,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public Restaurant_Menus()
         {
             this.HstrRest_H = new HashSet<HstrRest_H>();
-            this.Restaurant_Menus_Food = new HashSet<Restaurant_Menus_Food>();
             this.Restaurant_H = new HashSet<Restaurant_H>();
+            this.Restaurant_Menus_Food = new HashSet<Restaurant_Menus_Food>();
         }
     
         public short Menu_No { get; set; }
@@ -32,9 +32,9 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HstrRest_H> HstrRest_H { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Restaurant_Menus_Food> Restaurant_Menus_Food { get; set; }
+        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
+        public virtual ICollection<Restaurant_Menus_Food> Restaurant_Menus_Food { get; set; }
     }
 }

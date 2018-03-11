@@ -19,7 +19,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Group_No { get; set; }
     
         public virtual Food Food { get; set; }
-        public virtual FoodsReport_H FoodsReport_H { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual FoodsReport_H FoodsReport_H { get; set; }
     }
 }

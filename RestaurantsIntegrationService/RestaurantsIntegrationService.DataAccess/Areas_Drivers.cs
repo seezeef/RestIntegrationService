@@ -19,7 +19,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Dr_No { get; set; }
         public bool S_Priority { get; set; }
     
-        public virtual Driver Driver { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual Driver Driver { get; set; }
     }
 }

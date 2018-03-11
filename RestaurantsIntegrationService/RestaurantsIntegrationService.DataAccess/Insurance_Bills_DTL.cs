@@ -28,8 +28,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public bool FromPastYear { get; set; }
     
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Insurance_Materials Insurance_Materials { get; set; }
         public virtual Insurance Insurance { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -30,9 +30,11 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Reservations = new HashSet<Reservation>();
             this.Restaurant_Bill_No = new HashSet<Restaurant_Bill_No>();
             this.Restaurant_D = new HashSet<Restaurant_D>();
+            this.Restaurant_H = new HashSet<Restaurant_H>();
             this.Restaurant_Orders = new HashSet<Restaurant_Orders>();
             this.RT_Bill_DTL_DTL = new HashSet<RT_Bill_DTL_DTL>();
             this.RT_Bill_DTL = new HashSet<RT_Bill_DTL>();
+            this.RT_Bill_MST = new HashSet<RT_Bill_MST>();
             this.RT_Ins_DTL = new HashSet<RT_Ins_DTL>();
             this.RT_Ins_MST = new HashSet<RT_Ins_MST>();
             this.Split_Bills = new HashSet<Split_Bills>();
@@ -40,8 +42,6 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Tables_Status = new HashSet<Tables_Status>();
             this.Transfer_Orders = new HashSet<Transfer_Orders>();
             this.Users_Current_Login = new HashSet<Users_Current_Login>();
-            this.Restaurant_H = new HashSet<Restaurant_H>();
-            this.RT_Bill_MST = new HashSet<RT_Bill_MST>();
         }
     
         public int POS_No { get; set; }
@@ -92,6 +92,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<ItemAchv> ItemAchvs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POS_Printers> POS_Printers { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -99,11 +100,15 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Restaurant_D> Restaurant_D { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Restaurant_Orders> Restaurant_Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Bill_DTL_DTL> RT_Bill_DTL_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Bill_DTL> RT_Bill_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RT_Bill_MST> RT_Bill_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -118,10 +123,5 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<Transfer_Orders> Transfer_Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users_Current_Login> Users_Current_Login { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RT_Bill_MST> RT_Bill_MST { get; set; }
     }
 }

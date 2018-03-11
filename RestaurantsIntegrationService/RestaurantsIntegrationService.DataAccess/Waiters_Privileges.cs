@@ -20,7 +20,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Branch_No { get; set; }
     
         public virtual Bench Bench { get; set; }
-        public virtual Waiter Waiter { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual Waiter Waiter { get; set; }
     }
 }

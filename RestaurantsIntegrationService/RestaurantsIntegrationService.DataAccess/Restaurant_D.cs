@@ -73,7 +73,7 @@ namespace RestaurantsIntegrationService.DataAccess
     
         public virtual Foods_Types Foods_Types { get; set; }
         public virtual POS POS { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Restaurant_H Restaurant_H { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

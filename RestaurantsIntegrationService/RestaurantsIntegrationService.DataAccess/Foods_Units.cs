@@ -22,7 +22,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Branch_No { get; set; }
     
         public virtual Food Food { get; set; }
-        public virtual Unit Unit { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual Unit Unit { get; set; }
     }
 }

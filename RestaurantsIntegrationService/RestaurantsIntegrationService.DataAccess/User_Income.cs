@@ -36,8 +36,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Sync { get; set; }
         public bool Posted { get; set; }
         public bool Acc_Posted { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
-        public virtual User User { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual User User { get; set; }
     }
 }

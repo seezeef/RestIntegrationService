@@ -32,7 +32,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual Insurance_Materials Insurance_Materials { get; set; }
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }
-        public virtual RT_Ins_MST RT_Ins_MST { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
+        public virtual RT_Ins_MST RT_Ins_MST { get; set; }
     }
 }

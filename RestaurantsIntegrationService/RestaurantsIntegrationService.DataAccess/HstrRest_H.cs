@@ -105,6 +105,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> ItemsTaxAmt { get; set; }
         public Nullable<double> VisaAmt { get; set; }
         public bool IsItemPriceIncludeTax { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Bench Bench { get; set; }
         public virtual Cell Cell { get; set; }
@@ -112,11 +113,11 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HstrRest_D> HstrRest_D { get; set; }
         public virtual OpenBuffet OpenBuffet { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Restaurant_InvoTypes Restaurant_InvoTypes { get; set; }
         public virtual Restaurant_Menus Restaurant_Menus { get; set; }
         public virtual Restaurant_Periods Restaurant_Periods { get; set; }
         public virtual User User { get; set; }
         public virtual Waiter Waiter { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

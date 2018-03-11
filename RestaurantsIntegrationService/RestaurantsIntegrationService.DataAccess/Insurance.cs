@@ -19,9 +19,9 @@ namespace RestaurantsIntegrationService.DataAccess
         {
             this.Insurance_Bills_DTL = new HashSet<Insurance_Bills_DTL>();
             this.RT_Bill_DTL = new HashSet<RT_Bill_DTL>();
+            this.RT_Bill_MST = new HashSet<RT_Bill_MST>();
             this.RT_Ins_DTL = new HashSet<RT_Ins_DTL>();
             this.RT_Ins_MST = new HashSet<RT_Ins_MST>();
-            this.RT_Bill_MST = new HashSet<RT_Bill_MST>();
         }
     
         public int Ins_No { get; set; }
@@ -53,19 +53,20 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Ins_Pay_Hand { get; set; }
         public bool FromPastYear { get; set; }
         public bool RptPrinted { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Insurance_Bills_DTL> Insurance_Bills_DTL { get; set; }
         public virtual Insurances_Closed Insurances_Closed { get; set; }
         public virtual POS POS { get; set; }
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Bill_DTL> RT_Bill_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RT_Bill_MST> RT_Bill_MST { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_MST> RT_Ins_MST { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RT_Bill_MST> RT_Bill_MST { get; set; }
     }
 }

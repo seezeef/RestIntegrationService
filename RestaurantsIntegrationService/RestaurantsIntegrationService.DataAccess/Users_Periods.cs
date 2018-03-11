@@ -19,8 +19,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Period_No { get; set; }
         public bool Can_Login { get; set; }
     
+        public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Restaurant_Periods Restaurant_Periods { get; set; }
         public virtual User User { get; set; }
-        public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }
