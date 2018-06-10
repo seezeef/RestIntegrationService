@@ -2,6 +2,9 @@
 using RestaurantsIntegrationService.Models.Pos;
 using RestaurantsIntegrationService.Models.Result;
 using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Transactions;
 using System.Web.Http;
@@ -39,12 +42,24 @@ namespace RestaurantsIntegrationService.Controllers {
                             x.B_Sync = true;
                             x.SyncDate = DateTime.Now;
                         });
+
+                        #region EFBatch
                         EFBatchOperation.For(context, context.HstrRest_H).InsertAll(data.BillsMaster);
                         EFBatchOperation.For(context, context.HstrRest_D).InsertAll(data.BillsDetail);
                         EFBatchOperation.For(context, context.HstrRest_D_DTL).InsertAll(data.BillsComponents);
                         EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
                         EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
+                        #endregion
+
+                        //context.HstrRest_H.AddRange(data.BillsMaster);
+                        //context.HstrRest_D.AddRange(data.BillsDetail);
+                        //context.HstrRest_D_DTL.AddRange(data.BillsComponents);
+                        //context.Item_Move.AddRange(data.ItemMoves);
+                        //context.Restaurant_Orders.AddRange(data.RestaurantOrders);
+                        //context.SaveChanges();
                         ts.Complete();
+
+                        #region Old Code
                         //context.HstrRest_H.AddRange(data.BillsMaster);
                         //context.HstrRest_D.AddRange(data.BillsDetail);
                         //context.HstrRest_D_DTL.AddRange(data.BillsComponents);
@@ -52,12 +67,60 @@ namespace RestaurantsIntegrationService.Controllers {
                         //context.Restaurant_Orders.AddRange(data.RestaurantOrders);
                         //context.SaveChanges();
                         //dbContextTransaction.Commit();                   
+                        #endregion
+
                     }
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                var error = ex as SqlException;
+                if (error != null && error.Number == 2627 && ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
+                {
+                    using (var tranasactionScope = new TransactionScope())
+                    {
+                        using (var context = new Restaurants())
+                        {
+                            var branch = data.BillsMaster.Select(x => x.Branch_No).FirstOrDefault();
+                            var date = context.HstrRest_H.OrderByDescending(x => x.SyncDate).Select(x => x.SyncDate)
+                                .FirstOrDefault().GetValueOrDefault().AddDays(-5);
+                            var allEntities = context.HstrRest_H.Where(x => x.Branch_No == branch && DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date)).ToList();
+
+                            var similarEntities = data.BillsMaster.Intersect(allEntities,
+                                new LambdaComparer<HstrRest_H>(
+                                    (x, y) => x.ASerial == y.ASerial && x.Order_No == y.Order_No &&
+                                              x.Branch_No == y.Branch_No && x.POS_No == y.POS_No)).ToList();
+                            foreach (var entity in similarEntities)
+                            {
+                                var detailsToberemoved =
+                                    data.BillsDetail.Where(x => x.ASerial == entity.ASerial && x.POS_No == entity.POS_No).ToList();
+
+                                foreach (var detail in detailsToberemoved)
+                                {
+                                    data.BillsDetail.Remove(detail);
+                                }
+                                var ordersTobeRemoved =
+                                    data.RestaurantOrders.Where(
+                                        x => x.ASerial == entity.ASerial && x.POS_No == entity.POS_No);
+                                data.RestaurantOrders.RemoveRange(0, ordersTobeRemoved.Count());
+                                data.BillsMaster.Remove(entity);
+                            }
+                            EFBatchOperation.For(context, context.HstrRest_H).InsertAll(data.BillsMaster);
+                            EFBatchOperation.For(context, context.HstrRest_D).InsertAll(data.BillsDetail);
+                            EFBatchOperation.For(context, context.HstrRest_D_DTL).InsertAll(data.BillsComponents);
+                            EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
+                            EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
+
+                            tranasactionScope.Complete();
+                        }
+                    }
+
+                }
+                else
+                {
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                }
+
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -83,21 +146,67 @@ namespace RestaurantsIntegrationService.Controllers {
                         EFBatchOperation.For(context, context.RT_Bill_DTL).InsertAll(data.ReturnBillsDetail);
                         EFBatchOperation.For(context, context.RT_Bill_DTL_DTL).InsertAll(data.ReturnBillsComponents);
                         EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
+                        ts.Complete();
 
+                        #region Old code
                         //context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
                         //context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
                         //context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
                         //context.Item_Move.AddRange(data.ItemMoves);
                         //context.SaveChanges();
-                        //dbContextTransaction.Commit();
-
-                        ts.Complete();
+                        //dbContextTransaction.Commit(); 
+                        #endregion
                     }
                 }
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                var error = ex as SqlException;
+                if (error != null && error.Number == 2627 && ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
+                {
+                    using (var tranasactionScope = new TransactionScope())
+                    {
+                        using (var context = new Restaurants())
+                        {
+                            var branch = data.ReturnBillsMaster.Select(x => x.Branch_No).FirstOrDefault();
+                            var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                            var allEntities = context.RT_Bill_MST.Where(x => x.Branch_No == branch && DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date)).ToList();
+
+                            var similarEntities = data.ReturnBillsMaster.Intersect(allEntities,
+                                new LambdaComparer<RT_Bill_MST>(
+                                    (x, y) => x.RT_Bill_No == y.RT_Bill_No && x.Branch_No == y.Branch_No &&
+                                              x.POS_No == y.POS_No)).ToList();
+                            foreach (var entity in similarEntities)
+                            {
+                                var detailsToberemoved =
+                                    data.ReturnBillsDetail.Where(x => x.RT_Bill_No == entity.RT_Bill_No && x.POS_No == entity.POS_No).ToList();
+                                foreach (var rtBillDtl in detailsToberemoved)
+                                {
+                                    var componentsTobeDeleted = data.ReturnBillsComponents.Where(
+                                        x => x.RT_Bill_No == rtBillDtl.RT_Bill_No && x.POS_No == entity.POS_No && x.S_ID == rtBillDtl.S_ID).ToList();
+                                    foreach (var component in componentsTobeDeleted)
+                                    {
+                                        data.ReturnBillsComponents.Remove(component);
+                                    }
+                                    
+                                    data.ReturnBillsDetail.Remove(rtBillDtl);
+                                }
+                                data.ReturnBillsMaster.Remove(entity);
+                            }
+                            EFBatchOperation.For(context, context.RT_Bill_MST).InsertAll(data.ReturnBillsMaster);
+                            EFBatchOperation.For(context, context.RT_Bill_DTL).InsertAll(data.ReturnBillsDetail);
+                            EFBatchOperation.For(context, context.RT_Bill_DTL_DTL).InsertAll(data.ReturnBillsComponents);
+                            EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
+                            tranasactionScope.Complete();
+                        }
+                    }
+
+                }
+                else
+                {
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                }
+
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -457,7 +566,41 @@ namespace RestaurantsIntegrationService.Controllers {
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                var error = ex as SqlException;
+                if (error != null && error.Number == 2627 &&
+                    ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
+                {
+                    using (var tranasactionScope = new TransactionScope())
+                    {
+                        using (var context = new Restaurants())
+                        {
+                            var branch = data.Master.Select(x => x.Branch_No).FirstOrDefault();
+                            var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month,1);
+                            var allEntities = context.User_Income
+                                .Where(x => x.Branch_No == branch &&
+                                            DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date))
+                                .ToList();
+
+                            var similarEntities = data.Master.Intersect(allEntities,
+                                new LambdaComparer<User_Income>(
+                                    (x, y) => x.Branch_No == y.Branch_No && x.Income_Date == y.Income_Date &&
+                                              x.User_ID == y.User_ID)).ToList();
+                            foreach (var entity in similarEntities)
+                            {
+                                data.Master.Remove(entity);
+                            }
+                            EFBatchOperation.For(context, context.User_Income).InsertAll(data.Master);
+                            tranasactionScope.Complete();
+                        }
+                    }
+
+                }
+                else
+                {
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                }
+
+
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
@@ -500,7 +643,40 @@ namespace RestaurantsIntegrationService.Controllers {
             }
             catch (Exception ex)
             {
-                return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                var error = ex as SqlException;
+                if (error != null && error.Number == 2627 &&
+                    ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
+                {
+                    using (var tranasactionScope = new TransactionScope())
+                    {
+                        using (var context = new Restaurants())
+                        {
+                            var branch = data.Master.Select(x => x.Branch_No).FirstOrDefault();
+                            var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                                
+                            var allEntities = context.Spends
+                                .Where(x => x.Branch_No == branch &&
+                                            DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date))
+                                .ToList();
+
+                            var similarEntities = data.Master.Intersect(allEntities,
+                                new LambdaComparer<Spend>(
+                                    (x, y) => x.Branch_No == y.Branch_No && x.Sp_No == y.Sp_No &&
+                                              x.User_ID == y.User_ID)).ToList();
+                            foreach (var entity in similarEntities)
+                            {
+                                data.Master.Remove(entity);
+                            }
+                            EFBatchOperation.For(context, context.Spends).InsertAll(data.Master);
+                            tranasactionScope.Complete();
+                        }
+                    }
+
+                }
+                else
+                {
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                }
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });

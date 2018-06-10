@@ -125,6 +125,7 @@
     <Compile Include="Dtos\ThirdInputDtos\Waiters_PrivilegesDto.cs" />
     <Compile Include="Extensions\ExceptionExtensions.cs" />
     <Compile Include="Extensions\Extenstions.cs" />
+    <Compile Include="Extensions\LambdaComparer.cs" />
     <Compile Include="Models\CompanyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
