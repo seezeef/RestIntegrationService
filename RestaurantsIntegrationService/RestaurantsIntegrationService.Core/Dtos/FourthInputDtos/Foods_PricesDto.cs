@@ -18,6 +18,5 @@ namespace RestaurantsIntegrationService.Core.Dtos.FourthInputDtos
         public double? Food_Price { get; set; }
         public short Food_Disc { get; set; }
         public short? Price_Type { get; set; }
-        public double? FoodPriceVAT { get; set; }
     }
 }

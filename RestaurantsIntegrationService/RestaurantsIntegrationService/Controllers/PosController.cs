@@ -12,10 +12,12 @@ using EntityFramework.Utilities;
 using RestaurantsIntegrationService.Core.Extensions;
 using WebGrease.Css.Extensions;
 
-namespace RestaurantsIntegrationService.Controllers {
+namespace RestaurantsIntegrationService.Controllers
+{
     [Authorize]
     [RoutePrefix("api/pos")]
-    public class PosController : ApiController {
+    public class PosController : ApiController
+    {
         [Route("InsertBills")]
         [HttpPost]
         public IHttpActionResult InsertBills(BillsTransferModel data)
@@ -169,8 +171,9 @@ namespace RestaurantsIntegrationService.Controllers {
                         using (var context = new Restaurants())
                         {
                             var branch = data.ReturnBillsMaster.Select(x => x.Branch_No).FirstOrDefault();
-                            var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                            var allEntities = context.RT_Bill_MST.Where(x => x.Branch_No == branch && DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date)).ToList();
+                            //var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                            //&& DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date)
+                            var allEntities = context.RT_Bill_MST.Where(x => x.Branch_No == branch).ToList();
 
                             var similarEntities = data.ReturnBillsMaster.Intersect(allEntities,
                                 new LambdaComparer<RT_Bill_MST>(
@@ -188,7 +191,7 @@ namespace RestaurantsIntegrationService.Controllers {
                                     {
                                         data.ReturnBillsComponents.Remove(component);
                                     }
-                                    
+
                                     data.ReturnBillsDetail.Remove(rtBillDtl);
                                 }
                                 data.ReturnBillsMaster.Remove(entity);
@@ -544,22 +547,22 @@ namespace RestaurantsIntegrationService.Controllers {
                 {
                     using (var dbContextTransaction = context.Database.BeginTransaction())
                     {
-                        try
+                        //try
+                        //{
+                        data.Master.ForEach(x =>
                         {
-                            data.Master.ForEach(x =>
-                            {
-                                x.B_Sync = true;
-                                x.SyncDate = DateTime.Now;
-                            });
-                            context.User_Income.AddRange(data.Master);
-                            context.SaveChanges();
-                            dbContextTransaction.Commit();
-                        }
-                        catch (Exception ex)
-                        {
-                            dbContextTransaction.Rollback();
-                            return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
-                        }
+                            x.B_Sync = true;
+                            x.SyncDate = DateTime.Now;
+                        });
+                        context.User_Income.AddRange(data.Master);
+                        context.SaveChanges();
+                        dbContextTransaction.Commit();
+                        //}
+                        //catch (Exception ex)
+                        //{
+                        //    dbContextTransaction.Rollback();
+                        //    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                        //}
                     }
 
                 }
@@ -568,32 +571,14 @@ namespace RestaurantsIntegrationService.Controllers {
             {
                 var error = ex as SqlException;
                 if (error != null && error.Number == 2627 &&
-                    ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
+                    ex.GetLastException().Contains("Violation of PRIMARY KEY constraint") )
                 {
-                    using (var tranasactionScope = new TransactionScope())
-                    {
-                        using (var context = new Restaurants())
-                        {
-                            var branch = data.Master.Select(x => x.Branch_No).FirstOrDefault();
-                            var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month,1);
-                            var allEntities = context.User_Income
-                                .Where(x => x.Branch_No == branch &&
-                                            DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date))
-                                .ToList();
+                    DeleteDuplicateUserIncomes(data);
 
-                            var similarEntities = data.Master.Intersect(allEntities,
-                                new LambdaComparer<User_Income>(
-                                    (x, y) => x.Branch_No == y.Branch_No && x.Income_Date == y.Income_Date &&
-                                              x.User_ID == y.User_ID)).ToList();
-                            foreach (var entity in similarEntities)
-                            {
-                                data.Master.Remove(entity);
-                            }
-                            EFBatchOperation.For(context, context.User_Income).InsertAll(data.Master);
-                            tranasactionScope.Complete();
-                        }
-                    }
-
+                }
+                if (ex.GetLastException().Contains("Cannot insert duplicate key row in object"))
+                {
+                    DeleteDuplicateUserIncomes(data);
                 }
                 else
                 {
@@ -604,6 +589,32 @@ namespace RestaurantsIntegrationService.Controllers {
             }
 
             return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        }
+
+        private static void DeleteDuplicateUserIncomes(UserIncomeModel data)
+        {
+            using (var tranasactionScope = new TransactionScope())
+            {
+                using (var context = new Restaurants())
+                {
+                    var branch = data.Master.Select(x => x.Branch_No).FirstOrDefault();
+                    //var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                    var allEntities = context.User_Income
+                        .Where(x => x.Branch_No == branch )
+                        .ToList();
+
+                    var similarEntities = data.Master.Intersect(allEntities,
+                        new LambdaComparer<User_Income>(
+                            (x, y) => x.Branch_No == y.Branch_No && x.Income_Date == y.Income_Date &&
+                                      x.User_ID == y.User_ID)).ToList();
+                    foreach (var entity in similarEntities)
+                    {
+                        data.Master.Remove(entity);
+                    }
+                    EFBatchOperation.For(context, context.User_Income).InsertAll(data.Master);
+                    tranasactionScope.Complete();
+                }
+            }
         }
 
         /// <summary>
@@ -653,7 +664,7 @@ namespace RestaurantsIntegrationService.Controllers {
                         {
                             var branch = data.Master.Select(x => x.Branch_No).FirstOrDefault();
                             var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                                
+
                             var allEntities = context.Spends
                                 .Where(x => x.Branch_No == branch &&
                                             DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date))
