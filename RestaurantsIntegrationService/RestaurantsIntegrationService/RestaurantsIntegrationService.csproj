@@ -246,6 +246,7 @@
     <Compile Include="Models\Bills\BillMasterModel.cs" />
     <Compile Include="Models\InsertModel.cs" />
     <Compile Include="Models\Pos\BillsTransferModel.cs" />
+    <Compile Include="Models\Pos\CustomerPamentsModel.cs" />
     <Compile Include="Models\Pos\DamageTransferModel.cs" />
     <Compile Include="Models\Pos\IncomingTransferModel.cs" />
     <Compile Include="Models\Pos\InsuranceTransferModel.cs" />

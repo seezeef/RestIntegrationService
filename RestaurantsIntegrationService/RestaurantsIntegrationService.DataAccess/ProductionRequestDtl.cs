@@ -20,6 +20,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string ItemDesc { get; set; }
         public long SerialID { get; set; }
         public short Branch_No { get; set; }
+        public bool FromReservation { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }

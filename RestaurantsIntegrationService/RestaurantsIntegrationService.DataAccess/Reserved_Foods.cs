@@ -53,6 +53,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> ItemsTaxAmt { get; set; }
         public Nullable<double> DiscPer { get; set; }
         public Nullable<double> DiscAmt { get; set; }
+        public bool Produced { get; set; }
+        public int ProductionID { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }

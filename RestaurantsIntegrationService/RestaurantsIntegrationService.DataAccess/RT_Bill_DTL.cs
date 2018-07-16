@@ -57,7 +57,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Bill_Amount_Before { get; set; }
         public Nullable<double> I_TaxAmt { get; set; }
         public Nullable<double> I_TaxPer { get; set; }
-        public double FoodPriceVAT { get; set; }
+        public Nullable<double> FoodPriceVAT { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Insurance Insurance { get; set; }

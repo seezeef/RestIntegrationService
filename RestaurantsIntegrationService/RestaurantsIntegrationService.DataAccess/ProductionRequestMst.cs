@@ -36,6 +36,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public long DocSer { get; set; }
         public short Branch_No { get; set; }
         public Nullable<int> POS_No { get; set; }
+        public bool FromReservation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductionRequestComponent> ProductionRequestComponents { get; set; }

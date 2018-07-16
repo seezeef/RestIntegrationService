@@ -19,12 +19,12 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Doc_Type { get; set; }
         public Nullable<System.DateTime> Doc_Date { get; set; }
         public int Food_No { get; set; }
-        public double F_Qty { get; set; }
-        public double S_Qty { get; set; }
+        public Nullable<double> F_Qty { get; set; }
+        public Nullable<double> S_Qty { get; set; }
         public Nullable<double> P_Size { get; set; }
         public Nullable<int> Main_Food_No { get; set; }
-        public double Main_Qty { get; set; }
-        public double F_Price { get; set; }
+        public Nullable<double> Main_Qty { get; set; }
+        public Nullable<double> F_Price { get; set; }
         public string F_Unit { get; set; }
         public string BarCode_No { get; set; }
         public Nullable<short> W_Code { get; set; }

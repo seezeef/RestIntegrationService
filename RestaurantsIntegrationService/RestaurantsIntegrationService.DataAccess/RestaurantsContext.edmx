@@ -109,7 +109,7 @@
           <Property Name="Type_Pic" Type="varbinary(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Bill_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Bill_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Bill_details">
           <Key>
             <PropertyRef Name="Disc_Per" />
@@ -196,6 +196,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Bill_details' does not have
           <Property Name="Mandatory" Type="bit" Nullable="false" />
           <Property Name="POS_No" Type="int" Nullable="false" />
           <Property Name="S_ID" Type="float" Nullable="false" />
+          <Property Name="Expire_Date" Type="datetime" />
         </EntityType>
         <EntityType Name="Bills_Notes_Mst">
           <Key>
@@ -263,7 +264,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Bill_details' does not have
           <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.ConfirmConsume_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.ConfirmConsume_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ConfirmConsume_DTL">
           <Key>
             <PropertyRef Name="Food_No" />
@@ -280,7 +281,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.ConfirmConsume_DTL' does no
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.ConfirmConsume_MST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.ConfirmConsume_MST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ConfirmConsume_MST">
           <Key>
             <PropertyRef Name="PROCESSED" />
@@ -336,7 +337,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.ConfirmConsume_MST' does no
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Customer_Promo_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Customer_Promo_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Customer_Promo_DTL">
           <Key>
             <PropertyRef Name="Promo_No" />
@@ -405,9 +406,11 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Customer_Promo_DTL' does no
           <Property Name="Acc_Posted" Type="bit" Nullable="false" />
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
           <Property Name="BalancePastYear" Type="bit" Nullable="false" />
+          <Property Name="B_Sync" Type="bit" Nullable="false" />
+          <Property Name="SyncDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Damage_Components' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Damage_Components' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Damage_Components">
           <Key>
             <PropertyRef Name="DocID" />
@@ -696,6 +699,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Damage_Components' does not
           <Property Name="Restart_Type" Type="smallint" Nullable="false" />
           <Property Name="Restart_No" Type="int" Nullable="false" />
           <Property Name="Print_Cashier_Copy" Type="bit" Nullable="false" />
+          <Property Name="StartWork" Type="datetime" />
+          <Property Name="EndWork" Type="datetime" />
         </EntityType>
         <EntityType Name="Device_Token">
           <Key>
@@ -705,7 +710,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Damage_Components' does not
           <Property Name="Device_ID" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Discount_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Discount_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Discount_DTL">
           <Key>
             <PropertyRef Name="Disc_No" />
@@ -717,10 +722,10 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Discount_DTL' does not have
             <PropertyRef Name="Food_Grp" />
             <PropertyRef Name="Branch_No" />
             <PropertyRef Name="PromoType" />
-            <PropertyRef Name="MainQty" />
             <PropertyRef Name="PromoFood_No" />
-            <PropertyRef Name="PromoQty" />
             <PropertyRef Name="Disc_Ordr" />
+            <PropertyRef Name="MainQty" />
+            <PropertyRef Name="PromoQty" />
           </Key>
           <Property Name="Disc_No" Type="int" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
@@ -812,7 +817,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Discount_DTL' does not have
           <Property Name="Method_No" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.DriverGps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.DriverGps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DriverGps">
           <Key>
             <PropertyRef Name="Op_ID" />
@@ -883,6 +888,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.DriverGps' does not have a 
           <Property Name="Meal_Price" Type="int" />
           <Property Name="Meals_Count" Type="smallint" Nullable="false" />
           <Property Name="Acc_Emp_No" Type="int" />
+          <Property Name="MonthlyBalance" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Employees_Foods">
           <Key>
@@ -898,7 +904,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.DriverGps' does not have a 
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.EvalutionDTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.EvalutionDTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="EvalutionDTL">
           <Key>
             <PropertyRef Name="EvlNo" />
@@ -953,7 +959,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.EvalutionDTL' does not have
           <Property Name="EstmDegree" Type="smallint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.EvalutionModelEstimate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.EvalutionModelEstimate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="EvalutionModelEstimate">
           <Key>
             <PropertyRef Name="ModelID" />
@@ -1002,7 +1008,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.EvalutionModelEstimate' doe
           <Property Name="Food_No" Type="int" Nullable="false" />
           <Property Name="Food_AName" Type="nvarchar" MaxLength="120" />
           <Property Name="Food_EName" Type="nvarchar" MaxLength="120" />
-          <Property Name="Food_Price" Type="real" />
+          <Property Name="Food_Price" Type="real" Nullable="false" />
           <Property Name="Food_Type" Type="smallint" Nullable="false" />
           <Property Name="Food_Unit" Type="nvarchar" MaxLength="50" />
           <Property Name="Food_Cost" Type="money" Nullable="false" />
@@ -1045,6 +1051,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.EvalutionModelEstimate' doe
           <Property Name="ReturnAsDamaged" Type="bit" Nullable="false" />
           <Property Name="ItemTax" Type="float" />
           <Property Name="IsProduct" Type="bit" Nullable="false" />
+          <Property Name="StopTemporary" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Foods_Altrantv">
           <Key>
@@ -1437,7 +1444,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.EvalutionModelEstimate' doe
           <Property Name="SyncDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.IAS_NO_ITM_FOUND' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.IAS_NO_ITM_FOUND' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="IAS_NO_ITM_FOUND">
           <Key>
             <PropertyRef Name="Food_No" />
@@ -1450,7 +1457,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.IAS_NO_ITM_FOUND' does not 
           <Property Name="Branch_No" Type="smallint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.IAS_OUT_REQUEST_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.IAS_OUT_REQUEST_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="IAS_OUT_REQUEST_DTL">
           <Key>
             <PropertyRef Name="Food_No" />
@@ -1615,6 +1622,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.IAS_OUT_REQUEST_DTL' does n
           <Property Name="FromPastYear" Type="bit" Nullable="false" />
           <Property Name="RptPrinted" Type="bit" Nullable="false" />
           <Property Name="SyncDate" Type="datetime" />
+          <Property Name="Bill_Pay_Type" Type="int" Nullable="false" />
+          <Property Name="CreditCard_Type" Type="int" />
         </EntityType>
         <EntityType Name="Insurances_Closed">
           <Key>
@@ -1684,7 +1693,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.IAS_OUT_REQUEST_DTL' does n
           <Property Name="Del_Date" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Inventory_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Inventory_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Inventory_DTL">
           <Key>
             <PropertyRef Name="Doc_No" />
@@ -1727,12 +1736,12 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Inventory_DTL' does not hav
           <Property Name="Doc_Type" Type="smallint" Nullable="false" />
           <Property Name="Doc_Date" Type="datetime" />
           <Property Name="Food_No" Type="int" Nullable="false" />
-          <Property Name="F_Qty" Type="float" Nullable="false" />
-          <Property Name="S_Qty" Type="float" Nullable="false" />
+          <Property Name="F_Qty" Type="float" />
+          <Property Name="S_Qty" Type="float" />
           <Property Name="P_Size" Type="float" />
           <Property Name="Main_Food_No" Type="int" />
-          <Property Name="Main_Qty" Type="float" Nullable="false" />
-          <Property Name="F_Price" Type="float" Nullable="false" />
+          <Property Name="Main_Qty" Type="float" />
+          <Property Name="F_Price" Type="float" />
           <Property Name="F_Unit" Type="nvarchar" MaxLength="20" />
           <Property Name="BarCode_No" Type="nvarchar" MaxLength="30" />
           <Property Name="W_Code" Type="smallint" />
@@ -1786,7 +1795,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Inventory_DTL' does not hav
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.JournalTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.JournalTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="JournalTable">
           <Key>
             <PropertyRef Name="P_Type" />
@@ -1896,9 +1905,15 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.JournalTable' does not have
           <Property Name="No_Of_points" Type="smallint" Nullable="false" />
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Restaurant_002Server.dbo.Notifications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Notifications">
           <Key>
             <PropertyRef Name="Id" />
+            
+            
+            
+            
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -1999,6 +2014,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.JournalTable' does not have
           <Property Name="DlvryReQType" Type="int" />
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
           <Property Name="ServerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrintInvoiceA4" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="POS_Printers">
           <Key>
@@ -2029,7 +2045,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.JournalTable' does not have
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.PrinterDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.PrinterDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PrinterDetail">
           <Key>
             <PropertyRef Name="PrinterID" />
@@ -2089,6 +2105,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.PrinterDetail' does not hav
           <Property Name="ItemDesc" Type="nvarchar" MaxLength="250" />
           <Property Name="SerialID" Type="bigint" Nullable="false" />
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
+          <Property Name="FromReservation" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductionRequestMst">
           <Key>
@@ -2109,6 +2126,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.PrinterDetail' does not hav
           <Property Name="DocSer" Type="bigint" Nullable="false" />
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
           <Property Name="POS_No" Type="int" />
+          <Property Name="FromReservation" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="REQUEST_TYPES">
           <Key>
@@ -2243,6 +2261,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.PrinterDetail' does not hav
           <Property Name="ItemsTaxAmt" Type="float" />
           <Property Name="DiscPer" Type="float" />
           <Property Name="DiscAmt" Type="float" />
+          <Property Name="Produced" Type="bit" Nullable="false" />
+          <Property Name="ProductionID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Reserved_Foods_Canceled">
           <Key>
@@ -2314,7 +2334,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.PrinterDetail' does not hav
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Restaurant_Bill_No' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Restaurant_Bill_No' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Restaurant_Bill_No">
           <Key>
             <PropertyRef Name="ASerial" />
@@ -2349,6 +2369,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Restaurant_Bill_No' does no
           <Property Name="Food_Name" Type="nvarchar" MaxLength="120" />
           <Property Name="Food_No" Type="int" Nullable="false" />
           <Property Name="Food_Price" Type="float" />
+          <Property Name="FoodPriceVAT" Type="float" />
           <Property Name="Food_Type" Type="smallint" />
           <Property Name="Order_No" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="float" />
@@ -2400,7 +2421,6 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Restaurant_Bill_No' does no
           <Property Name="I_TaxAmt" Type="float" />
           <Property Name="I_TaxPer" Type="float" />
           <Property Name="AttMainFoodNo" Type="smallint" Nullable="false" />
-          <Property Name="FoodPriceVAT" Type="float" />
         </EntityType>
         <EntityType Name="Restaurant_H">
           <Key>
@@ -2520,7 +2540,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Restaurant_Bill_No' does no
           <Property Name="ResFoods_Acc" Type="nvarchar" MaxLength="20" />
           <Property Name="Spends_Acc" Type="nvarchar" MaxLength="20" />
           <Property Name="CCI_Acc" Type="nvarchar" MaxLength="20" />
-          <Property Name="FA_Branch_No" Type="smallint" />
+          <Property Name="FA_Branch_No" Type="smallint" Nullable="false" />
           <Property Name="FA_Year" Type="smallint" />
           <Property Name="FA_Warehouse" Type="int" />
           <Property Name="FA_Out_W_Code" Type="smallint" />
@@ -2770,7 +2790,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Restaurant_Bill_No' does no
           <Property Name="Bill_Amount_Before" Type="float" />
           <Property Name="I_TaxAmt" Type="float" />
           <Property Name="I_TaxPer" Type="float" />
-          <Property Name="FoodPriceVAT" Type="float" Nullable="false" />
+          <Property Name="FoodPriceVAT" Type="float" />
         </EntityType>
         <EntityType Name="RT_Bill_DTL_DTL">
           <Key>
@@ -2905,7 +2925,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Restaurant_Bill_No' does no
           <Property Name="SyncDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.SaveSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.SaveSetting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SaveSetting">
           <Key>
             <PropertyRef Name="Branch_No" />
@@ -3126,7 +3146,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.SaveSetting' does not have 
           <Property Name="TableOrder" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Sys_Errors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Sys_Errors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Sys_Errors">
           <Key>
             <PropertyRef Name="ERR_SN" />
@@ -3255,6 +3275,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Sys_Errors' does not have a
           <Property Name="B_Sync" Type="bit" Nullable="false" />
           <Property Name="Posted" Type="bit" Nullable="false" />
           <Property Name="Acc_Posted" Type="bit" Nullable="false" />
+          <Property Name="Income_Visa_Amount" Type="money" />
           <Property Name="SyncDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Users">
@@ -3301,7 +3322,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Sys_Errors' does not have a
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Users_Actions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Users_Actions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Users_Actions">
           <Key>
             <PropertyRef Name="Branch_No" />
@@ -3330,7 +3351,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Users_Actions' does not hav
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.Users_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.Users_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Users_History">
           <Key>
             <PropertyRef Name="Action_ID" />
@@ -3406,6 +3427,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Users_History' does not hav
           <Property Name="CanPrintResMoreOne" Type="bit" Nullable="false" />
           <Property Name="CanNotEditAfterPrintBill" Type="bit" Nullable="false" />
           <Property Name="CanCloseIns" Type="bit" Nullable="false" />
+          <Property Name="TemporarilyStopItems" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Users_Periods">
           <Key>
@@ -3473,7 +3495,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.Users_History' does not hav
           <Property Name="Branch_No" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_BILL_COMPND_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_BILL_COMPND_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_BILL_COMPND_DTL">
           <Key>
             <PropertyRef Name="Bill_No" />
@@ -3497,7 +3519,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_BILL_COMPND_DTL' does n
           <Property Name="RCRD_NO" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_BILL_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_BILL_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_BILL_DTL">
           <Key>
             <PropertyRef Name="BILL_NO" />
@@ -3533,7 +3555,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_BILL_DTL' does not have
           <Property Name="RCRD_NO" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_RT_BILL_COMPND_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_RT_BILL_COMPND_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_RT_BILL_COMPND_DTL">
           <Key>
             <PropertyRef Name="RT_Bill_No" />
@@ -3558,7 +3580,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_RT_BILL_COMPND_DTL' doe
           <Property Name="RCRD_NO" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_RT_BILL_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_RT_BILL_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_RT_BILL_DTL">
           <Key>
             <PropertyRef Name="RT_Bill_No" />
@@ -3597,7 +3619,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_RT_BILL_DTL' does not h
           <Property Name="RCRD_NO" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_RT_BILL_MST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_RT_BILL_MST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_RT_BILL_MST">
           <Key>
             <PropertyRef Name="RT_Bill_No" />
@@ -3640,7 +3662,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_RT_BILL_MST' does not h
           <Property Name="User_ID" Type="smallint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_STK_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_STK_DTL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_STK_DTL">
           <Key>
             <PropertyRef Name="STK_TYPE" />
@@ -3663,7 +3685,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_STK_DTL' does not have 
           <Property Name="Stk_ID" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_STK_MST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_STK_MST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_STK_MST">
           <Key>
             <PropertyRef Name="STK_TYPE" />
@@ -3696,7 +3718,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_STK_MST' does not have 
           <Property Name="User_ID" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_DTL_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_WHTRNS_DTL_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_WHTRNS_DTL_V">
           <Key>
             <PropertyRef Name="USE_SERIALNO" />
@@ -3725,7 +3747,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_DTL_V' does not 
           <Property Name="Expire_Date" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'Restaurant_002Server.dbo.RES_WHTRNS_MST_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RES_WHTRNS_MST_V">
           <Key>
             <PropertyRef Name="PROCESSED" />
@@ -5852,6 +5874,20 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Insurances_CreditCards">
+          <End Role="CreditCards" Type="Self.CreditCards" Multiplicity="0..1" />
+          <End Role="Insurances" Type="Self.Insurances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreditCards">
+              <PropertyRef Name="Card_No" />
+              <PropertyRef Name="Branch_No" />
+            </Principal>
+            <Dependent Role="Insurances">
+              <PropertyRef Name="CreditCard_Type" />
+              <PropertyRef Name="Branch_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Insurances_Deleted_Restaurant_Info">
           <End Role="Restaurant_Info" Type="Self.Restaurant_Info" Multiplicity="1" />
           <End Role="Insurances_Deleted" Type="Self.Insurances_Deleted" Multiplicity="*" />
@@ -5865,7 +5901,9 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Insurances_Insurance_Bills_DTL">
-          <End Role="Insurances" Type="Self.Insurances" Multiplicity="1" />
+          <End Role="Insurances" Type="Self.Insurances" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Insurance_Bills_DTL" Type="Self.Insurance_Bills_DTL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Insurances">
@@ -8190,7 +8228,6 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySet Name="Mobile_Privillages" EntityType="Self.Mobile_Privillages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MyPoints" EntityType="Self.MyPoints" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MyPoints_DTL" EntityType="Self.MyPoints_DTL" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OpenBuffet" EntityType="Self.OpenBuffet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Options_Privileges" EntityType="Self.Options_Privileges" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderMethod" EntityType="Self.OrderMethod" Schema="dbo" store:Type="Tables" />
@@ -8469,6 +8506,15 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
     [JournalTable].[Cash_No] AS [Cash_No], 
     [JournalTable].[Bank_No] AS [Bank_No]
     FROM [dbo].[JournalTable] AS [JournalTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Notifications].[Id] AS [Id], 
+    [Notifications].[Name] AS [Name], 
+    [Notifications].[Description] AS [Description], 
+    [Notifications].[CreationDate] AS [CreationDate], 
+    [Notifications].[Read] AS [Read]
+    FROM [dbo].[Notifications] AS [Notifications]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PrinterDetail" EntityType="Self.PrinterDetail" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -9390,6 +9436,10 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <AssociationSet Name="FK_Insurances_Closed_Restaurant_Info" Association="Self.FK_Insurances_Closed_Restaurant_Info">
             <End Role="Restaurant_Info" EntitySet="Restaurant_Info" />
             <End Role="Insurances_Closed" EntitySet="Insurances_Closed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurances_CreditCards" Association="Self.FK_Insurances_CreditCards">
+            <End Role="CreditCards" EntitySet="CreditCards" />
+            <End Role="Insurances" EntitySet="Insurances" />
           </AssociationSet>
           <AssociationSet Name="FK_Insurances_Deleted_Restaurant_Info" Association="Self.FK_Insurances_Deleted_Restaurant_Info">
             <End Role="Restaurant_Info" EntitySet="Restaurant_Info" />
@@ -11603,6 +11653,10 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
             <End Role="WAREHOUSE_DETAILS" EntitySet="WAREHOUSE_DETAILS" />
             <End Role="IAS_OUT_REQUEST_DTL" EntitySet="IAS_OUT_REQUEST_DTL" />
           </AssociationSet>
+          <AssociationSet Name="FK_Insurances_CreditCards" Association="Restaurant_2017002Model.FK_Insurances_CreditCards">
+            <End Role="CreditCard" EntitySet="CreditCards" />
+            <End Role="Insurance" EntitySet="Insurances" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AccSys_Accounts">
           <Key>
@@ -11778,6 +11832,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="Food" Relationship="Restaurant_2017002Model.FK_Bills_Components_Foods" FromRole="Bills_Components" ToRole="Food" />
           <NavigationProperty Name="POS" Relationship="Restaurant_2017002Model.FK_Bills_Components_POS" FromRole="Bills_Components" ToRole="POS" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_Bills_Components_Restaurant_Info" FromRole="Bills_Components" ToRole="Restaurant_Info" />
+          <Property Name="Expire_Date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Bills_Notes_Mst">
           <Key>
@@ -11889,6 +11944,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="Deleted_H" Relationship="Restaurant_2017002Model.FK_Deleted_H_CreditCards" FromRole="CreditCard" ToRole="Deleted_H" />
           <NavigationProperty Name="HstrRest_H" Relationship="Restaurant_2017002Model.FK_Hstrrest_H_CreditCards" FromRole="CreditCard" ToRole="HstrRest_H" />
           <NavigationProperty Name="Restaurant_H" Relationship="Restaurant_2017002Model.FK_Restaurant_H_CreditCards" FromRole="CreditCard" ToRole="Restaurant_H" />
+          <NavigationProperty Name="Insurances" Relationship="Restaurant_2017002Model.FK_Insurances_CreditCards" FromRole="CreditCard" ToRole="Insurance" />
         </EntityType>
         <EntityType Name="Currency_Categories">
           <Key>
@@ -11954,6 +12010,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="BalancePastYear" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_Customers_Payment_Restaurant_Info" FromRole="Customers_Payment" ToRole="Restaurant_Info" />
           <NavigationProperty Name="User" Relationship="Restaurant_2017002Model.FK_Customers_Payment_Users" FromRole="Customers_Payment" ToRole="User" />
+          <Property Name="B_Sync" Type="Boolean" Nullable="false" />
+          <Property Name="SyncDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Damage_DTL">
           <Key>
@@ -12246,6 +12304,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="Restart_No" Type="Int32" Nullable="false" />
           <Property Name="Print_Cashier_Copy" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_Delivery_Options_Restaurant_Info" FromRole="Delivery_Options" ToRole="Restaurant_Info" />
+          <Property Name="StartWork" Type="DateTime" Precision="3" />
+          <Property Name="EndWork" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Device_Token">
           <Key>
@@ -12402,6 +12462,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="Employees_Foods" Relationship="Restaurant_2017002Model.FK_Employees_Foods_Employees" FromRole="Employee" ToRole="Employees_Foods" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_Employees_Restaurant_Info" FromRole="Employee" ToRole="Restaurant_Info" />
           <NavigationProperty Name="Restaurant_H" Relationship="Restaurant_2017002Model.FK_Restaurant_H_Employees" FromRole="Employee" ToRole="Restaurant_H" />
+          <Property Name="MonthlyBalance" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Employees_Foods">
           <Key>
@@ -12504,7 +12565,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="Food_No" Type="Int32" Nullable="false" />
           <Property Name="Food_AName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
           <Property Name="Food_EName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
-          <Property Name="Food_Price" Type="Single" />
+          <Property Name="Food_Price" Type="Single" Nullable="false" />
           <Property Name="Food_Type" Type="Int16" Nullable="false" />
           <Property Name="Food_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Food_Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
@@ -12587,6 +12648,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="Stock_QtyAv" Relationship="Restaurant_2017002Model.FK_Stock_QtyAv_Foods" FromRole="Food" ToRole="Stock_QtyAv" />
           <NavigationProperty Name="Sub_Items" Relationship="Restaurant_2017002Model.FK_Sub_Items_Foods" FromRole="Food" ToRole="Sub_Items" />
           <NavigationProperty Name="Transfer_Orders" Relationship="Restaurant_2017002Model.FK_Transfer_Orders_Foods" FromRole="Food" ToRole="Transfer_Orders" />
+          <Property Name="StopTemporary" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Foods_Altrantv">
           <Key>
@@ -13215,6 +13277,9 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="RT_Bill_MST" Relationship="Restaurant_2017002Model.FK_RT_Bill_MST_Insurances" FromRole="Insurance" ToRole="RT_Bill_MST" />
           <NavigationProperty Name="RT_Ins_DTL" Relationship="Restaurant_2017002Model.FK_RT_Ins_DTL_Insurances" FromRole="Insurance" ToRole="RT_Ins_DTL" />
           <NavigationProperty Name="RT_Ins_MST" Relationship="Restaurant_2017002Model.FK_RT_Ins_MST_Insurances" FromRole="Insurance" ToRole="RT_Ins_MST" />
+          <Property Name="Bill_Pay_Type" Type="Int32" Nullable="false" />
+          <Property Name="CreditCard_Type" Type="Int32" />
+          <NavigationProperty Name="CreditCard" Relationship="Restaurant_2017002Model.FK_Insurances_CreditCards" FromRole="Insurance" ToRole="CreditCard" />
         </EntityType>
         <EntityType Name="Insurances_Closed">
           <Key>
@@ -13315,12 +13380,12 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="Doc_Type" Type="Int16" Nullable="false" />
           <Property Name="Doc_Date" Type="DateTime" Precision="3" />
           <Property Name="Food_No" Type="Int32" Nullable="false" />
-          <Property Name="F_Qty" Type="Double" Nullable="false" />
-          <Property Name="S_Qty" Type="Double" Nullable="false" />
+          <Property Name="F_Qty" Type="Double" />
+          <Property Name="S_Qty" Type="Double" />
           <Property Name="P_Size" Type="Double" />
           <Property Name="Main_Food_No" Type="Int32" />
-          <Property Name="Main_Qty" Type="Double" Nullable="false" />
-          <Property Name="F_Price" Type="Double" Nullable="false" />
+          <Property Name="Main_Qty" Type="Double" />
+          <Property Name="F_Price" Type="Double" />
           <Property Name="F_Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="BarCode_No" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="W_Code" Type="Int16" />
@@ -13582,6 +13647,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="Tables_Status" Relationship="Restaurant_2017002Model.FK_Tables_Status_MST_POS" FromRole="POS" ToRole="Tables_Status" />
           <NavigationProperty Name="Transfer_Orders" Relationship="Restaurant_2017002Model.FK_Transfer_Orders_POS" FromRole="POS" ToRole="Transfer_Orders" />
           <NavigationProperty Name="Users_Current_Login" Relationship="Restaurant_2017002Model.FK_Users_Current_Login_POS" FromRole="POS" ToRole="Users_Current_Login" />
+          <Property Name="PrintInvoiceA4" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="POS_Printers">
           <Key>
@@ -13674,6 +13740,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="Food" Relationship="Restaurant_2017002Model.FK_Foods_ProductionRequestDtl" FromRole="ProductionRequestDtl" ToRole="Food" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_ProductionRequestDtl_Restaurant_Info" FromRole="ProductionRequestDtl" ToRole="Restaurant_Info" />
           <NavigationProperty Name="ProductionRequestMst" Relationship="Restaurant_2017002Model.FK_ProductionRequestMst_ProductionRequestDtl" FromRole="ProductionRequestDtl" ToRole="ProductionRequestMst" />
+          <Property Name="FromReservation" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="ProductionRequestMst">
           <Key>
@@ -13697,6 +13764,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="ProductionRequestComponents" Relationship="Restaurant_2017002Model.FK_ProductionRequestMst_ProductionRequestComponents" FromRole="ProductionRequestMst" ToRole="ProductionRequestComponent" />
           <NavigationProperty Name="ProductionRequestDtls" Relationship="Restaurant_2017002Model.FK_ProductionRequestMst_ProductionRequestDtl" FromRole="ProductionRequestMst" ToRole="ProductionRequestDtl" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_ProductionRequestMst_Restaurant_Info" FromRole="ProductionRequestMst" ToRole="Restaurant_Info" />
+          <Property Name="FromReservation" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="REQUEST_TYPES">
           <Key>
@@ -13850,6 +13918,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <NavigationProperty Name="User" Relationship="Restaurant_2017002Model.FK_Reserved_Foods_Users" FromRole="Reserved_Foods" ToRole="User" />
           <NavigationProperty Name="RSRVD_Payments" Relationship="Restaurant_2017002Model.RSRVD_Payments_FK" FromRole="Reserved_Foods" ToRole="RSRVD_Payments" />
           <NavigationProperty Name="RSRVD_RefundPayment" Relationship="Restaurant_2017002Model.RSRVD_RefundPayment_FK" FromRole="Reserved_Foods" ToRole="RSRVD_RefundPayment" />
+          <Property Name="Produced" Type="Boolean" Nullable="false" />
+          <Property Name="ProductionID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Reserved_Foods_Canceled">
           <Key>
@@ -14123,7 +14193,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="ResFoods_Acc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Spends_Acc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CCI_Acc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FA_Branch_No" Type="Int16" />
+          <Property Name="FA_Branch_No" Type="Int16" Nullable="false" />
           <Property Name="FA_Year" Type="Int16" />
           <Property Name="FA_Warehouse" Type="Int32" />
           <Property Name="FA_Out_W_Code" Type="Int16" />
@@ -14546,7 +14616,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="Bill_Amount_Before" Type="Double" />
           <Property Name="I_TaxAmt" Type="Double" />
           <Property Name="I_TaxPer" Type="Double" />
-          <Property Name="FoodPriceVAT" Type="Double" Nullable="false" />
+          <Property Name="FoodPriceVAT" Type="Double" />
           <NavigationProperty Name="Food" Relationship="Restaurant_2017002Model.FK_RT_Bill_DTL_Foods" FromRole="RT_Bill_DTL" ToRole="Food" />
           <NavigationProperty Name="Insurance" Relationship="Restaurant_2017002Model.FK_RT_Bill_DTL_Insurances" FromRole="RT_Bill_DTL" ToRole="Insurance" />
           <NavigationProperty Name="POS" Relationship="Restaurant_2017002Model.FK_RT_Bill_DTL_POS" FromRole="RT_Bill_DTL" ToRole="POS" />
@@ -15067,6 +15137,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="SyncDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_User_Income_Restaurant_Info" FromRole="User_Income" ToRole="Restaurant_Info" />
           <NavigationProperty Name="User" Relationship="Restaurant_2017002Model.FK_User_Income_Users" FromRole="User_Income" ToRole="User" />
+          <Property Name="Income_Visa_Amount" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -15213,6 +15284,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <Property Name="CanCloseIns" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Restaurant_Info" Relationship="Restaurant_2017002Model.FK_Users_Options_Restaurant_Info" FromRole="Users_Options" ToRole="Restaurant_Info" />
           <NavigationProperty Name="User" Relationship="Restaurant_2017002Model.FK_Users_Options_Users" FromRole="Users_Options" ToRole="User" />
+          <Property Name="TemporarilyStopItems" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Users_Periods">
           <Key>
@@ -20317,6 +20389,20 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Insurances_CreditCards">
+          <End Type="Restaurant_2017002Model.CreditCard" Role="CreditCard" Multiplicity="0..1" />
+          <End Type="Restaurant_2017002Model.Insurance" Role="Insurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreditCard">
+              <PropertyRef Name="Card_No" />
+              <PropertyRef Name="Branch_No" />
+            </Principal>
+            <Dependent Role="Insurance">
+              <PropertyRef Name="CreditCard_Type" />
+              <PropertyRef Name="Branch_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -20463,6 +20549,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Bills_Components">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Bills_Components">
               <MappingFragment StoreEntitySet="Bills_Components">
+                <ScalarProperty Name="Expire_Date" ColumnName="Expire_Date" />
                 <ScalarProperty Name="S_ID" ColumnName="S_ID" />
                 <ScalarProperty Name="POS_No" ColumnName="POS_No" />
                 <ScalarProperty Name="Mandatory" ColumnName="Mandatory" />
@@ -20609,6 +20696,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Customers_Payment">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Customers_Payment">
               <MappingFragment StoreEntitySet="Customers_Payment">
+                <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
+                <ScalarProperty Name="B_Sync" ColumnName="B_Sync" />
                 <ScalarProperty Name="BalancePastYear" ColumnName="BalancePastYear" />
                 <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
                 <ScalarProperty Name="Acc_Posted" ColumnName="Acc_Posted" />
@@ -20878,6 +20967,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Delivery_Options">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Delivery_Options">
               <MappingFragment StoreEntitySet="Delivery_Options">
+                <ScalarProperty Name="EndWork" ColumnName="EndWork" />
+                <ScalarProperty Name="StartWork" ColumnName="StartWork" />
                 <ScalarProperty Name="Print_Cashier_Copy" ColumnName="Print_Cashier_Copy" />
                 <ScalarProperty Name="Restart_No" ColumnName="Restart_No" />
                 <ScalarProperty Name="Restart_Type" ColumnName="Restart_Type" />
@@ -21016,6 +21107,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Employee">
               <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="MonthlyBalance" ColumnName="MonthlyBalance" />
                 <ScalarProperty Name="Acc_Emp_No" ColumnName="Acc_Emp_No" />
                 <ScalarProperty Name="Meals_Count" ColumnName="Meals_Count" />
                 <ScalarProperty Name="Meal_Price" ColumnName="Meal_Price" />
@@ -21114,6 +21206,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Foods">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Food">
               <MappingFragment StoreEntitySet="Foods">
+                <ScalarProperty Name="StopTemporary" ColumnName="StopTemporary" />
                 <ScalarProperty Name="IsProduct" ColumnName="IsProduct" />
                 <ScalarProperty Name="ItemTax" ColumnName="ItemTax" />
                 <ScalarProperty Name="ReturnAsDamaged" ColumnName="ReturnAsDamaged" />
@@ -21653,6 +21746,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Insurances">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Insurance">
               <MappingFragment StoreEntitySet="Insurances">
+                <ScalarProperty Name="CreditCard_Type" ColumnName="CreditCard_Type" />
+                <ScalarProperty Name="Bill_Pay_Type" ColumnName="Bill_Pay_Type" />
                 <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
                 <ScalarProperty Name="RptPrinted" ColumnName="RptPrinted" />
                 <ScalarProperty Name="FromPastYear" ColumnName="FromPastYear" />
@@ -21972,6 +22067,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="POS">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.POS">
               <MappingFragment StoreEntitySet="POS">
+                <ScalarProperty Name="PrintInvoiceA4" ColumnName="PrintInvoiceA4" />
                 <ScalarProperty Name="ServerName" ColumnName="ServerName" />
                 <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
                 <ScalarProperty Name="DlvryReQType" ColumnName="DlvryReQType" />
@@ -22068,6 +22164,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="ProductionRequestDtls">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.ProductionRequestDtl">
               <MappingFragment StoreEntitySet="ProductionRequestDtl">
+                <ScalarProperty Name="FromReservation" ColumnName="FromReservation" />
                 <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
                 <ScalarProperty Name="SerialID" ColumnName="SerialID" />
                 <ScalarProperty Name="ItemDesc" ColumnName="ItemDesc" />
@@ -22080,6 +22177,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="ProductionRequestMsts">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.ProductionRequestMst">
               <MappingFragment StoreEntitySet="ProductionRequestMst">
+                <ScalarProperty Name="FromReservation" ColumnName="FromReservation" />
                 <ScalarProperty Name="POS_No" ColumnName="POS_No" />
                 <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
                 <ScalarProperty Name="DocSer" ColumnName="DocSer" />
@@ -22198,6 +22296,8 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Reserved_Foods">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Reserved_Foods">
               <MappingFragment StoreEntitySet="Reserved_Foods">
+                <ScalarProperty Name="ProductionID" ColumnName="ProductionID" />
+                <ScalarProperty Name="Produced" ColumnName="Produced" />
                 <ScalarProperty Name="DiscAmt" ColumnName="DiscAmt" />
                 <ScalarProperty Name="DiscPer" ColumnName="DiscPer" />
                 <ScalarProperty Name="ItemsTaxAmt" ColumnName="ItemsTaxAmt" />
@@ -23158,6 +23258,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="User_Income">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.User_Income">
               <MappingFragment StoreEntitySet="User_Income">
+                <ScalarProperty Name="Income_Visa_Amount" ColumnName="Income_Visa_Amount" />
                 <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
                 <ScalarProperty Name="Acc_Posted" ColumnName="Acc_Posted" />
                 <ScalarProperty Name="Posted" ColumnName="Posted" />
@@ -23260,6 +23361,7 @@ warning 6002: The table/view 'Restaurant_2018001.dbo.RES_WHTRNS_MST_V' does not 
           <EntitySetMapping Name="Users_Options">
             <EntityTypeMapping TypeName="Restaurant_2017002Model.Users_Options">
               <MappingFragment StoreEntitySet="Users_Options">
+                <ScalarProperty Name="TemporarilyStopItems" ColumnName="TemporarilyStopItems" />
                 <ScalarProperty Name="CanCloseIns" ColumnName="CanCloseIns" />
                 <ScalarProperty Name="CanNotEditAfterPrintBill" ColumnName="CanNotEditAfterPrintBill" />
                 <ScalarProperty Name="CanPrintResMoreOne" ColumnName="CanPrintResMoreOne" />

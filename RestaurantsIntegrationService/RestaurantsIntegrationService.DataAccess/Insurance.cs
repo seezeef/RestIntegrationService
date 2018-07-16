@@ -54,6 +54,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool FromPastYear { get; set; }
         public bool RptPrinted { get; set; }
         public Nullable<System.DateTime> SyncDate { get; set; }
+        public int Bill_Pay_Type { get; set; }
+        public Nullable<int> CreditCard_Type { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Insurance_Bills_DTL> Insurance_Bills_DTL { get; set; }
@@ -68,5 +70,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_MST> RT_Ins_MST { get; set; }
+        public virtual CreditCard CreditCard { get; set; }
     }
 }

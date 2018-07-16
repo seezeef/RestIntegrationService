@@ -186,7 +186,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string ResFoods_Acc { get; set; }
         public string Spends_Acc { get; set; }
         public string CCI_Acc { get; set; }
-        public Nullable<short> FA_Branch_No { get; set; }
+        public short FA_Branch_No { get; set; }
         public Nullable<short> FA_Year { get; set; }
         public Nullable<int> FA_Warehouse { get; set; }
         public Nullable<short> FA_Out_W_Code { get; set; }

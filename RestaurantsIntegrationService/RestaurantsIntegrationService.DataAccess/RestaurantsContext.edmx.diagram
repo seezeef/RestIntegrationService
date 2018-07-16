@@ -516,6 +516,7 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Periods_Users" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Waiters_Privileges_Waiters" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_WAREHOUSE_DETAILS" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_CreditCards" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

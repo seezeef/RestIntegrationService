@@ -49,6 +49,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool CanPrintResMoreOne { get; set; }
         public bool CanNotEditAfterPrintBill { get; set; }
         public bool CanCloseIns { get; set; }
+        public bool TemporarilyStopItems { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }

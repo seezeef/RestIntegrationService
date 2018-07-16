@@ -57,7 +57,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Food_No { get; set; }
         public string Food_AName { get; set; }
         public string Food_EName { get; set; }
-        public Nullable<float> Food_Price { get; set; }
+        public float Food_Price { get; set; }
         public short Food_Type { get; set; }
         public string Food_Unit { get; set; }
         public decimal Food_Cost { get; set; }
@@ -100,6 +100,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool ReturnAsDamaged { get; set; }
         public Nullable<double> ItemTax { get; set; }
         public bool IsProduct { get; set; }
+        public bool StopTemporary { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bills_Components> Bills_Components { get; set; }

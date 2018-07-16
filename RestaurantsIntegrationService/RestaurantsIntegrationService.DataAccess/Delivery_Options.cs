@@ -25,6 +25,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Restart_Type { get; set; }
         public int Restart_No { get; set; }
         public bool Print_Cashier_Copy { get; set; }
+        public Nullable<System.DateTime> StartWork { get; set; }
+        public Nullable<System.DateTime> EndWork { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }

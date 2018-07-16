@@ -34,11 +34,11 @@ namespace RestaurantsIntegrationService.Controllers
                             x.B_Sync = true;
                             x.SyncDate = DateTime.Now;
                         });
-                        data.RestaurantOrders.ForEach(x =>
-                        {
-                            x.B_Sync = true;
-                            x.SyncDate = DateTime.Now;
-                        });
+                        //data.RestaurantOrders.ForEach(x =>
+                        //{
+                        //    x.B_Sync = true;
+                        //    x.SyncDate = DateTime.Now;
+                        //});
                         data.ItemMoves.ForEach(x =>
                         {
                             x.B_Sync = true;
@@ -50,7 +50,8 @@ namespace RestaurantsIntegrationService.Controllers
                         EFBatchOperation.For(context, context.HstrRest_D).InsertAll(data.BillsDetail);
                         EFBatchOperation.For(context, context.HstrRest_D_DTL).InsertAll(data.BillsComponents);
                         EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
-                        EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
+                        //EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
+                        EFBatchOperation.For(context, context.Dlvr_Dtl).InsertAll(data.DeliveryDetails);
                         #endregion
 
                         //context.HstrRest_H.AddRange(data.BillsMaster);
@@ -84,9 +85,9 @@ namespace RestaurantsIntegrationService.Controllers
                         using (var context = new Restaurants())
                         {
                             var branch = data.BillsMaster.Select(x => x.Branch_No).FirstOrDefault();
-                            var date = context.HstrRest_H.OrderByDescending(x => x.SyncDate).Select(x => x.SyncDate)
-                                .FirstOrDefault().GetValueOrDefault().AddDays(-5);
-                            var allEntities = context.HstrRest_H.Where(x => x.Branch_No == branch && DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date)).ToList();
+                            var date = context.HstrRest_H.OrderByDescending(x => x.S_Date).Select(x => x.S_Date)
+                                .FirstOrDefault().GetValueOrDefault().AddDays(-10);
+                            var allEntities = context.HstrRest_H.Where(x => x.Branch_No == branch && DbFunctions.TruncateTime(x.S_Date) >= DbFunctions.TruncateTime(date)).AsNoTracking();
 
                             var similarEntities = data.BillsMaster.Intersect(allEntities,
                                 new LambdaComparer<HstrRest_H>(
@@ -97,21 +98,58 @@ namespace RestaurantsIntegrationService.Controllers
                                 var detailsToberemoved =
                                     data.BillsDetail.Where(x => x.ASerial == entity.ASerial && x.POS_No == entity.POS_No).ToList();
 
-                                foreach (var detail in detailsToberemoved)
-                                {
-                                    data.BillsDetail.Remove(detail);
-                                }
-                                var ordersTobeRemoved =
-                                    data.RestaurantOrders.Where(
-                                        x => x.ASerial == entity.ASerial && x.POS_No == entity.POS_No);
-                                data.RestaurantOrders.RemoveRange(0, ordersTobeRemoved.Count());
+                                detailsToberemoved.ForEach(x=>data.BillsDetail.Remove(x));
+
+                                //foreach (var detail in detailsToberemoved)
+                                //{
+                                //    data.BillsDetail.Remove(detail);
+                                //}
+                                //foreach (var hstrRestDDtl in entity.Restaurant_Info.HstrRest_D_DTL)
+                                //{
+                                //    data.BillsComponents.Remove(hstrRestDDtl);
+                                //}
+                                //foreach (var item in entity.Restaurant_Info.Item_Move)
+                                //{
+                                //    data.ItemMoves.Remove(item);
+                                //}
+                                //foreach (var order in entity.Restaurant_Info.Restaurant_Orders)
+                                //{
+                                //    data.RestaurantOrders.Remove(order);
+                                //}
+                                //var ordersTobeRemoved =
+                                //    data.RestaurantOrders.Where(
+                                //        x => x.ASerial == entity.ASerial && x.POS_No == entity.POS_No && x.Branch_No == entity.Branch_No && x.Serial_No == entity.Serial_No);
+                                //data.RestaurantOrders.RemoveRange(0, ordersTobeRemoved.Count());
+                                //ordersTobeRemoved.ForEach(x=>data.RestaurantOrders.Remove(x));
                                 data.BillsMaster.Remove(entity);
+
                             }
+                            var ddTlEntities = context.HstrRest_D_DTL.Where(x => x.Branch_No == branch).OrderByDescending(x => x.ASerial).AsNoTracking().Take(20000);
+
+                            var similarDdtl = data.BillsComponents.Intersect(ddTlEntities,
+                                new LambdaComparer<HstrRest_D_DTL>(
+                                    (x, y) => x.ASerial == y.ASerial && x.S_ID == y.S_ID &&
+                                              x.Branch_No == y.Branch_No && x.RCRD_No == y.RCRD_No && x.POS_No == y.POS_No)).ToList();
+                            similarDdtl.ForEach(x => data.BillsComponents.Remove(x));
+
+                            var itemMovesEntites = context.Item_Move.Where(x => x.Branch_No == branch && x.Doc_Type == 1)
+                                .OrderByDescending(x => x.Doc_No).AsNoTracking().Take(20000);
+                            var similarItemMoves = data.ItemMoves.Intersect(itemMovesEntites,
+                                new LambdaComparer<Item_Move>(
+                                    (x, y) => x.SN_No == y.SN_No)).ToList();
+                            similarItemMoves.ForEach(x => data.ItemMoves.Remove(x));
+
+                            //var restaurantOrdersEntities = context.Restaurant_Orders.Where(x => x.Branch_No == branch)
+                            //    .AsNoTracking().Take(20000);
+                            //var similarRestaurantOrders = data.RestaurantOrders.Intersect(restaurantOrdersEntities,
+                            //    new LambdaComparer<Restaurant_Orders>(
+                            //        (x, y) => x.ASerial == y.ASerial && x.Branch_No == y.Branch_No && x.Serial_No == y.Serial_No && x.POS_No == y.POS_No));
+                            //similarRestaurantOrders.ForEach(x => data.RestaurantOrders.Remove(x));
                             EFBatchOperation.For(context, context.HstrRest_H).InsertAll(data.BillsMaster);
                             EFBatchOperation.For(context, context.HstrRest_D).InsertAll(data.BillsDetail);
                             EFBatchOperation.For(context, context.HstrRest_D_DTL).InsertAll(data.BillsComponents);
                             EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
-                            EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
+                           // EFBatchOperation.For(context, context.Restaurant_Orders).InsertAll(data.RestaurantOrders);
 
                             tranasactionScope.Complete();
                         }
@@ -200,6 +238,71 @@ namespace RestaurantsIntegrationService.Controllers
                             EFBatchOperation.For(context, context.RT_Bill_DTL).InsertAll(data.ReturnBillsDetail);
                             EFBatchOperation.For(context, context.RT_Bill_DTL_DTL).InsertAll(data.ReturnBillsComponents);
                             EFBatchOperation.For(context, context.Item_Move).InsertAll(data.ItemMoves);
+                            tranasactionScope.Complete();
+                        }
+                    }
+
+                }
+                else
+                {
+                    return Ok(new AjaxResponse<object>() { Success = false, ErrorMessage = ex.GetLastException() });
+                }
+
+            }
+
+            return Ok(new AjaxResponse<object>() { Success = true, SuccessMessage = "Successfully" });
+        }
+
+        [Route("InsertCustomerPayment")]
+        [HttpPost]
+        public IHttpActionResult InsertCustomerPayment(CustomerPamentsModel data)
+        {
+            try
+            {
+                using (var ts = new TransactionScope())
+                {
+                    using (Restaurants context = new Restaurants())
+                    {
+                        data.CustomerPaymnets.ForEach(x =>
+                        {
+                            x.B_Sync = true;
+                            x.SyncDate = DateTime.Now;
+                        });
+                        EFBatchOperation.For(context, context.Customers_Payment).InsertAll(data.CustomerPaymnets);
+                        ts.Complete();
+                        #region Old code
+                        //context.RT_Bill_MST.AddRange(data.ReturnBillsMaster);
+                        //context.RT_Bill_DTL.AddRange(data.ReturnBillsDetail);
+                        //context.RT_Bill_DTL_DTL.AddRange(data.ReturnBillsComponents);
+                        //context.Item_Move.AddRange(data.ItemMoves);
+                        //context.SaveChanges();
+                        //dbContextTransaction.Commit(); 
+                        #endregion
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var error = ex as SqlException;
+                if (error != null && error.Number == 2627 && ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
+                {
+                    using (var tranasactionScope = new TransactionScope())
+                    {
+                        using (var context = new Restaurants())
+                        {
+                            var branch = data.CustomerPaymnets.Select(x => x.Branch_No).FirstOrDefault();
+                            //var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                            //&& DbFunctions.TruncateTime(x.SyncDate) >= DbFunctions.TruncateTime(date)
+                            var allEntities = context.Customers_Payment.Where(x => x.Branch_No == branch).ToList();
+
+                            var similarEntities = data.CustomerPaymnets.Intersect(allEntities,
+                                new LambdaComparer<Customers_Payment>(
+                                    (x, y) => x.Trans_ID == y.Trans_ID && x.Branch_No == y.Branch_No)).ToList();
+                            foreach (var entity in similarEntities)
+                            {
+                                data.CustomerPaymnets.Remove(entity);
+                            }
+                            EFBatchOperation.For(context, context.Customers_Payment).InsertAll(data.CustomerPaymnets);
                             tranasactionScope.Complete();
                         }
                     }
@@ -571,7 +674,7 @@ namespace RestaurantsIntegrationService.Controllers
             {
                 var error = ex as SqlException;
                 if (error != null && error.Number == 2627 &&
-                    ex.GetLastException().Contains("Violation of PRIMARY KEY constraint") )
+                    ex.GetLastException().Contains("Violation of PRIMARY KEY constraint"))
                 {
                     DeleteDuplicateUserIncomes(data);
 
@@ -600,7 +703,7 @@ namespace RestaurantsIntegrationService.Controllers
                     var branch = data.Master.Select(x => x.Branch_No).FirstOrDefault();
                     //var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                     var allEntities = context.User_Income
-                        .Where(x => x.Branch_No == branch )
+                        .Where(x => x.Branch_No == branch)
                         .ToList();
 
                     var similarEntities = data.Master.Intersect(allEntities,

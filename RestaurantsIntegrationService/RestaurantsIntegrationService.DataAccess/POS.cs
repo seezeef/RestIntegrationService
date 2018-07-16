@@ -71,6 +71,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<int> DlvryReQType { get; set; }
         public short Branch_No { get; set; }
         public string ServerName { get; set; }
+        public bool PrintInvoiceA4 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bills_Components> Bills_Components { get; set; }

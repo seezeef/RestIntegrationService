@@ -30,6 +30,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<int> Meal_Price { get; set; }
         public short Meals_Count { get; set; }
         public Nullable<int> Acc_Emp_No { get; set; }
+        public bool MonthlyBalance { get; set; }
     
         public virtual Employee_Groups Employee_Groups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

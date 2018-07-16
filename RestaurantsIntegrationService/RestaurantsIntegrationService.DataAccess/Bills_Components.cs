@@ -22,6 +22,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Mandatory { get; set; }
         public int POS_No { get; set; }
         public double S_ID { get; set; }
+        public Nullable<System.DateTime> Expire_Date { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual POS POS { get; set; }
