@@ -18,7 +18,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public string Food_Name { get; set; }
         public int Food_No { get; set; }
         public Nullable<double> Food_Price { get; set; }
-        public short Food_Type { get; set; }
+        public Nullable<double> FoodPriceVAT { get; set; }
+        public Nullable<short> Food_Type { get; set; }
         public int Order_No { get; set; }
         public Nullable<double> Quantity { get; set; }
         public Nullable<double> S_Qty { get; set; }
@@ -71,7 +72,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> I_TaxAmt { get; set; }
         public Nullable<double> I_TaxPer { get; set; }
         public short AttMainFoodNo { get; set; }
-        public Nullable<double> FoodPriceVAT { get; set; }
+        public bool FAndroid { get; set; }
     
         public virtual Food Food { get; set; }
         public virtual Foods_Types Foods_Types { get; set; }

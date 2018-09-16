@@ -157,22 +157,31 @@ namespace RestaurantsIntegrationService.Controllers {
                 {
                     var foodsTypes = context.Foods_Types.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.FoodsTypes = AutoMapperConfig.Mapper.Map<List<Foods_TypesDto>>(foodsTypes);
+
                     var foodsGroups = context.Foods_Groups.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.FoodsGroups = AutoMapperConfig.Mapper.Map<List<Foods_GroupsDto>>(foodsGroups);
+
                     var foods = context.Foods.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.Foods = AutoMapperConfig.Mapper.Map<List<FoodDto>>(foods);
+
                     var foodsUnits = context.Foods_Units.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.FoodsUnits = AutoMapperConfig.Mapper.Map<List<Foods_UnitsDto>>(foodsUnits);
+
                     var foodsPrices = context.Foods_Prices.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.FoodsPrices = AutoMapperConfig.Mapper.Map<List<Foods_PricesDto>>(foodsPrices);
+
                     var groupsItems = context.Groups_Items.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.GroupsItems = AutoMapperConfig.Mapper.Map<List<Groups_ItemsDto>>(groupsItems);
+
                     var itemsNotesMsts = context.Items_Notes_Mst.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.ItemsNotesMsts = AutoMapperConfig.Mapper.Map<List<Items_Notes_MstDto>>(itemsNotesMsts);
+
                     var itemsNotesDtls = context.Items_Notes_Dtl.Where(b => b.Branch_No == branchNo).ToList();
                     inputs.ItemsNotesDtls = AutoMapperConfig.Mapper.Map<List<Items_Notes_DtlDto>>(itemsNotesDtls);
+
                     var subItemses = context.Sub_Items.Where(x => x.Branch_No == branchNo).ToList();
                     inputs.SubItems = AutoMapperConfig.Mapper.Map<List<Sub_ItemsDto>>(subItemses);
+
                     var foodsAltrantvs = context.Foods_Altrantv.Where(x => x.Branch_No == branchNo).ToList();
                     inputs.FoodsAltrantvs = AutoMapperConfig.Mapper.Map<List<Foods_AltrantvDto>>(foodsAltrantvs);
                     //var json = JsonConvert.SerializeObject(inputs);

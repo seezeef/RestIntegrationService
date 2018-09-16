@@ -25,6 +25,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Group_No { get; set; }
         public string Group_A_Name { get; set; }
         public string Group_E_Name { get; set; }
+        public string Group_T_Name { get; set; }
         public Nullable<short> FoodGroup_Type { get; set; }
         public byte[] Group_Pic { get; set; }
         public short Branch_No { get; set; }

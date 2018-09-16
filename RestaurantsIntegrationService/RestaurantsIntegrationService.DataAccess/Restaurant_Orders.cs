@@ -27,10 +27,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<System.DateTime> ClosedAt { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public int POS_No { get; set; }
         public Nullable<double> BSerial_No { get; set; }
         public int Sync_No { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual POS POS { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }

@@ -19,8 +19,8 @@ namespace RestaurantsIntegrationService.DataAccess
         {
             this.Deleted_H = new HashSet<Deleted_H>();
             this.HstrRest_H = new HashSet<HstrRest_H>();
-            this.Restaurant_H = new HashSet<Restaurant_H>();
             this.Insurances = new HashSet<Insurance>();
+            this.Restaurant_H = new HashSet<Restaurant_H>();
         }
     
         public int Card_No { get; set; }
@@ -39,8 +39,8 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HstrRest_H> HstrRest_H { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Insurance> Insurances { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
     }
 }

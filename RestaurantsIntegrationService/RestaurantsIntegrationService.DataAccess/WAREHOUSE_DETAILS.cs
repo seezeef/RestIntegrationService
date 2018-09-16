@@ -25,6 +25,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string W_NAME { get; set; }
         public string W_E_NAME { get; set; }
         public string CC_CODE { get; set; }
+        public bool NotForSale { get; set; }
         public short Branch_No { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

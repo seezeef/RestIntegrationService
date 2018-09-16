@@ -12,25 +12,30 @@ namespace RestaurantsIntegrationService.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Incoming_Types
+    public partial class Coupons_Dtl
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Incoming_Types()
+        public Coupons_Dtl()
         {
-            this.InComing_DTL = new HashSet<InComing_DTL>();
-            this.InComing_Mst = new HashSet<InComing_Mst>();
+            this.HstrRest_H = new HashSet<HstrRest_H>();
+            this.Restaurant_H = new HashSet<Restaurant_H>();
         }
     
-        public short Type_No { get; set; }
-        public string Type_AName { get; set; }
-        public string Type_EName { get; set; }
-        public bool EffIncome { get; set; }
+        public Nullable<int> Trans_ID { get; set; }
+        public string Coupon_No { get; set; }
+        public Nullable<double> Coupon_Amount { get; set; }
+        public Nullable<double> Rem_Coupon_Amount { get; set; }
+        public bool Processed { get; set; }
+        public string Coupon_Desc { get; set; }
+        public bool InActive { get; set; }
+        public Nullable<System.DateTime> Coupon_Expire_Date { get; set; }
         public short Branch_No { get; set; }
     
+        public virtual Coupons_Mst Coupons_Mst { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InComing_DTL> InComing_DTL { get; set; }
+        public virtual ICollection<HstrRest_H> HstrRest_H { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InComing_Mst> InComing_Mst { get; set; }
+        public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }
 }

@@ -36,10 +36,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<decimal> Pay_Amount { get; set; }
         public Nullable<decimal> RemainingAmount { get; set; }
         public Nullable<decimal> AddItemsTotal { get; set; }
-        public int Ins_No { get; set; }
         public Nullable<short> User_ID { get; set; }
         public Nullable<System.DateTime> Res_Date { get; set; }
         public Nullable<System.DateTime> Res_Time { get; set; }
+        public int Ins_No { get; set; }
         public string R_Desc { get; set; }
         public Nullable<System.DateTime> Insert_Date { get; set; }
         public bool Res_Posted { get; set; }

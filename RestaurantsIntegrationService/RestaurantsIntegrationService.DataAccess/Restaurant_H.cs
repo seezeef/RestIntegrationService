@@ -102,9 +102,12 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> ItemsTaxAmt { get; set; }
         public Nullable<double> VisaAmt { get; set; }
         public bool IsItemPriceIncludeTax { get; set; }
+        public string Coupon_No { get; set; }
+        public Nullable<double> Coupon_Amount { get; set; }
     
         public virtual Bench Bench { get; set; }
         public virtual Cell Cell { get; set; }
+        public virtual Coupons_Dtl Coupons_Dtl { get; set; }
         public virtual CreditCard CreditCard1 { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual OpenBuffet OpenBuffet { get; set; }

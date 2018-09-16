@@ -44,6 +44,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<int> Bill_Serial_No { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public int POS_No { get; set; }
         public Nullable<double> Serial_No { get; set; }
         public long ASerial { get; set; }
@@ -51,12 +52,12 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool B_Suspend { get; set; }
         public int Sync_No { get; set; }
         public bool Ins_Pay_Hand { get; set; }
-        public bool FromPastYear { get; set; }
-        public bool RptPrinted { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
         public int Bill_Pay_Type { get; set; }
         public Nullable<int> CreditCard_Type { get; set; }
+        public bool FromPastYear { get; set; }
+        public bool RptPrinted { get; set; }
     
+        public virtual CreditCard CreditCard { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Insurance_Bills_DTL> Insurance_Bills_DTL { get; set; }
         public virtual Insurances_Closed Insurances_Closed { get; set; }
@@ -70,6 +71,5 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<RT_Ins_DTL> RT_Ins_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RT_Ins_MST> RT_Ins_MST { get; set; }
-        public virtual CreditCard CreditCard { get; set; }
     }
 }

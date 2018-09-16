@@ -29,13 +29,13 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Out_Type { get; set; }
         public bool PROCESSED { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public bool P_Onyx { get; set; }
         public Nullable<short> User_ID { get; set; }
         public string AD_TRMNL_NM { get; set; }
         public long DocSer { get; set; }
         public short Branch_No { get; set; }
         public Nullable<int> POS_No { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Damage_DTL> Damage_DTL { get; set; }

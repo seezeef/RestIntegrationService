@@ -14,6 +14,10 @@ namespace RestaurantsIntegrationService.Models.Pos
         public List<Item_Move> ItemMoves { get; set; }
         //public List<Restaurant_Orders> RestaurantOrders { get; set; }
         public List<Dlvr_Dtl> DeliveryDetails { get; set; }
+        public List<CanceledOrder_H> CanceledOrderHs { get; set; }
+        public List<CanceledOrder_D> CanceledOrderDs { get; set; }
+        public List<Deleted_H> DeletedHs { get; set; }
+        public List<Deleted_D> DeletedDs { get; set; }
 
     }
 }

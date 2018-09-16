@@ -19,7 +19,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<long> Doc_Ser { get; set; }
         public string I_Code { get; set; }
         public string ITM_UNT { get; set; }
-        public Nullable<double> P_SIZE { get; set; }
+        public double P_SIZE { get; set; }
         public Nullable<double> I_QTY { get; set; }
         public Nullable<double> P_QTY { get; set; }
         public short w_code { get; set; }

@@ -76,6 +76,9 @@
     <Compile Include="Areas_Drivers.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Auto_Backup.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="BarCode_Setup.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
@@ -103,6 +106,12 @@
     <Compile Include="Black_List.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="CanceledOrder_D.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CanceledOrder_H.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Cell.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
@@ -122,6 +131,12 @@
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="COST_CENTERS.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons_Dtl.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons_Mst.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="CreditCard.cs">
@@ -343,6 +358,9 @@
     <Compile Include="List_States.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="MenuViewSetup.cs">
+      <DependentUpon>RestaurantsContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="MNTNC_REQ.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
@@ -482,21 +500,6 @@
     <Compile Include="Rest_Taxes.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="RES_BILL_COMPND_DTL.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RES_BILL_DTL.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RES_RT_BILL_COMPND_DTL.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RES_RT_BILL_DTL.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RES_RT_BILL_MST.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="RES_STK_DTL.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
@@ -506,13 +509,7 @@
     <Compile Include="RES_WHTRNS_DTL.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="RES_WHTRNS_DTL_V.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="RES_WHTRNS_MST.cs">
-      <DependentUpon>RestaurantsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RES_WHTRNS_MST_V.cs">
       <DependentUpon>RestaurantsContext.tt</DependentUpon>
     </Compile>
     <Compile Include="RSRVD_Payments.cs">

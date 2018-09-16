@@ -26,9 +26,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Acc_Posted { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public Nullable<int> Sp_Type { get; set; }
         public Nullable<int> POS_No { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Spends_Types Spends_Types { get; set; }

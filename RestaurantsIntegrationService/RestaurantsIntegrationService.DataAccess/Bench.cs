@@ -34,8 +34,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Bench_W { get; set; }
         public int Bench_H { get; set; }
         public Nullable<int> Use_Count { get; set; }
-        public short Branch_No { get; set; }
         public bool Bench_Stop { get; set; }
+        public short Branch_No { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual Benches_Sections Benches_Sections { get; set; }

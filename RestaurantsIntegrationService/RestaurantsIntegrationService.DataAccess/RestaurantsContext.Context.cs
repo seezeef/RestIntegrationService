@@ -37,11 +37,13 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Bills_Components> Bills_Components { get; set; }
         public virtual DbSet<Bills_Notes_Mst> Bills_Notes_Mst { get; set; }
         public virtual DbSet<Black_List> Black_List { get; set; }
+        public virtual DbSet<CanceledOrder_H> CanceledOrder_H { get; set; }
         public virtual DbSet<Cell> Cells { get; set; }
         public virtual DbSet<Cells_Groups> Cells_Groups { get; set; }
         public virtual DbSet<Chef> Chefs { get; set; }
-        public virtual DbSet<Configuration> Configurations { get; set; }
         public virtual DbSet<COST_CENTERS> COST_CENTERS { get; set; }
+        public virtual DbSet<Coupons_Dtl> Coupons_Dtl { get; set; }
+        public virtual DbSet<Coupons_Mst> Coupons_Mst { get; set; }
         public virtual DbSet<CreditCard> CreditCards { get; set; }
         public virtual DbSet<Currency_Categories> Currency_Categories { get; set; }
         public virtual DbSet<Customer_Promo_MST> Customer_Promo_MST { get; set; }
@@ -106,7 +108,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Mobile_Privillages> Mobile_Privillages { get; set; }
         public virtual DbSet<MyPoint> MyPoints { get; set; }
         public virtual DbSet<MyPoints_DTL> MyPoints_DTL { get; set; }
-        public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<OpenBuffet> OpenBuffets { get; set; }
         public virtual DbSet<Options_Privileges> Options_Privileges { get; set; }
         public virtual DbSet<OrderMethod> OrderMethods { get; set; }
@@ -175,7 +176,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<Waiters_Privileges> Waiters_Privileges { get; set; }
         public virtual DbSet<WareHouse> WareHouses { get; set; }
         public virtual DbSet<WAREHOUSE_DETAILS> WAREHOUSE_DETAILS { get; set; }
+        public virtual DbSet<Auto_Backup> Auto_Backup { get; set; }
         public virtual DbSet<Bill_details> Bill_details { get; set; }
+        public virtual DbSet<CanceledOrder_D> CanceledOrder_D { get; set; }
+        public virtual DbSet<Configuration> Configurations { get; set; }
         public virtual DbSet<ConfirmConsume_DTL> ConfirmConsume_DTL { get; set; }
         public virtual DbSet<ConfirmConsume_MST> ConfirmConsume_MST { get; set; }
         public virtual DbSet<Customer_Promo_DTL> Customer_Promo_DTL { get; set; }
@@ -188,20 +192,15 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual DbSet<IAS_OUT_REQUEST_DTL> IAS_OUT_REQUEST_DTL { get; set; }
         public virtual DbSet<Inventory_DTL> Inventory_DTL { get; set; }
         public virtual DbSet<JournalTable> JournalTables { get; set; }
+        public virtual DbSet<MenuViewSetup> MenuViewSetups { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<PrinterDetail> PrinterDetails { get; set; }
         public virtual DbSet<Restaurant_Bill_No> Restaurant_Bill_No { get; set; }
         public virtual DbSet<SaveSetting> SaveSettings { get; set; }
         public virtual DbSet<Sys_Errors> Sys_Errors { get; set; }
         public virtual DbSet<Users_Actions> Users_Actions { get; set; }
         public virtual DbSet<Users_History> Users_History { get; set; }
-        public virtual DbSet<RES_BILL_COMPND_DTL> RES_BILL_COMPND_DTL { get; set; }
-        public virtual DbSet<RES_BILL_DTL> RES_BILL_DTL { get; set; }
-        public virtual DbSet<RES_RT_BILL_COMPND_DTL> RES_RT_BILL_COMPND_DTL { get; set; }
-        public virtual DbSet<RES_RT_BILL_DTL> RES_RT_BILL_DTL { get; set; }
-        public virtual DbSet<RES_RT_BILL_MST> RES_RT_BILL_MST { get; set; }
         public virtual DbSet<RES_STK_DTL> RES_STK_DTL { get; set; }
         public virtual DbSet<RES_STK_MST> RES_STK_MST { get; set; }
-        public virtual DbSet<RES_WHTRNS_DTL_V> RES_WHTRNS_DTL_V { get; set; }
-        public virtual DbSet<RES_WHTRNS_MST_V> RES_WHTRNS_MST_V { get; set; }
     }
 }

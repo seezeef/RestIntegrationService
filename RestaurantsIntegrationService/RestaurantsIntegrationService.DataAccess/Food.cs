@@ -57,14 +57,16 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Food_No { get; set; }
         public string Food_AName { get; set; }
         public string Food_EName { get; set; }
+        public string Food_TName { get; set; }
         public float Food_Price { get; set; }
-        public short Food_Type { get; set; }
+        public Nullable<short> Food_Type { get; set; }
         public string Food_Unit { get; set; }
         public decimal Food_Cost { get; set; }
         public string I_Code { get; set; }
         public Nullable<short> Group_No { get; set; }
         public string Food_ADesc { get; set; }
         public string Food_EDesc { get; set; }
+        public string Food_TDesc { get; set; }
         public byte[] Food_Pic { get; set; }
         public short Branch_No { get; set; }
         public bool Has_Component { get; set; }
@@ -87,7 +89,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<short> W_Code { get; set; }
         public int Sub_Item { get; set; }
         public bool W_Link { get; set; }
-        public Nullable<double> P_SIZE { get; set; }
+        public double P_SIZE { get; set; }
         public bool Use_Qty_Fraction { get; set; }
         public bool Main_Unit { get; set; }
         public short Unt_Level { get; set; }

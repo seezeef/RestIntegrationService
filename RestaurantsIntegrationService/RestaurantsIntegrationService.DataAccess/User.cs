@@ -36,6 +36,7 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Spends = new HashSet<Spend>();
             this.Tables_Status = new HashSet<Tables_Status>();
             this.User_Income = new HashSet<User_Income>();
+            this.Auto_Backup = new HashSet<Auto_Backup>();
             this.ConfirmConsume_DTL = new HashSet<ConfirmConsume_DTL>();
             this.ConfirmConsume_MST = new HashSet<ConfirmConsume_MST>();
             this.Damage_Components = new HashSet<Damage_Components>();
@@ -112,6 +113,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<Tables_Status> Tables_Status { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User_Income> User_Income { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Auto_Backup> Auto_Backup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConfirmConsume_DTL> ConfirmConsume_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

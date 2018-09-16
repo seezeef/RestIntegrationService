@@ -19,5 +19,8 @@ namespace RestaurantsIntegrationService.Core.Dtos.FirstInputDtos
         public short Restart_Type { get; set; }
         public int Restart_No { get; set; }
         public bool Print_Cashier_Copy { get; set; }
+        public DateTime? StartWork { get; set; }
+        public DateTime? EndWork { get; set; }
+        public bool PriceByMethods { get; set; }
     }
 }

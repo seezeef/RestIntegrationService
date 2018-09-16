@@ -37,6 +37,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public short Branch_No { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public int POS_No { get; set; }
         public long ASerial { get; set; }
         public int Service_No { get; set; }
@@ -44,7 +45,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Sync_No { get; set; }
         public bool FromPastYear { get; set; }
         public bool RptPrinted { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }

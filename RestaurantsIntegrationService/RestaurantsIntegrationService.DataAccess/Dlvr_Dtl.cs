@@ -46,12 +46,12 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Canceled_Bill { get; set; }
         public string Canceled_Desc { get; set; }
         public int Ref_No { get; set; }
-        public bool PDA_Upload { get; set; }
         public Nullable<System.DateTime> Last_Modified_Date { get; set; }
         public Nullable<int> Last_Modified_User { get; set; }
         public short U_Sync { get; set; }
         public short B_Sync { get; set; }
         public bool RptPrinted { get; set; }
+        public bool PDA_Upload { get; set; }
         public bool PDA_Download { get; set; }
         public int Sync_No { get; set; }
         public int Post_No { get; set; }

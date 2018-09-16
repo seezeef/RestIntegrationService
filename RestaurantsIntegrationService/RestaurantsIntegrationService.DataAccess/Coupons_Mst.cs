@@ -12,25 +12,22 @@ namespace RestaurantsIntegrationService.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Customers_Payment
+    public partial class Coupons_Mst
     {
-        public int Trans_ID { get; set; }
-        public bool Trans_Type { get; set; }
-        public Nullable<System.DateTime> Trans_Date { get; set; }
-        public Nullable<System.DateTime> Trans_Time { get; set; }
-        public Nullable<long> Customer_No { get; set; }
-        public Nullable<short> User_ID { get; set; }
-        public decimal Pay_Amount { get; set; }
-        public Nullable<System.DateTime> Pay_Date { get; set; }
-        public string T_Desc { get; set; }
-        public bool Posted { get; set; }
-        public bool Acc_Posted { get; set; }
-        public bool B_Sync { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
-        public short Branch_No { get; set; }
-        public bool BalancePastYear { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Coupons_Mst()
+        {
+            this.Coupons_Dtl = new HashSet<Coupons_Dtl>();
+        }
     
+        public int Trans_ID { get; set; }
+        public string Trans_Desc { get; set; }
+        public Nullable<System.DateTime> Trans_Date { get; set; }
+        public Nullable<short> User_ID { get; set; }
+        public short Branch_No { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Coupons_Dtl> Coupons_Dtl { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }
-        public virtual User User { get; set; }
     }
 }

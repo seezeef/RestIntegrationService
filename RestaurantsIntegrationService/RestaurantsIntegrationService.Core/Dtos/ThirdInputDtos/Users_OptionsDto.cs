@@ -43,5 +43,8 @@ namespace RestaurantsIntegrationService.Core.Dtos.ThirdInputDtos
         public bool CanPrintResMoreOne { get; set; }
         public bool CanNotEditAfterPrintBill { get; set; }
         public bool CanCloseIns { get; set; }
+        public bool TemporarilyStopItems { get; set; }
+        public bool StopSuspendBill { get; set; }
+        public bool AllSalesInCashierReport { get; set; }
     }
 }

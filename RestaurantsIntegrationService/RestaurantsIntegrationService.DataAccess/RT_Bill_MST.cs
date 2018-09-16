@@ -45,7 +45,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<int> Last_Modified_User { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public int POS_No { get; set; }
+        public bool RptPrinted { get; set; }
         public int Sync_No { get; set; }
         public int Post_No { get; set; }
         public decimal Dr_Amount { get; set; }
@@ -59,10 +61,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Itm_Disc { get; set; }
         public bool Dstrbut_DISC_TAX { get; set; }
         public Nullable<double> ItemsTaxAmt { get; set; }
-        public bool RptPrinted { get; set; }
         public Nullable<System.DateTime> RT_DateTime { get; set; }
         public bool IsItemPriceIncludeTax { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual Insurance Insurance { get; set; }
         public virtual POS POS { get; set; }

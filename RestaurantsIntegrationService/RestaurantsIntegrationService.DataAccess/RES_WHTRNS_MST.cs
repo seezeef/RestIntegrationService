@@ -38,6 +38,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string F_TR_SER { get; set; }
         public bool Rec_Read { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public bool P_Onyx { get; set; }
         public int F_Rec_ID { get; set; }
         public Nullable<short> User_ID { get; set; }
@@ -48,7 +49,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public long DocSer { get; set; }
         public short Branch_No { get; set; }
         public Nullable<int> POS_No { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
     
         public virtual COST_CENTERS COST_CENTERS { get; set; }
         public virtual Delegate Delegate { get; set; }

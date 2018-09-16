@@ -21,6 +21,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public decimal Pay_Amount { get; set; }
         public Nullable<System.DateTime> Pay_Date { get; set; }
         public Nullable<System.DateTime> Pay_Time { get; set; }
+        public short Pay_Type { get; set; }
+        public Nullable<int> CreditCard_Type { get; set; }
         public string P_Desc { get; set; }
         public Nullable<short> User_ID { get; set; }
         public short UP_User_ID { get; set; }
@@ -31,8 +33,6 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Acc_Posted { get; set; }
         public bool Printed { get; set; }
         public short Branch_No { get; set; }
-        public short Pay_Type { get; set; }
-        public Nullable<int> CreditCard_Type { get; set; }
     
         public virtual Reserved_Foods Reserved_Foods { get; set; }
         public virtual Restaurant_Info Restaurant_Info { get; set; }

@@ -54,5 +54,6 @@ namespace RestaurantsIntegrationService.Core.Dtos.FourthInputDtos
         public bool ReturnAsDamaged { get; set; }
         public float ItemTax { get; set; }
         public bool IsProduct { get; set; }
+        public bool StopTemporary { get; set; }
     }
 }

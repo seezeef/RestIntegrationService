@@ -41,6 +41,11 @@ namespace RestaurantsIntegrationService.DataAccess
         public int Use_Android { get; set; }
         public int StopPrintCheck { get; set; }
         public bool DefaultReservation { get; set; }
+        public int OutType { get; set; }
+        public int OutNo { get; set; }
+        public string OutAcc { get; set; }
+        public string OutCC { get; set; }
+        public string OutAC_Dtl { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Deleted_H> Deleted_H { get; set; }

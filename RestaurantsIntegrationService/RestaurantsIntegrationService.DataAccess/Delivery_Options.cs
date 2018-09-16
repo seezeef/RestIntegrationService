@@ -27,6 +27,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public bool Print_Cashier_Copy { get; set; }
         public Nullable<System.DateTime> StartWork { get; set; }
         public Nullable<System.DateTime> EndWork { get; set; }
+        public bool PriceByMethods { get; set; }
+        public bool AutoReceiptDeliveryInvoice { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }

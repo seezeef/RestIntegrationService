@@ -5,184 +5,181 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4d299a8dac0e4a5f8d38cfcc2055d3a1" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="Restaurant_2017002Model.AccSys_Accounts" Width="1.5" PointX="3" PointY="560.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Action" Width="1.5" PointX="3.75" PointY="351" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Area" Width="1.5" PointX="3" PointY="469.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Areas_Drivers" Width="1.5" PointX="8.25" PointY="310.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.BarCode_Setup" Width="1.5" PointX="3" PointY="243.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Bench" Width="1.5" PointX="5.25" PointY="406.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Benches_Sections" Width="1.5" PointX="3" PointY="495" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.AccSys_Accounts" Width="1.5" PointX="3" PointY="580.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Action" Width="1.5" PointX="0.75" PointY="377.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Area" Width="1.5" PointX="3" PointY="288.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Areas_Drivers" Width="1.5" PointX="5.25" PointY="387.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.BarCode_Setup" Width="1.5" PointX="3" PointY="512.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bench" Width="1.5" PointX="5.25" PointY="400.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Benches_Sections" Width="1.5" PointX="3" PointY="470" />
         <EntityTypeShape EntityType="Restaurant_2017002Model.Benches_Types" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="Restaurant_2017002Model.Bill" Width="1.5" PointX="5.75" PointY="5.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Bills_Components" Width="1.5" PointX="8.25" PointY="326" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Bills_Notes_Mst" Width="1.5" PointX="3" PointY="252.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Black_List" Width="1.5" PointX="5.25" PointY="402" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Cell" Width="1.5" PointX="5.25" PointY="431.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Cells_Groups" Width="1.5" PointX="3" PointY="546.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Chef" Width="1.5" PointX="3" PointY="528" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Configuration" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.COST_CENTERS" Width="1.5" PointX="3" PointY="498.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.CreditCard" Width="1.5" PointX="3" PointY="517.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Currency_Categories" Width="1.5" PointX="3" PointY="324.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Customer_Promo_MST" Width="1.5" PointX="3" PointY="556" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Customers_Accounts" Width="1.5" PointX="3" PointY="572.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Customers_Payment" Width="1.5" PointX="12" PointY="344.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_DTL" Width="1.5" PointX="9.75" PointY="383.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_MST" Width="1.5" PointX="3" PointY="341.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_Types" Width="1.5" PointX="3" PointY="428.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Delegate" Width="1.5" PointX="6" PointY="428.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Deleted_D" Width="1.5" PointX="15.75" PointY="442.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Deleted_H" Width="1.5" PointX="13.5" PointY="388.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.DeleteRest" Width="1.5" PointX="12.75" PointY="369.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Delivery_Options" Width="1.5" PointX="3" PointY="549.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Device_Token" Width="1.5" PointX="2.75" PointY="8.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Discount_MST" Width="1.5" PointX="3" PointY="583" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Dlvr_Dtl" Width="1.5" PointX="11.25" PointY="299.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Driver" Width="1.5" PointX="3" PointY="258.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Drivers_Work_Days" Width="1.5" PointX="5.25" PointY="309.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Employee_Groups" Width="1.5" PointX="3" PointY="246.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Employee" Width="1.5" PointX="5.25" PointY="303.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Employees_Foods" Width="1.5" PointX="9.75" PointY="379.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionElement" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bills_Components" Width="1.5" PointX="11.25" PointY="327.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Bills_Notes_Mst" Width="1.5" PointX="3" PointY="306.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Black_List" Width="1.5" PointX="5.25" PointY="397.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.CanceledOrder_H" Width="1.5" PointX="3" PointY="351.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Cell" Width="1.5" PointX="8.25" PointY="331.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Cells_Groups" Width="1.5" PointX="3" PointY="285.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Chef" Width="1.5" PointX="3" PointY="312.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.COST_CENTERS" Width="1.5" PointX="3" PointY="555.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Coupons_Dtl" Width="1.5" PointX="8.25" PointY="312" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Coupons_Mst" Width="1.5" PointX="3" PointY="257.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.CreditCard" Width="1.5" PointX="3" PointY="527.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Currency_Categories" Width="1.5" PointX="3" PointY="246" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customer_Promo_MST" Width="1.5" PointX="3" PointY="531.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customers_Accounts" Width="1.5" PointX="3" PointY="544.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customers_Payment" Width="1.5" PointX="12" PointY="342.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_DTL" Width="1.5" PointX="16.75" PointY="384.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_MST" Width="1.5" PointX="6" PointY="348.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_Types" Width="1.5" PointX="3" PointY="536" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Delegate" Width="1.5" PointX="6" PointY="422.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Deleted_D" Width="1.5" PointX="15.75" PointY="438.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Deleted_H" Width="1.5" PointX="10.5" PointY="407.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.DeleteRest" Width="1.5" PointX="15.75" PointY="372.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Delivery_Options" Width="1.5" PointX="3" PointY="391.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Device_Token" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Discount_MST" Width="1.5" PointX="3" PointY="260.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Dlvr_Dtl" Width="1.5" PointX="5.25" PointY="355.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Driver" Width="1.5" PointX="3" PointY="442.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Drivers_Work_Days" Width="1.5" PointX="8.25" PointY="390" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Employee_Groups" Width="1.5" PointX="3" PointY="499.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Employee" Width="1.5" PointX="5.25" PointY="414" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Employees_Foods" Width="1.5" PointX="19.75" PointY="382.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionElement" Width="1.5" PointX="0.75" PointY="5.125" />
         <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionEstimate" Width="1.5" PointX="3" PointY="4.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModel" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModel" Width="1.5" PointX="0.75" PointY="0.875" />
         <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModelDetail" Width="1.5" PointX="3" PointY="0.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionMST" Width="1.5" PointX="3" PointY="510.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.FingerDevice" Width="1.5" PointX="3" PointY="236.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Food" Width="1.5" PointX="7.5" PointY="440.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Altrantv" Width="1.5" PointX="15.75" PointY="385.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Attach" Width="1.5" PointX="18.75" PointY="392" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Combo" Width="1.5" PointX="18.75" PointY="388.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Components" Width="1.5" PointX="15.75" PointY="395.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Components_End" Width="1.5" PointX="15.75" PointY="399.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Groups" Width="1.5" PointX="5.25" PointY="445.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Prices" Width="1.5" PointX="3" PointY="459" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Types" Width="1.5" PointX="3" PointY="576.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Units" Width="1.5" PointX="11.75" PointY="352.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.FoodsReport_D" Width="1.5" PointX="9.75" PointY="449.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.FoodsReport_H" Width="1.5" PointX="3" PointY="579.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Form_Details" Width="1.5" PointX="0.75" PointY="314.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Groups_Items" Width="1.5" PointX="15.75" PointY="381.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D" Width="1.5" PointX="13.75" PointY="421.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D_Combo" Width="1.5" PointX="9.75" PointY="359.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D_DTL" Width="1.5" PointX="15.75" PointY="366.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_H" Width="1.5" PointX="10.5" PointY="388.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_OUT_REQUEST_MST" Width="1.5" PointX="11.25" PointY="433.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.InComing_DTL" Width="1.5" PointX="15.75" PointY="414.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.InComing_Mst" Width="1.5" PointX="5.25" PointY="420.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Incoming_Types" Width="1.5" PointX="3" PointY="524.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance_Bills_DTL" Width="1.5" PointX="16.5" PointY="408.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance_Materials" Width="1.5" PointX="3" PointY="502.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance" Width="1.5" PointX="14.25" PointY="316.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurances_Closed" Width="1.5" PointX="17.5" PointY="335.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurances_Deleted" Width="1.5" PointX="3" PointY="333.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Inventory_MST" Width="1.5" PointX="9" PointY="330.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Item_Move" Width="1.5" PointX="15.75" PointY="358.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.ItemAchv" Width="1.5" PointX="14.25" PointY="311.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Items_Notes_Dtl" Width="1.5" PointX="12.75" PointY="385.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Items_Notes_Mst" Width="1.5" PointX="3" PointY="553.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.List_States" Width="1.5" PointX="3" PointY="484.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.MNTNC_REQ" Width="1.5" PointX="9" PointY="335.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Mobile_Privillages" Width="1.5" PointX="9.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.MyPoint" Width="1.5" PointX="3" PointY="371" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.MyPoints_DTL" Width="1.5" PointX="3" PointY="435" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Notification" Width="1.5" PointX="10.75" PointY="3.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.OpenBuffet" Width="1.5" PointX="3" PointY="303.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Options_Privileges" Width="1.5" PointX="3" PointY="348" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.OrderMethod" Width="1.5" PointX="3" PointY="522.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.OUT_TYPES" Width="1.5" PointX="3" PointY="255.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Penality" Width="1.5" PointX="3" PointY="472.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.POS" Width="1.5" PointX="3" PointY="278.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.POS_Printers" Width="1.5" PointX="7.5" PointY="364" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Printer" Width="1.5" PointX="3" PointY="564.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Privilege" Width="1.5" PointX="9" PointY="339.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Privileges_SBF" Width="1.5" PointX="12" PointY="348.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.ProductionRequestComponent" Width="1.5" PointX="9.75" PointY="413.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.ProductionRequestDtl" Width="1.5" PointX="12.75" PointY="415.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.ProductionRequestMst" Width="1.5" PointX="3" PointY="505.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.REQUEST_TYPES" Width="1.5" PointX="3" PointY="539.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_DTL" Width="1.5" PointX="16.5" PointY="429.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_MST" Width="1.5" PointX="8.25" PointY="425.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Reservation" Width="1.5" PointX="5.25" PointY="323.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods" Width="1.5" PointX="15" PointY="337.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods_Canceled" Width="1.5" PointX="3" PointY="568.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods_Items" Width="1.5" PointX="14.75" PointY="346.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Rest_Targets" Width="1.5" PointX="10.75" PointY="6.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Rest_Taxes" Width="1.5" PointX="3" PointY="431.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_D" Width="1.5" PointX="10.75" PointY="419.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_H" Width="1.5" PointX="7.5" PointY="389.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Info" Width="1.5" PointX="0.75" PointY="319.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_InvoTypes" Width="1.5" PointX="3" PointY="401.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Menus" Width="1.5" PointX="3" PointY="488" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Menus_Food" Width="1.5" PointX="9.75" PointY="408.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Orders" Width="1.5" PointX="8.25" PointY="320.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Periods" Width="1.5" PointX="3" PointY="268.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Shortcuts" Width="1.5" PointX="9" PointY="349" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RSRVD_Payments" Width="1.5" PointX="20.25" PointY="338.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RSRVD_RefundPayment" Width="1.5" PointX="17.25" PointY="343.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_DTL" Width="1.5" PointX="21.75" PointY="363.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_DTL_DTL" Width="1.5" PointX="9.75" PointY="365.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_MST" Width="1.5" PointX="19.5" PointY="312.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Ins_DTL" Width="1.5" PointX="16.5" PointY="389.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Ins_MST" Width="1.5" PointX="16.5" PointY="317.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.SchduleOption" Width="1.5" PointX="3" PointY="480.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.SMS_DTL" Width="1.5" PointX="3" PointY="425.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.SMS_Suplliers" Width="1.5" PointX="3" PointY="263.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Spend" Width="1.5" PointX="8.25" PointY="301.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Spends_Types" Width="1.5" PointX="3" PointY="249.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Split_Bills" Width="1.5" PointX="11.25" PointY="323.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_Adjst_DTL" Width="1.5" PointX="13.5" PointY="380.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_Adjst_MST" Width="1.5" PointX="11.25" PointY="317.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_QtyAv" Width="1.5" PointX="18.75" PointY="385.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Street" Width="1.5" PointX="5.25" PointY="393.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Sub_Items" Width="1.5" PointX="20.75" PointY="382.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.SyncData" Width="1.5" PointX="3" PointY="534.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.SyncTable" Width="1.5" PointX="10.75" PointY="9.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.System_Initial" Width="1.5" PointX="0.75" PointY="11.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.System_Options" Width="1.5" PointX="3" PointY="542.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Tables_Status" Width="1.5" PointX="8.25" PointY="316.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Transfer_Orders" Width="1.5" PointX="12.75" PointY="362" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.TRANSFER_TYPES" Width="1.5" PointX="3" PointY="530.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Unit" Width="1.5" PointX="3" PointY="240.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.User_Income" Width="1.5" PointX="6" PointY="338.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.User" Width="1.5" PointX="3" PointY="310.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Acc_Link" Width="1.5" PointX="6" PointY="330" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Current_Login" Width="1.5" PointX="5.25" PointY="319.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Login" Width="1.5" PointX="9" PointY="344" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Options" Width="1.5" PointX="12" PointY="330" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Periods" Width="1.5" PointX="5.25" PointY="314.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Waiter" Width="1.5" PointX="3" PointY="451.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Waiters_Privileges" Width="1.5" PointX="7.5" PointY="385.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.WareHouse" Width="1.5" PointX="3" PointY="455.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.WAREHOUSE_DETAILS" Width="1.5" PointX="3" PointY="491.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionMST" Width="1.5" PointX="3" PointY="308.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.FingerDevice" Width="1.5" PointX="3" PointY="452.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Food" Width="1.5" PointX="7.5" PointY="439" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Altrantv" Width="1.5" PointX="10.75" PointY="401.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Attach" Width="1.5" PointX="16.75" PointY="398.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Combo" Width="1.5" PointX="16.75" PointY="394.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Components" Width="1.5" PointX="13.75" PointY="396.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Components_End" Width="1.5" PointX="19.75" PointY="386.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Groups" Width="1.5" PointX="5.25" PointY="433.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Prices" Width="1.5" PointX="3" PointY="483.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Types" Width="1.5" PointX="3" PointY="558.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Foods_Units" Width="1.5" PointX="12.75" PointY="460.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.FoodsReport_D" Width="1.5" PointX="10.75" PointY="427.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.FoodsReport_H" Width="1.5" PointX="3" PointY="515.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Form_Details" Width="1.5" PointX="3.75" PointY="367.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Groups_Items" Width="1.5" PointX="13.75" PointY="392.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D" Width="1.5" PointX="21.75" PointY="407.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D_Combo" Width="1.5" PointX="9.75" PointY="372" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_D_DTL" Width="1.5" PointX="12.75" PointY="366.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.HstrRest_H" Width="1.5" PointX="16.5" PointY="404.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_OUT_REQUEST_MST" Width="1.5" PointX="5.25" PointY="449.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.InComing_DTL" Width="1.5" PointX="13.75" PointY="433.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.InComing_Mst" Width="1.5" PointX="5.25" PointY="425.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Incoming_Types" Width="1.5" PointX="3" PointY="523.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance_Bills_DTL" Width="1.5" PointX="13.5" PointY="447.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance_Materials" Width="1.5" PointX="3" PointY="566.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurance" Width="1.5" PointX="11.25" PointY="391.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurances_Closed" Width="1.5" PointX="16.5" PointY="365.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Insurances_Deleted" Width="1.5" PointX="3" PointY="547.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Inventory_MST" Width="1.5" PointX="8" PointY="360.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Item_Move" Width="1.5" PointX="18.75" PointY="370.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ItemAchv" Width="1.5" PointX="14.25" PointY="315.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Items_Notes_Dtl" Width="1.5" PointX="18.75" PointY="402.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Items_Notes_Mst" Width="1.5" PointX="3" PointY="541.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.List_States" Width="1.5" PointX="3" PointY="463.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MNTNC_REQ" Width="1.5" PointX="6" PointY="340.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Mobile_Privillages" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MyPoint" Width="1.5" PointX="3" PointY="538.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MyPoints_DTL" Width="1.5" PointX="3" PointY="509.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.OpenBuffet" Width="1.5" PointX="3" PointY="502.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Options_Privileges" Width="1.5" PointX="3" PointY="345" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.OrderMethod" Width="1.5" PointX="3" PointY="569.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.OUT_TYPES" Width="1.5" PointX="3" PointY="495.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Penality" Width="1.5" PointX="3" PointY="588.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.POS" Width="1.5" PointX="3" PointY="273.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.POS_Printers" Width="1.5" PointX="16.5" PointY="355.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Printer" Width="1.5" PointX="3" PointY="491.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Privilege" Width="1.5" PointX="6" PointY="344.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Privileges_SBF" Width="1.5" PointX="3" PointY="347.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ProductionRequestComponent" Width="1.5" PointX="10.75" PointY="431.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ProductionRequestDtl" Width="1.5" PointX="13.75" PointY="429.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ProductionRequestMst" Width="1.5" PointX="3" PointY="518.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.REQUEST_TYPES" Width="1.5" PointX="3" PointY="572.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_DTL" Width="1.5" PointX="16.5" PointY="425.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_MST" Width="1.5" PointX="8.25" PointY="421.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reservation" Width="1.5" PointX="8.25" PointY="325" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods" Width="1.5" PointX="11" PointY="355.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods_Canceled" Width="1.5" PointX="3" PointY="562.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Reserved_Foods_Items" Width="1.5" PointX="9.75" PointY="456.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Rest_Targets" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Rest_Taxes" Width="1.5" PointX="3" PointY="460.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_D" Width="1.5" PointX="24.75" PointY="402.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_H" Width="1.5" PointX="13.5" PointY="407.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Info" Width="1.5" PointX="0.75" PointY="330.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_InvoTypes" Width="1.5" PointX="3" PointY="592" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Menus" Width="1.5" PointX="3" PointY="456.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Menus_Food" Width="1.5" PointX="13.75" PointY="400.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Orders" Width="1.5" PointX="11.25" PointY="322.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Periods" Width="1.5" PointX="3" PointY="253.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Shortcuts" Width="1.5" PointX="3" PointY="340" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RSRVD_Payments" Width="1.5" PointX="19.25" PointY="352.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RSRVD_RefundPayment" Width="1.5" PointX="16.25" PointY="349.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_DTL" Width="1.5" PointX="18.75" PointY="359.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_DTL_DTL" Width="1.5" PointX="21" PointY="362.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Bill_MST" Width="1.5" PointX="13.5" PointY="331.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Ins_DTL" Width="1.5" PointX="18.75" PointY="418.875" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RT_Ins_MST" Width="1.5" PointX="16.5" PointY="336.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SchduleOption" Width="1.5" PointX="3" PointY="487.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SMS_DTL" Width="1.5" PointX="3" PointY="474" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SMS_Suplliers" Width="1.5" PointX="3" PointY="575.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Spend" Width="1.5" PointX="8.25" PointY="400.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Spends_Types" Width="1.5" PointX="3" PointY="467" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Split_Bills" Width="1.5" PointX="11.25" PointY="316.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_Adjst_DTL" Width="1.5" PointX="10.75" PointY="383.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_Adjst_MST" Width="1.5" PointX="5.25" PointY="326.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Stock_QtyAv" Width="1.5" PointX="13.75" PointY="384.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Street" Width="1.5" PointX="5.25" PointY="331.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Sub_Items" Width="1.5" PointX="10.75" PointY="388.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SyncData" Width="1.5" PointX="3" PointY="248.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SyncTable" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.System_Initial" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.System_Options" Width="1.5" PointX="3" PointY="265.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Tables_Status" Width="1.5" PointX="5.25" PointY="320.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Transfer_Orders" Width="1.5" PointX="12.75" PointY="373.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.TRANSFER_TYPES" Width="1.5" PointX="3" PointY="298.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Unit" Width="1.5" PointX="3" PointY="585.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.User_Income" Width="1.5" PointX="14" PointY="359" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.User" Width="1.5" PointX="3" PointY="316" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Acc_Link" Width="1.5" PointX="9" PointY="345" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Current_Login" Width="1.5" PointX="5.25" PointY="323.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Login" Width="1.5" PointX="8" PointY="355" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Options" Width="1.5" PointX="14" PointY="348.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Periods" Width="1.5" PointX="5.25" PointY="313.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Waiter" Width="1.5" PointX="3" PointY="242.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Waiters_Privileges" Width="1.5" PointX="13.5" PointY="328.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.WareHouse" Width="1.5" PointX="3" PointY="269.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.WAREHOUSE_DETAILS" Width="1.5" PointX="3" PointY="505.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Auto_Backup" Width="1.5" PointX="5.25" PointY="305.25" />
         <EntityTypeShape EntityType="Restaurant_2017002Model.Bill_details" Width="1.5" PointX="8" PointY="5.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.ConfirmConsume_DTL" Width="1.5" PointX="20.75" PointY="377.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.ConfirmConsume_MST" Width="1.5" PointX="6" PointY="345.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Customer_Promo_DTL" Width="1.5" PointX="5.25" PointY="437.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_Components" Width="1.5" PointX="15.75" PointY="376.375" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Discount_DTL" Width="1.5" PointX="9.75" PointY="452.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.DriverGp" Width="1.5" PointX="8.25" PointY="306.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionDTL" Width="1.5" PointX="5.25" PointY="511.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.CanceledOrder_D" Width="1.5" PointX="8.25" PointY="348.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Configuration" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ConfirmConsume_DTL" Width="1.5" PointX="18.75" PointY="390" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.ConfirmConsume_MST" Width="1.5" PointX="11" PointY="351.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Customer_Promo_DTL" Width="1.5" PointX="8.25" PointY="434.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Damage_Components" Width="1.5" PointX="19.75" PointY="396.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Discount_DTL" Width="1.5" PointX="9.75" PointY="365.5" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.DriverGp" Width="1.5" PointX="8.25" PointY="386.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionDTL" Width="1.5" PointX="5.25" PointY="309.125" />
         <EntityTypeShape EntityType="Restaurant_2017002Model.EvalutionModelEstimate" Width="1.5" PointX="5.25" PointY="0.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_NO_ITM_FOUND" Width="1.5" PointX="18.75" PointY="396.25" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_OUT_REQUEST_DTL" Width="1.5" PointX="16.5" PointY="424.5" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Inventory_DTL" Width="1.5" PointX="18.25" PointY="379.875" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.JournalTable" Width="1.5" PointX="2.75" PointY="11.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.PrinterDetail" Width="1.5" PointX="3" PointY="515" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Bill_No" Width="1.5" PointX="11.25" PointY="312.625" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.SaveSetting" Width="1.5" PointX="3" PointY="330" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Sys_Errors" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Actions" Width="1.5" PointX="6" PointY="333.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_History" Width="1.5" PointX="12" PointY="339.125" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_BILL_COMPND_DTL" Width="1.5" PointX="12.75" PointY="4.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_BILL_DTL" Width="1.5" PointX="4.75" PointY="12.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_RT_BILL_COMPND_DTL" Width="1.5" PointX="6.75" PointY="12.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_RT_BILL_DTL" Width="1.5" PointX="8.75" PointY="12.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_RT_BILL_MST" Width="1.5" PointX="12.75" PointY="9.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_STK_DTL" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_STK_MST" Width="1.5" PointX="14.75" PointY="5.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_DTL_V" Width="1.5" PointX="14.75" PointY="10.75" />
-        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_WHTRNS_MST_V" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_NO_ITM_FOUND" Width="1.5" PointX="13.75" PointY="388.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.IAS_OUT_REQUEST_DTL" Width="1.5" PointX="9.75" PointY="450.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Inventory_DTL" Width="1.5" PointX="16.25" PointY="390.125" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.JournalTable" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.MenuViewSetup" Width="1.5" PointX="3" PointY="291.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Notification" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.PrinterDetail" Width="1.5" PointX="3" PointY="335.375" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Restaurant_Bill_No" Width="1.5" PointX="8.25" PointY="319.625" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.SaveSetting" Width="1.5" PointX="11" PointY="348" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Sys_Errors" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_Actions" Width="1.5" PointX="3" PointY="357.25" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.Users_History" Width="1.5" PointX="3" PointY="362.25" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_AccSys_Accounts_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Actions_Actions" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Users_History_Actions" />
@@ -205,6 +202,8 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_Bills_Notes_Mst_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Black_List_List_States" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Black_List_Restaurant_Info" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_CanceledOrder_H_CanceledOrder_D" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_CanceledOrder_H_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Foods" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Groups_Cells" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Cells_Restaurant_Info" />
@@ -217,9 +216,15 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_MST_COST_CENTERS" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_DTL_COST_CENTERS" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_RES_WHTRNS_MST_COST_CENTERS" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Coupons_Dtl_Coupons_Mst" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Coupons_Dtl_HstrRest_H" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Coupons_Dtl_Restaurant_H" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Coupons_Dtl_Restaurant_Info" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Coupons_Mst_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_CreditCards_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Deleted_H_CreditCards" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Hstrrest_H_CreditCards" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_CreditCards" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_CreditCards" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Currency_Categories_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Customer_Promo_DTL_Customer_Promo_MST" />
@@ -439,6 +444,7 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Restaurant_Menus" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Restaurant_Periods" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_H_Waiters" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_CanceledOrder_D_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_DTL_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_MST_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Customer_Promo_DTL_Restaurant_Info" />
@@ -448,6 +454,7 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_NO_ITM_FOUND_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Inventory_DTL_Restaurant_Info" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_MenuViewSetup_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_PrinterDetail_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_Bill_No_Restaurant_Info" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Restaurant_InvoTypes_Restaurant_Info" />
@@ -507,6 +514,7 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_Stock_Adjst_Mst_Stock_Adjst_Dtl" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Tables_Status_Users" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_User_Income_Users" />
+        <AssociationConnector Association="Restaurant_2017002Model.FK_Auto_Backup_Users" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_DTL_Users" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_ConfirmConsume_MST_Users" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Damage_Components_Users" />
@@ -516,7 +524,8 @@
         <AssociationConnector Association="Restaurant_2017002Model.FK_Users_Periods_Users" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_Waiters_Privileges_Waiters" />
         <AssociationConnector Association="Restaurant_2017002Model.FK_IAS_OUT_REQUEST_DTL_WAREHOUSE_DETAILS" />
-        <AssociationConnector Association="Restaurant_2017002Model.FK_Insurances_CreditCards" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_STK_DTL" Width="1.5" PointX="5.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Restaurant_2017002Model.RES_STK_MST" Width="1.5" PointX="7.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

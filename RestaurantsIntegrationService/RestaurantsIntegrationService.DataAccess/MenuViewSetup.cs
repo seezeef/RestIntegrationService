@@ -12,18 +12,13 @@ namespace RestaurantsIntegrationService.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Foods_Prices
+    public partial class MenuViewSetup
     {
-        public int IDSer { get; set; }
+        public string HeaderPicture { get; set; }
+        public string BGPicture { get; set; }
+        public int DataUpdate { get; set; }
+        public int ImgUpdate { get; set; }
         public short Branch_No { get; set; }
-        public Nullable<short> Type_No { get; set; }
-        public Nullable<short> Group_No { get; set; }
-        public int Food_No { get; set; }
-        public Nullable<int> Unit_No { get; set; }
-        public int Unit_Size { get; set; }
-        public Nullable<float> Food_Price { get; set; }
-        public short Food_Disc { get; set; }
-        public Nullable<short> Price_Type { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
     }

@@ -25,10 +25,13 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Bills_Components = new HashSet<Bills_Components>();
             this.Bills_Notes_Mst = new HashSet<Bills_Notes_Mst>();
             this.Black_List = new HashSet<Black_List>();
+            this.CanceledOrder_H = new HashSet<CanceledOrder_H>();
             this.Cells = new HashSet<Cell>();
             this.Cells_Groups = new HashSet<Cells_Groups>();
             this.Chefs = new HashSet<Chef>();
             this.COST_CENTERS = new HashSet<COST_CENTERS>();
+            this.Coupons_Dtl = new HashSet<Coupons_Dtl>();
+            this.Coupons_Mst = new HashSet<Coupons_Mst>();
             this.CreditCards = new HashSet<CreditCard>();
             this.Currency_Categories = new HashSet<Currency_Categories>();
             this.Customer_Promo_MST = new HashSet<Customer_Promo_MST>();
@@ -106,6 +109,7 @@ namespace RestaurantsIntegrationService.DataAccess
             this.Rest_Taxes = new HashSet<Rest_Taxes>();
             this.Restaurant_D = new HashSet<Restaurant_D>();
             this.Restaurant_H = new HashSet<Restaurant_H>();
+            this.CanceledOrder_D = new HashSet<CanceledOrder_D>();
             this.ConfirmConsume_DTL = new HashSet<ConfirmConsume_DTL>();
             this.ConfirmConsume_MST = new HashSet<ConfirmConsume_MST>();
             this.Customer_Promo_DTL = new HashSet<Customer_Promo_DTL>();
@@ -115,6 +119,7 @@ namespace RestaurantsIntegrationService.DataAccess
             this.IAS_NO_ITM_FOUND = new HashSet<IAS_NO_ITM_FOUND>();
             this.IAS_OUT_REQUEST_DTL = new HashSet<IAS_OUT_REQUEST_DTL>();
             this.Inventory_DTL = new HashSet<Inventory_DTL>();
+            this.MenuViewSetups = new HashSet<MenuViewSetup>();
             this.PrinterDetails = new HashSet<PrinterDetail>();
             this.Restaurant_Bill_No = new HashSet<Restaurant_Bill_No>();
             this.Restaurant_InvoTypes = new HashSet<Restaurant_InvoTypes>();
@@ -197,7 +202,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string Hotel_Path { get; set; }
         public bool SaveMultiHotelServices { get; set; }
         public Nullable<short> Restart_Type { get; set; }
-        public Nullable<int> Restart_No { get; set; }
+        public int Restart_No { get; set; }
         public Nullable<double> WhenBillNo { get; set; }
         public string Service_Acc { get; set; }
         public string Round_Acc { get; set; }
@@ -238,6 +243,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public short CostCenterBy { get; set; }
         public string TaxNumber { get; set; }
         public bool ItemPriceIncludeTax { get; set; }
+        public bool MandotaryCustAccDTL { get; set; }
+        public short LinkWarehouseBy { get; set; }
+        public bool HiddenBranch { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AccSys_Accounts> AccSys_Accounts { get; set; }
@@ -257,6 +265,8 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Black_List> Black_List { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CanceledOrder_H> CanceledOrder_H { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cell> Cells { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cells_Groups> Cells_Groups { get; set; }
@@ -264,6 +274,10 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<Chef> Chefs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COST_CENTERS> COST_CENTERS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Coupons_Dtl> Coupons_Dtl { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Coupons_Mst> Coupons_Mst { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CreditCard> CreditCards { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -421,6 +435,8 @@ namespace RestaurantsIntegrationService.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Restaurant_H> Restaurant_H { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CanceledOrder_D> CanceledOrder_D { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConfirmConsume_DTL> ConfirmConsume_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConfirmConsume_MST> ConfirmConsume_MST { get; set; }
@@ -438,6 +454,8 @@ namespace RestaurantsIntegrationService.DataAccess
         public virtual ICollection<IAS_OUT_REQUEST_DTL> IAS_OUT_REQUEST_DTL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventory_DTL> Inventory_DTL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MenuViewSetup> MenuViewSetups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PrinterDetail> PrinterDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

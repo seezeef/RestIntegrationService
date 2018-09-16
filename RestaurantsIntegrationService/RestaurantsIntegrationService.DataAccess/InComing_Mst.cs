@@ -30,6 +30,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public string DOC_DESC { get; set; }
         public bool PROCESSED { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public bool P_Onyx { get; set; }
         public Nullable<short> User_ID { get; set; }
         public short Branch_No { get; set; }
@@ -39,7 +40,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public int AccEmpNo { get; set; }
         public long DocSer { get; set; }
         public Nullable<int> POS_No { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
+        public bool Periodic { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InComing_DTL> InComing_DTL { get; set; }

@@ -75,6 +75,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<int> Last_Modified_User { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public int POS_No { get; set; }
         public Nullable<double> Serial_No { get; set; }
         public bool BillPrinted { get; set; }
@@ -105,10 +106,12 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> ItemsTaxAmt { get; set; }
         public Nullable<double> VisaAmt { get; set; }
         public bool IsItemPriceIncludeTax { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
+        public string Coupon_No { get; set; }
+        public Nullable<double> Coupon_Amount { get; set; }
     
         public virtual Bench Bench { get; set; }
         public virtual Cell Cell { get; set; }
+        public virtual Coupons_Dtl Coupons_Dtl { get; set; }
         public virtual CreditCard CreditCard1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HstrRest_D> HstrRest_D { get; set; }

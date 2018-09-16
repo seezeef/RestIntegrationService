@@ -20,6 +20,7 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<System.DateTime> Income_Date { get; set; }
         public Nullable<System.DateTime> Income_Time { get; set; }
         public Nullable<decimal> Income_Amount { get; set; }
+        public Nullable<decimal> Income_Visa_Amount { get; set; }
         public decimal Back_Amount { get; set; }
         public decimal Ins_Amount { get; set; }
         public decimal ReturnIns_Amount { get; set; }
@@ -34,10 +35,9 @@ namespace RestaurantsIntegrationService.DataAccess
         public Nullable<double> Purch_Amt { get; set; }
         public bool U_Sync { get; set; }
         public bool B_Sync { get; set; }
+        public Nullable<System.DateTime> SyncDate { get; set; }
         public bool Posted { get; set; }
         public bool Acc_Posted { get; set; }
-        public Nullable<System.DateTime> SyncDate { get; set; }
-        public Nullable<decimal> Income_Visa_Amount { get; set; }
     
         public virtual Restaurant_Info Restaurant_Info { get; set; }
         public virtual User User { get; set; }
